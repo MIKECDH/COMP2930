@@ -1,0 +1,39 @@
+body {
+  background-image: url(leone-venter-469710-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 85px);
+}
+#Logo {
+  margin-top: 5px;
+  height: 75px;
+  width: auto;
+}
+#para1 {
+  font-size: 36pt;
+  letter-spacing: 10px;
+  line-height: 120px;
+  font-weight: 500;
+}
+
+#backgroundImg {
+  height: 60%;
+  width: 75%;
+}
+.navbar-nav li a {
+  line-height: 55px;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.buttonMain {
+  display: flex;
+  justify-content: flex-start;
+}
+.buttonMain button {
+  background-color: whitesmoke;
+  margin: 50px 0 0 90px;
+}
