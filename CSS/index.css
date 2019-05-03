@@ -1,5 +1,5 @@
 body {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: Roboto ,Arial, Helvetica, sans-serif;
 }
 
 #backgroundMain {
@@ -21,7 +21,7 @@ body {
 }
 
 #para1 {
-  font-size: 3.5vw;
+  font-size: 36pt;
   letter-spacing: 10px;
   line-height: 120px;
   font-weight: 500;
@@ -34,7 +34,7 @@ body {
 
 .navbar-nav li a {
   line-height: 55px;
-  font-size: 1.0vw;
+  font-size: 1.1em;
   letter-spacing: 2px;
 }
 
@@ -52,3 +52,25 @@ body {
   background-color: whitesmoke;
   margin: 50px 0 0 70px;
 }
+
+#post1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 5px 0 5px;
+  height: 150px;
+  background-color: whitesmoke;
+  border-radius: 0;
+}
+
+#post1 p {
+  margin: 0 5px 0 5px;
+  font-size: 16pt;
+  line-height: 60px;
+}
+
+#post1 a {
+  height: 50px;
+  width: 50px;
+  margin: 0 5px 0 5px;
+}
+
