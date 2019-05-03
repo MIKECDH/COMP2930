@@ -1,5 +1,5 @@
 body {
-  background-image: url(../PICTURE/leone-venter-469710-unsplash.jpg);
+  /*background-image: url(../PICTURE/leone-venter-469710-unsplash.jpg);*/
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - 85px);
@@ -27,7 +27,7 @@ body {
   letter-spacing: 10px;
   line-height: 90px;
   font-weight: 500;
-  color: yellow;
+  /*color: yellow;*/
 }
 
 #thelabel {
@@ -71,3 +71,15 @@ body {
   background-color: whitesmoke;
   margin: 20px 0 0 30px;
 }
+
+.spanMain {
+  font-size: 20pt;
+  /*display: flex;*/
+  /*justify-content: flex-start;*/
+}
+
+/*@media only screen and (max-width: 200px) {
+  h1.posthelp {
+    font-size: 12pt;
+  }
+}*/
