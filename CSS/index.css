@@ -3,7 +3,7 @@ body {
 }
 
 #backgroundMain {
-  background-image: url(../PICTURE/leone-venter-469710-unsplash.jpg);
+  background-image: url(../PICTURE/KakaoTalk_Photo_2019-05-03-12-47-28.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - 85px);
@@ -12,6 +12,11 @@ body {
 #navbarMain {
   margin: 0;
   padding: 0;
+}
+
+.navbar-toggle {
+  float: none;
+  margin-right: 0;
 }
 
 #Logo {
