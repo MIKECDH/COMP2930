@@ -24,6 +24,8 @@
 
 <body>
     
+    
+  <!-- nav bar -->
   <nav id="navbarMain" class="navbar navbar-default shadow-sm" style="height: 85px;">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -41,7 +43,14 @@
           <li class="nav-item"><a href="#">Home</a></li>
           <li class="nav-item"><a href="#">Volunteering</a></li>
           <li class="nav-item"><a href="#">Organization</a></li>
-          <li class="nav-item"><a href="#">Feature</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">MyPage
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">My Portfolio</a></li>
+              <li><a href="#">My Account</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li class="nav-item"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
@@ -49,11 +58,13 @@
     </div>
   </nav>
     
+    
 <div class="container text-center">    
-  <h2>My Portfolio</h2><br>
+  <h2>My Portfolio</h2><hr><br>
   <div class="row">
     
-    <!-- Profile -->
+      
+    <!-- User Profile -->
     <div class="col-sm-4"><br><br>
       <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
       <h4 class="text-left">Stella Kim</h4><br>
@@ -62,10 +73,13 @@
        <span class="label label-default">Sports</span>
        <span class="label label-default">Youth Development</span>
        <div class="btn-group">
-          <button type="button" class="btn btn-primary btn-xs">Categories</button>
-          <button type="button" class="btn btn-primary dropdown-toggle btn-xs" data-toggle="dropdown">
-            <span class="caret"></span>
-          </button>
+           
+           
+       <!-- Categories dropdown -->
+       <button type="button" class="btn btn-default btn-xs">Categories</button>
+       <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">
+         <span class="caret"></span>
+       </button>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Seniors</a></li>
             <li><a href="#">Disabilities</a></li>
@@ -75,17 +89,19 @@
             <li><a href="#">Educdation</a></li>
           </ul>
         </div><br><br>
-        <button type="button" class="btn btn-default">Save</button>
+        <button type="button" class="btn btn-primary">Save</button>
       </h4>
     </div>
       
-    <!-- Organization Volunteer -->
+      
+    <!-- Organization Volunteering History -->
     <div class="col-sm-8"> 
       <h4 class="text-left">Organization Volunteer</h4><br>
         <div class="col-sm-1"></div>
-        <div class="col-sm-11">        
+        <div class="col-sm-11"> 
+            
             <div class="row">
-              <div class="col-sm-3"><br>
+              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
                 <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
                 <p>BCIT</p>
               </div>
@@ -98,8 +114,9 @@
                 <p>Aug.2016 ~ Sep.2016</p>
               </div>
             </div><hr>
+            
             <div class="row">
-              <div class="col-sm-3"><br>
+              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
                 <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
                 <p>BCIT</p>
               </div>
@@ -111,18 +128,55 @@
                 <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
                 <p>Aug.2016 ~ Sep.2016</p>
               </div>
-            </div><br><br>
+            </div><hr><br><br>
         </div>
         
-    <!-- Personal Volunteer -->
+      <!-- Personal Volunteering History -->
       <h4 class="text-left">Personal Volunteer</h4><br>
         <div class="col-sm-1"></div>
         <div class="col-sm-11"> 
+            
             <div class="row">
-              <div class="col-sm-3"><br>
+              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
                 <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
                 <p>BCIT</p>
               </div>
+                
+                
+  <!-- Modal for writing reviews -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">List for applying people</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
+              <h4 class="text-center">Brandon</h4><br>
+            </div>
+            <div class="col-md-4">
+              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
+              <h4 class="text-center">Eric</h4><br>
+            </div>
+            <div class="col-md-4">
+              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
+              <h4 class="text-center">Ryan</h4><br>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>       
+                
               <div class="col-sm-2 text-left">
                 <h4>Role</h4><br>
                 <h4>Period</h4>
