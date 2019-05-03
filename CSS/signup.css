@@ -1,0 +1,37 @@
+body {
+  font-family: Roboto ,Arial, Helvetica, sans-serif;
+}
+
+#backgroundMain {
+  background-image: url(../PICTURE/leone-venter-469710-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 85px);
+}
+
+#navbarMain {
+  margin: 0;
+  padding: 0;
+}
+
+#Logo {
+  margin-top: 5px;
+  height: 75px;
+  width: auto;
+}
+.navbar-nav li a {
+  line-height: 55px;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+img {
+    margin-top:-70px;
+    width:40%;
+    height:30%;
+}
