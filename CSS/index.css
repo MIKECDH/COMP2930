@@ -14,6 +14,11 @@ body {
   padding: 0;
 }
 
+.navbar-toggle {
+  float: none;
+  margin-right: 0;
+}
+
 #Logo {
   margin-top: 5px;
   height: 75px;
@@ -21,7 +26,7 @@ body {
 }
 
 #para1 {
-  font-size: 3.5vw;
+  font-size: 36pt;
   letter-spacing: 10px;
   line-height: 120px;
   font-weight: 500;
