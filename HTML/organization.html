@@ -51,17 +51,31 @@
   
   <!--body part-->
   <div class="container-fluid" >
-  <div class="col-sm-12" id="welcomeText">
-    <h1 id= "posthelp">Post your help !</h1>
+  <div class="col-sm-12 text-center" id="welcomeText" >
+    <h1 id= "posthelp" style="font-size:5vw;">Post your help !</h1>
+  </div>
      <!--the person and organization part-->
     <div class="col-sm-1">
     </div>
-    <div class="buttonMain">
-      <button type="button" class="btn-lg">Person</button>
-      <button type="button" class="btn-lg">Organization</button>
-    </div>
+
+    <!-- <div class="spanMain"> -->
+    <div class="col-xs-4 row">
+      <div class="container">
+        <form>
+          <div class="radio">
+            <label><input type="radio" name="optradio" checked>Person</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio">Organization</label>
+          </div>
+        </form>
+      </div>
+     </div>
+
     <br>
   </div>
+
+  <br>
 
   <div class="col-sm-1">
   </div>
@@ -114,16 +128,22 @@
   <!--category and buttons-->
   <div class="form-group">
   <label for="exampleInputEmail1" id ="thelabel">Category:</label>
-  <div class="buttonMain">
-      <button type="button" class="btn-lg">Disabilities</button>
-      <button type="button" class="btn-lg">Seniors</button>
-      <button type="button" class="btn-lg">Education</button>
+
+
+  <form>
+    <div class="form-group">
+      <select class="form-control" id="sel1">
+        <option>Disabilities</option>
+        <option>Seniors</option>
+        <option>Education</option>
+        <option>Sports</option>
+        <option>Environment</option>
+        <option>Youth Development</option>
+      </select>
     </div>
-  <div class="buttonMain">
-      <button type="button" class="btn-lg">Sports</button>
-      <button type="button" class="btn-lg">Environment</button>
-      <button type="button" class="btn-lg">Youth Development</button>
-  </div>
+  </form>
+
+
   </div>
 <br>
 
@@ -161,7 +181,7 @@
         <div class="col-xs-4">
           <label for="nvol" id ="thelabel">Number of Volunteer:</label>
           
-          <input type="number" class="form-control" id="name" pattern="[0-9]" aria-describedby="numvolHelp" placeholder="how many volunteers are needed" required/>
+          <input type="number" class="form-control" id="name" pattern="[0-9]" aria-describedby="numvolHelp" placeholder="how many volunteers" required/>
         </div>
       </div>
    
@@ -183,7 +203,7 @@
     <div class="form-group row">
       <div class="col-xs-12">
       <label for="Textarea" id ="thelabel">Description:</label>
-      <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
+      <textarea class="form-control" id="exampleTextarea" rows="11"></textarea>
 
     </div>
   

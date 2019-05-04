@@ -1,7 +1,4 @@
 body {
-  background-image: url(../PICTURE/leone-venter-469710-unsplash.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   height: calc(100vh - 85px);
   font-family: Roboto,Arial, Helvetica, sans-serif;
 }
@@ -15,11 +12,6 @@ body {
   letter-spacing: 10px;
   line-height: 120px;
   font-weight: 500;
-}
-
-#backgroundImg {
-  height: 60%;
-  width: 75%;
 }
 
 #posthelp {
