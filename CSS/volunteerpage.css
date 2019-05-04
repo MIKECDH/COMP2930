@@ -1,0 +1,50 @@
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+#navbarMain {
+  margin: 0;
+  padding: 0;
+}
+
+#Logo {
+  margin-top: 5px;
+  height: 75px;
+  width: auto;
+}
+
+.navbar-nav li a {
+  line-height: 55px;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#searchbar {
+  margin-top: 30px;
+}
+
+#post1 {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  margin: 30px 5px 0 5px;
+  height: 120px;
+  background-color: white;
+  border-radius: 0;
+}
+
+#post1 p {
+  margin: 0 5px 0 5px;
+  font-size: 16pt;
+}
+
+#post1 a img {
+  height: 50px;
+  width: auto;
+}

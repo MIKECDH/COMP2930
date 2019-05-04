@@ -1,0 +1,226 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <!-- Index CSS -->
+  <link rel="stylesheet" type="text/css" href="../CSS/organization.css">
+
+  <!-- Font Style -->
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+  </style>
+</head>
+
+<body>
+  <nav id="navbarMain" class="navbar navbar-default shadow-sm" style="height: 85px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-left navbar-link" href="#">
+          <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right navbar-link">
+          <li class="nav-item"><a href="index.html">Home</a></li>
+          <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+          <li class="nav-item"><a href="#">Organization</a></li>
+          <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+          <li class="nav-item"><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li class="nav-item"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  
+  <!--body part-->
+  <div class="container-fluid" >
+  <div class="col-sm-12 text-center" id="welcomeText" >
+    <h1 id= "posthelp" style="font-size:5vw;">Post your help !</h1>
+  </div>
+     <!--the person and organization part-->
+    <div class="col-sm-1">
+    </div>
+    <div class="col-xs-4 row">
+      <div class="container">
+        <form>
+          <div class="radio">
+            <label><input type="radio" name="optradio" checked>Person</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio">Organization</label>
+          </div>
+        </form>
+      </div>
+     </div>
+
+  </div>
+
+  <br>
+
+  <div class="col-sm-1">
+  </div>
+  <!-- left form part-->
+  <div class="col-sm-5" id="welcomeText">  
+  <form>
+  <!--name-->
+  <div class="form-group row">
+      <div class="col-xs-3">
+      <label for="name" id ="thelabel">Name:</label>
+      
+      <input type="text" class="form-control" id="name" pattern="[A-Za-z]{8,15}" aria-describedby="nameHelp" placeholder="Enter your name" required/>
+    </div>
+  </div>
+   
+ 
+  <br>
+
+
+
+  <!--phone-->
+  <div class="form-group row">
+      <div class="col-xs-4">
+      <label for="phone" id ="thelabel">Phone:</label>
+      <input type="tel" class="form-control" id="phone" pattern="[0-9]" aria-describedby="numberHelp" placeholder="Enter phone number" required/>
+      </div>
+  </div>
+  <br>
+
+
+  <!--location-->
+  <div class="form-group row">
+    <div class="col-xs-6">
+      <label for="location" id ="thelabel">Location:</label>
+      <input type="text" class="form-control" id="name" pattern="[A-Za-z0-9]{8,30}" aria-describedby="locationHelp" placeholder="Enter location" required/>
+    </div>
+  </div>
+  <br>
+
+  <!--email-->
+  <div class="form-group row">
+    <div class="col-xs-6">
+      <label for="exampleInputEmail1" id ="thelabel">Email address:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1"  pattern="[A-Za-z0-9]{8,30}" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+     
+  </div>
+  <br>
+
+  <!--category and buttons-->
+  <div class="form-group">
+  <label for="exampleInputEmail1" id ="thelabel">Category:</label>
+  <form>
+    <div class="form-group">
+      <select class="form-control" id="sel1">
+        <option>Disabilities</option>
+        <option>Seniors</option>
+        <option>Education</option>
+        <option>Sports</option>
+        <option>Environment</option>
+        <option>Youth Development</option>
+      </select>
+    </div>
+  </form>
+  </div>
+<br>
+
+  <div class="form-group row">
+    <div class="col-xs-6">
+      <label for="qualification" id ="thelabel">Qualification:</label>
+      <input type="text" class="form-control" id="inputQualification"  pattern="[A-Za-z0-9]{8,30}" aria-describedby="emailHelp" placeholder="the qualification">
+    </div>
+     
+  </div>
+  
+</form>
+
+  </div>
+
+
+
+
+  <!--right side-->
+  <div class="col-sm-5">
+    <form>
+      <!--event name-->
+      <div class="form-group row">
+        <div class="col-xs-6">
+        <label for="ename" id ="thelabel">Event Name:</label>
+        
+        <input type="text" class="form-control" id="name" pattern="[A-Za-z0-9]{4,15}" aria-describedby="enameHelp" placeholder="Enter your event" required/>
+      </div>
+    </div>
+
+  <br>
+
+      <!--volunteer number-->
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <label for="nvol" id ="thelabel">Number of Volunteer:</label>
+          
+          <input type="number" class="form-control" id="name" pattern="[0-9]" aria-describedby="numvolHelp" placeholder="how many volunteers" required/>
+        </div>
+      </div>
+   
+ 
+  <br>
+
+      <!--file input-->
+    <div class="form-group row">
+      <div class="col-xs-4">
+      <label for="inputfile" id ="thelabel">Upload Image:</label>
+ 
+      <input type="file" class="form-control-file"  id="file1">
+      <label for="fileupload" id ="smallUpload"> Select a file to upload image</label>
+    </div>
+    </div>
+  <br>
+
+    <!--description-->
+    <div class="form-group row">
+      <div class="col-xs-12">
+      <label for="Textarea" id ="thelabel">Description:</label>
+      <textarea class="form-control" id="exampleTextarea" rows="11"></textarea>
+
+    </div>
+  
+  </form>
+
+  
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+  
+
+  
+
+
+
+
+  </div>
+
+  <!--the max right side-->
+  <div class="col-sm-1">
+  </div>
+</div>
+
+  
+</body>
+
+</html>
