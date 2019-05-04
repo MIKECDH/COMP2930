@@ -52,27 +52,18 @@
   <!--body part-->
   <div class="container-fluid" >
   <div class="col-sm-12 text-center" id="welcomeText" >
-    <h1 id= "posthelp" style="font-size:5vw;">Post your help !</h1>
+    <h1 id= "posthelp" style="font-size:5vw;">Post your help !</h1><br>
   </div>
      <!--the person and organization part-->
     <div class="col-sm-1">
     </div>
-
-    <!-- <div class="spanMain"> -->
     <div class="col-xs-4 row">
-      <div class="container">
-        <form>
-          <div class="radio">
-            <label><input type="radio" name="optradio" checked>Person</label>
-          </div>
-          <div class="radio">
-            <label><input type="radio" name="optradio">Organization</label>
-          </div>
-        </form>
-      </div>
+      <form>
+        <label class="radio-inline"><input type="radio" name="optradio" checked>Person</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Organization</label>
+      </form>
      </div>
 
-    <br>
   </div>
 
   <br>
@@ -128,8 +119,6 @@
   <!--category and buttons-->
   <div class="form-group">
   <label for="exampleInputEmail1" id ="thelabel">Category:</label>
-
-
   <form>
     <div class="form-group">
       <select class="form-control" id="sel1">
@@ -142,8 +131,6 @@
       </select>
     </div>
   </form>
-
-
   </div>
 <br>
 
