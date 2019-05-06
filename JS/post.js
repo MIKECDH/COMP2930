@@ -1,4 +1,4 @@
-// Your web app's Firebase configuration
+// Our web apps Firebase configuration
 var firebaseConfig = {
     apiKey: "AIzaSyCnWEHvBytIj-gxgiE2XeM2Wg9rWRJ25oM",
     authDomain: "volunteerstudio-ccb6f.firebaseapp.com",
@@ -12,7 +12,8 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   
   // Reference messages collection
-  var postsRef = firebase.database().ref('posts');
+  var database = firebase.database();
+  var postsRef = database.ref('posts');
   
   // Listen for form submit
   document.getElementById('submit').addEventListener('click', submitForm);
