@@ -23,7 +23,12 @@
 </head>
 
 <body>
+
+  <form id = 'postForm'>
+
+
   <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
+
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
@@ -108,7 +113,7 @@
   <div class="form-group row">
     <div class="col-xs-6">
       <label for="location" id ="thelabel">Location:</label>
-      <input type="text" class="form-control" id="name" pattern="[A-Za-z0-9]{8,30}" aria-describedby="locationHelp" placeholder="Enter location" required/>
+      <input type="text" class="form-control" id="location" pattern="[A-Za-z0-9]{8,30}" aria-describedby="locationHelp" placeholder="Enter location" required/>
     </div>
   </div>
   <br>
@@ -117,7 +122,7 @@
   <div class="form-group row">
     <div class="col-xs-6">
       <label for="exampleInputEmail1" id ="thelabel">Email address:</label>
-      <input type="email" class="form-control" id="exampleInputEmail1"  pattern="[A-Za-z0-9]{8,30}" aria-describedby="emailHelp" placeholder="Enter email">
+      <input type="email" class="form-control" id="email"  pattern="[A-Za-z0-9]{8,30}" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
      
   </div>
@@ -144,7 +149,7 @@
   <div class="form-group row">
     <div class="col-xs-6">
       <label for="qualification" id ="thelabel">Qualification:</label>
-      <input type="text" class="form-control" id="inputQualification"  pattern="[A-Za-z0-9]{8,30}" aria-describedby="emailHelp" placeholder="the qualification">
+      <input type="text" class="form-control" id="qualification"  pattern="[A-Za-z0-9]{8,30}" aria-describedby="emailHelp" placeholder="the qualification">
     </div>
      
   </div>
@@ -158,13 +163,13 @@
 
   <!--right side-->
   <div class="col-sm-5">
-    <form>
+  
       <!--event name-->
       <div class="form-group row">
         <div class="col-xs-6">
         <label for="ename" id ="thelabel">Event Name:</label>
         
-        <input type="text" class="form-control" id="name" pattern="[A-Za-z0-9]{4,15}" aria-describedby="enameHelp" placeholder="Enter your event" required/>
+        <input type="text" class="form-control" id="eventName" pattern="[A-Za-z0-9]{4,15}" aria-describedby="enameHelp" placeholder="Enter your event" required/>
       </div>
     </div>
 
@@ -175,7 +180,9 @@
         <div class="col-xs-4">
           <label for="nvol" id ="thelabel">Number of Volunteer:</label>
           
-          <input type="number" class="form-control" id="name" pattern="[0-9]" aria-describedby="numvolHelp" placeholder="how many volunteers" required/>
+
+          <input type="number" class="form-control" id="volunteerCount" pattern="[0-9]" aria-describedby="numvolHelp" placeholder="how many volunteers are needed" required/>
+
         </div>
       </div>
    
@@ -197,16 +204,18 @@
     <div class="form-group row">
       <div class="col-xs-12">
       <label for="Textarea" id ="thelabel">Description:</label>
-      <textarea class="form-control" id="exampleTextarea" rows="11"></textarea>
+
+      <textarea class="form-control" id="description" rows="12"></textarea>
+
 
     </div>
   
-  </form>
+  
 
   
   </div>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" id='submit'>Submit</button>
   
 
   
@@ -222,6 +231,10 @@
 </div>
 
 </form>
+
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src="../JS/post.js"></script>
+
 </div>
   
 </body>
