@@ -13,7 +13,7 @@ var firebaseConfig = {
   
   // Reference messages collection
   var database = firebase.database();
-  var postsRef = database.ref('posts');
+  var postsRef = database.ref('users/' + userId + '/posts');
   
   // Listen for form submit
   document.getElementById('submit').addEventListener('click', submitForm);
@@ -63,3 +63,14 @@ var firebaseConfig = {
       image: image
     });
   }
+
+function getList(category){
+    var dbRef = firebase.database().ref(category+ "/");
+    var promise = dbRef.once('value', function(snap){
+        list = snap.val();
+    });
+    promise.then(function(){
+        Display
+    })
+}
+  
