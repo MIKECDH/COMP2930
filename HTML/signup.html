@@ -119,32 +119,16 @@
               name=$('#name').val();
 
               
-              firebaseEmailAuth.createUserWithEmailAndPassword(email,password).then(function(user) {
-                console.log("userInfo/"+userInfo);
-                console.log("userInfo.currentUser/"+userInfo.currentUser);
-                console.log("userInfo.uid/"+userInfo.uid);
-
-                //working when it successes
-                logUser();
-              }, function(error) {
-                //working when it fails
-                var errorCode=error.code;
-                var errorMessage=error.message;
-                alert(errorMessage);
-              });
-
-              function logUser() {
-                var ref=firebaseDatabase.ref("user/"+userInfo.uid);
-
-                //type of saving
-                var obj={
-                  name:name,
-                };
-                ref.set(obj);
-                alert("success");
-
-                window.location.href="/index.html";
-              }
+              firebaseEmailAuth.createUserWithEmailAndPassword(email,password).catch(function(error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if (errorCode == 'auth/weak-password') {
+                  alert('The password is too weak.');
+                } else {
+                  alert(errorMessage);
+                }
+                console.log(error);
+              })
 
             });
           });
