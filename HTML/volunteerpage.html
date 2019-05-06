@@ -80,14 +80,14 @@
 
     <!-- 고친부분 시작!!!-->
 
-          <h2 id="category" style="text-align: center">
-            <span class="label label-default">Seniors</span>
-            <span class="label label-default">Disability</span>
-            <span class="label label-default">Sports</span>
-            <span class="label label-default">Youth Development</span>
-            <span class="label label-default">Environment</span>
-            <span class="label label-default">Education</span>
-          </h2>
+          <h3 id="category" style="text-align: center">
+            <button class="label label-default">Seniors</button>
+            <button class="label label-default">Disability</button>
+            <button class="label label-default">Sports</button>
+            <button class="label label-default">Youth Development</button>
+            <button class="label label-default">Environment</button>
+            <button class="label label-default">Education</button>
+          </h3>
 
           
     <!-- 고친부분 끝!!!-->
@@ -135,7 +135,7 @@
   <script>
     $(document).ready(function() {
       $('#buttonCategory').click(function(){
-        $('#category').toggle();
+        $('#category').slideToggle();
       });
     });
   </script>

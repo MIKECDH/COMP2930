@@ -77,7 +77,7 @@
             </div>
             <div class="form-group">        
                 <div class="col-sm-offset-8 col-sm-10">
-                <button type="submit" class="btn btn-default join">Submit</button>
+                <button type="submit" class="btn btn-primary join">Submit</button>
                 </div>
             </div>
             </form>
@@ -85,7 +85,7 @@
         </div>
 
         <!-- Firebase snippet -->
-        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
         <script>
           
           // firebase email authentification global variable
@@ -96,15 +96,16 @@
           var userInfo;
 
           // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyCWm36sQK4KxX_oTnAd3vd_gYRcptSUNcU",
-            authDomain: "team-14-comp2930.firebaseapp.com",
-            databaseURL: "https://team-14-comp2930.firebaseio.com",
-            projectId: "team-14-comp2930",
-            storageBucket: "team-14-comp2930.appspot.com",
-            messagingSenderId: "217994080853"
-          };
-          firebase.initializeApp(config);
+          var firebaseConfig = {
+          apiKey: "AIzaSyDC58G-LwPQE8YWd-Sc4Q4V_C7sRJNS9dA",
+          authDomain: "team14-comp2930.firebaseapp.com",
+          databaseURL: "https://team14-comp2930.firebaseio.com",
+          projectId: "team14-comp2930",
+          storageBucket: "team14-comp2930.appspot.com",
+          messagingSenderId: "164661704915",
+          appId: "1:164661704915:web:2c97f9fb5011032d"
+        };
+          firebase.initializeApp(firebaseConfig);
 
           firebaseEmailAuth=firebase.auth();
           firebaseDatabase=firebase.database();
