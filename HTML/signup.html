@@ -77,77 +77,13 @@
             </div>
             <div class="form-group">        
                 <div class="col-sm-offset-8 col-sm-10">
-                <button type="submit" class="btn btn-primary join">Submit</button>
+                <button type="submit" class="btn btn-default join">Submit</button>
                 </div>
             </div>
             </form>
             <img src="../PICTURE/signup.jpg" alt="">
         </div>
 
-        <!-- Firebase snippet -->
-        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
-        <script>
-          
-          // firebase email authentification global variable
-          var firebaseEmailAuth;
-          // firebase db module global variable
-          var firebaseDatabase;
-          // information of user. object type
-          var userInfo;
-
-          // Initialize Firebase
-          var firebaseConfig = {
-          apiKey: "AIzaSyDC58G-LwPQE8YWd-Sc4Q4V_C7sRJNS9dA",
-          authDomain: "team14-comp2930.firebaseapp.com",
-          databaseURL: "https://team14-comp2930.firebaseio.com",
-          projectId: "team14-comp2930",
-          storageBucket: "team14-comp2930.appspot.com",
-          messagingSenderId: "164661704915",
-          appId: "1:164661704915:web:2c97f9fb5011032d"
-        };
-          firebase.initializeApp(firebaseConfig);
-
-          firebaseEmailAuth=firebase.auth();
-          firebaseDatabase=firebase.database();
-
-          $(document).ready(function() {
-
-            // function working when submit button is clicked
-            $(document).on('click', '.join', function() {
-              var email=$('#email').val();
-              var password=$('#pwd').val();
-              name=$('#name').val();
-
-              
-              firebaseEmailAuth.createUserWithEmailAndPassword(email,password).then(function(user) {
-                console.log("userInfo/"+userInfo);
-                console.log("userInfo.currentUser/"+userInfo.currentUser);
-                console.log("userInfo.uid/"+userInfo.uid);
-
-                //working when it successes
-                logUser();
-              }, function(error) {
-                //working when it fails
-                var errorCode=error.code;
-                var errorMessage=error.message;
-                alert(errorMessage);
-              });
-
-              function logUser() {
-                var ref=firebaseDatabase.ref("user/"+userInfo.uid);
-
-                //type of saving
-                var obj={
-                  name:name,
-                };
-                ref.set(obj);
-                alert("success");
-
-                window.location.href="/index.html";
-              }
-
-            });
-          });
-        </script>
+        <script src="signup.js"></script>
     </body>
 </html>
