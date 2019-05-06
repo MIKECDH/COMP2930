@@ -84,8 +84,9 @@
             <img src="../PICTURE/signup.jpg" alt="">
         </div>
 
+<<<<<<< HEAD
         <!-- Firebase snippet -->
-        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
         <script>
           
           // firebase email authentification global variable
@@ -96,15 +97,16 @@
           var userInfo;
 
           // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyCWm36sQK4KxX_oTnAd3vd_gYRcptSUNcU",
-            authDomain: "team-14-comp2930.firebaseapp.com",
-            databaseURL: "https://team-14-comp2930.firebaseio.com",
-            projectId: "team-14-comp2930",
-            storageBucket: "team-14-comp2930.appspot.com",
-            messagingSenderId: "217994080853"
-          };
-          firebase.initializeApp(config);
+          var firebaseConfig = {
+          apiKey: "AIzaSyDC58G-LwPQE8YWd-Sc4Q4V_C7sRJNS9dA",
+          authDomain: "team14-comp2930.firebaseapp.com",
+          databaseURL: "https://team14-comp2930.firebaseio.com",
+          projectId: "team14-comp2930",
+          storageBucket: "team14-comp2930.appspot.com",
+          messagingSenderId: "164661704915",
+          appId: "1:164661704915:web:2c97f9fb5011032d"
+        };
+          firebase.initializeApp(firebaseConfig);
 
           firebaseEmailAuth=firebase.auth();
           firebaseDatabase=firebase.database();
@@ -118,35 +120,22 @@
               name=$('#name').val();
 
               
-              firebaseEmailAuth.createUserWithEmailAndPassword(email,password).then(function(user) {
-                console.log("userInfo/"+userInfo);
-                console.log("userInfo.currentUser/"+userInfo.currentUser);
-                console.log("userInfo.uid/"+userInfo.uid);
-
-                //working when it successes
-                logUser();
-              }, function(error) {
-                //working when it fails
-                var errorCode=error.code;
-                var errorMessage=error.message;
-                alert(errorMessage);
-              });
-
-              function logUser() {
-                var ref=firebaseDatabase.ref("user/"+userInfo.uid);
-
-                //type of saving
-                var obj={
-                  name:name,
-                };
-                ref.set(obj);
-                alert("success");
-
-                window.location.href="/index.html";
-              }
+              firebaseEmailAuth.createUserWithEmailAndPassword(email,password).catch(function(error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if (errorCode == 'auth/weak-password') {
+                  alert('The password is too weak.');
+                } else {
+                  alert(errorMessage);
+                }
+                console.log(error);
+              })
 
             });
           });
         </script>
+=======
+        <script src="signup.js"></script>
+>>>>>>> 0b39a480922b0cedaab6d696272aac77049b5c0d
     </body>
 </html>
