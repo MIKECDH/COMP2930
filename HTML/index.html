@@ -46,6 +46,7 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
           <li class="active nav-item"><a href="#">Home</a></li>
+<<<<<<< HEAD
           <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
           <li class="nav-item"><a href="organization.html">Organization</a></li>
           <li class="nav-item"><a href="portfolio.html">Feature</a></li>
@@ -57,6 +58,13 @@
           <li class="nav-item" id="logout2" style="display: none">
             <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
           </li>
+=======
+          <li class="active nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+          <li class="active nav-item"><a href="organization.html">Organization</a></li>
+          <li class="active nav-item"><a href="portfolio.html">Feature</a></li>
+          <li class="active nav-item"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li class="active nav-item"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+>>>>>>> 0bc215247cb848c13939713f128599a263e22acd
         </ul>
       </div>
     </div>
@@ -71,6 +79,14 @@
         <p id="para1">
           Connecting Volunteers <span>with</span> Individuals & Organizations
         </p>
+<<<<<<< HEAD
+=======
+        <div class="buttonMain">
+          <button type="button" class="btn-lg nav-link" id="login" data-toggle="modal" href="#user_login">Sign-Up</button>
+          <button type="button" class="btn-lg">Volunteer</button>
+        </div>
+        </div>
+>>>>>>> 0bc215247cb848c13939713f128599a263e22acd
       </div>
     </div>
   </div>
@@ -98,6 +114,73 @@
 
   <!-- Index CSS -->
   <link rel="stylesheet" type="text/css" href="../CSS/index.css">
+
+    <!-- Main Content -->
+
+    <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
+
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+
+            <div class="modal-content" style>
+
+                <div class="modal-body">
+                    <div id="firebaseui-auth-container"></div>
+
+                    <div id="loader">Loading...</div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script>
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      </script>
+    
+      <script>
+        var uiConfig = {
+          callbacks: {
+            signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+              // User successfully signed in.
+              // Return type determines whether we continue the redirect automatically
+              // or whether we leave that to developer to handle.
+    
+              $('#user_login').modal('hide');
+    
+              return true;
+            },
+            uiShown: function () {
+              // The widget is rendered.
+              // Hide the loader.
+              document.getElementById('loader').style.display = 'none';
+            }
+          },
+          credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+          // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+          signInFlow: 'popup',
+          signInSuccessUrl: 'index.html',
+          signInOptions: [
+            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          ],
+        };
+    
+        // The start method will wait until the DOM is loaded.
+        // Inject the login interface into the HTML
+        ui.start("#firebaseui-auth-container", uiConfig);
+      </script>
+      <script>
+        // STATE CHANGED
+        firebase.auth().onAuthStateChanged(function (user) {
+          firebase.database().ref("Users/" + user.uid).update({
+            "name": user.displayName,
+            "email": user.email
+          });
+        });
+      </script>
 
 </body>
 
