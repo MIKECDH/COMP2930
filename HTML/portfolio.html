@@ -39,56 +39,52 @@
 
   <!-- nav bar -->
   <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar"
-          aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-left" href="#">
-          <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
-          <li class="active nav-item"><a href="index.html">Home</a></li>
-          <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-          <li class="nav-item"><a href="organization.html">Organization</a></li>
-          <li class="nav-item"><a href="portfolio.html">Feature</a></li>
-          <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
-              <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li class="nav-item" id="myprofile2" style="display: none">
-            <a id="myprofile" class="nav-link" href="volunteerpage.html">My Profile</a>
-          </li>
-          <li class="nav-item" id="logout2" style="display: none">
-            <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-<<<<<<< HEAD
-
-    <!-- Main Content -->
-    <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
-
-      <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-  
-        <div class="modal-content" style>
-  
-          <div class="modal-body">
-            <div id="firebaseui-auth-container"></div>
-  
-            <div id="loader">Loading...</div>
-          </div>
-  
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-left" href="#">
+            <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+          </a>
         </div>
-  
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
+            <li class="active nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+            <li class="nav-item"><a href="organization.html">Organization</a></li>
+            <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+            <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li class="nav-item" id="logout2" style="display: none">
+              <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+    
+  <!-- Main Content -->
+  <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
+
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+
+      <div class="modal-content" style>
+
+        <div class="modal-body">
+          <div id="firebaseui-auth-container"></div>
+
+          <div id="loader">Loading...</div>
+        </div>
+
+      </div>
+
     </div>
+  </div>
 
 
   <div class="container text-center">
@@ -98,67 +94,25 @@
 
 
       <!-- User Profile -->
-      <div class="col-sm-4"><br><br>
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
-        <h4 class="text-left">Stella Kim</h4><br>
-        <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p><br>
-        <h4 class="text-left">
-          <span class="label label-default">Sports</span>
-          <span class="label label-default">Youth Development</span>
-          <div class="btn-group">
-
-
-            <!-- Categories dropdown -->
-            <button type="button" class="btn btn-default btn-xs">Categories</button>
-            <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown">
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Seniors</a></li>
-              <li><a href="#">Disabilities</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Youth Development</a></li>
-              <li><a href="#">Environment</a></li>
-              <li><a href="#">Educdation</a></li>
-            </ul>
-          </div><br><br>
-          <button type="button" class="btn btn-primary">Save</button>
-        </h4>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3"><br>
+        <div class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+          <div class="caption">
+            <h3 class="text-left">Stella Kim</h3>
+            <h5 class="text-left"><span class="label label-default">Sports</span>
+              <span class="label label-default">Youth Development</span></h5><br>
+            <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p>
+          </div>
+          <button type="button" class="btn btn-info btn-md text-center btn-block">Edit profile</button>
+        </div><br><br>
       </div>
 
 
       <!-- Organization Volunteering History -->
-      <div class="col-sm-8">
+      <div class="col-sm-1"> </div>
+      <div class="col-sm-6">
         <h4 class="text-left">Organization Volunteer</h4><br>
-=======
-    
-    
-<div class="container text-center">    
-  <h2>My Portfolio</h2><hr><br>
-  <div class="row">
-    
-      
-    <!-- User Profile -->
-    <div class="col-sm-1"></div>
-    <div class="col-sm-3"><br><br>
-      <div class="thumbnail">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
-        <div class="caption">
-          <h3 class="text-left">Stella Kim</h3>
-          <h5 class="text-left"><span class="label label-default">Sports</span>
-            <span class="label label-default">Youth Development</span></h5><br>
-            <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p>
-        </div>
-        <button type="button" class="btn btn-info btn-md text-center btn-block">Edit profile</button>
-      </div><br><br>
-    </div>
-      
-      
-    <!-- Organization Volunteering History -->
-    <div class="col-sm-1"> </div>
-    <div class="col-sm-6"> 
-      <h4 class="text-left">Organization Volunteer</h4><br>
->>>>>>> af345126e9dbe2e01b54d973a76575f2c4199472
         <div class="col-sm-1"></div>
         <div class="col-sm-11">
 
