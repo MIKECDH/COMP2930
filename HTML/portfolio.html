@@ -104,7 +104,7 @@
               <span class="label label-default">Youth Development</span></h5><br>
             <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p>
           </div>
-          <button type="button" class="btn btn-info btn-md text-center btn-block">Edit profile</button>
+          <button type="button" class="btn btn-info btn-md text-center btn-block" data-toggle="modal" data-target="#myModal2">Edit profile</button>
         </div><br><br>
       </div>
 
@@ -242,13 +242,102 @@
     </div>
   </div><br>
 
-  <footer class="container-fluid text-left">
-    <hr>
-    <p>&copy; 2019 The Sprinters. All rights reserved.</p>
-  </footer>
+
+  <div class="modal fade text-center" id="myModal2" role="dialog" style="margin:0px auto; width:40%;">
+      <div class="modal-content">
+          <div class="container text-center" style="width:100%;">
+              <h2 style="margin-top: 50px">Edit Profile</h2>
+              <hr>
+
+              <div class="row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-4">
+                    <h4 class="category" style="margin: 0"><span class="glyphicon glyphicon-picture"></span>  Image</h4>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-group row">
+                      <div class="col-xs-4">
+                        <input type="file" class="form-control-file"  id="file1">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3"></div>
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-4">
+                      <h4 class="category"><span class="glyphicon glyphicon-user"></span>  Username</h4>
+                  </div>
+                  <div class="col-sm-3">
+                      <input type="text" name="title" style="height: 30px;">
+                  </div>
+                  <div class="col-sm-3"></div>
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-4">
+                      <h4 class="category"><span class="glyphicon glyphicon-th-list"></span>  Category</h4>
+                  </div>
+                  <div class="col-sm-3">
+                    <form>
+                      <div class="form-group">
+                        <select class="form-control" id="sel1">
+                          <option>Disabilities</option>
+                          <option>Seniors</option>
+                          <option>Education</option>
+                          <option>Sports</option>
+                          <option>Environment</option>
+                          <option>Youth Development</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                          <select class="form-control" id="sel2">
+                            <option>Disabilities</option>
+                            <option>Seniors</option>
+                            <option>Education</option>
+                            <option>Sports</option>
+                            <option>Environment</option>
+                            <option>Youth Development</option>
+                          </select>
+                        </div>
+                    </form>
+                  </div>
+                  <div class="col-sm-3"></div>
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-4">
+                      <h4 class="category"><span class="glyphicon glyphicon-pencil"></span>  Message</h4>
+                  </div>
+                  <div class="col-sm-3">
+                      <textarea cols="25" rows="4" style="margin-top:5px;"></textarea>
+                  </div>
+                  <div class="col-sm-3"></div>
+              </div>
+
+
+
+              <div class="col-sm-12" style="height: 80px; margin-top: 40px;" >
+                  <button type='submit' class="btn btn-info btn-lg">Save</button>
+                  <button type='submit' id="buttonClose" class="btn btn-info btn-lg">Close</button>
+              </div>
+          </div>
+      </div>
+
 
   <!--Link Firebase File-->
   <script src='../JS/firebase.js'></script>
+  <script>
+      $(document).ready(function () {
+          $('#buttonClose').click(function () {
+              window.open('portfolio.html', '_self');
+          });
+      });
+  </script>
 
 </body>
 
