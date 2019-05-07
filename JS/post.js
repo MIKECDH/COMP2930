@@ -64,13 +64,8 @@ var firebaseConfig = {
     });
   }
 
-function getList(category){
-    var dbRef = firebase.database().ref(category+ "/");
-    var promise = dbRef.once('value', function(snap){
-        list = snap.val();
-    });
-    promise.then(function(){
-        Display
-    })
-}
-  
+    var rootRef = firebase.database().ref();
+    rootRef.once("value")
+      .then(function(snapshot) {
+        document.getElementById('thelabel').innerHTML = snapshot.child("posts/-LeEIGg-K9gInntyN72o/description").val();
+      });
