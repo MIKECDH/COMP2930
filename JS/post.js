@@ -1,21 +1,30 @@
-// Our web apps Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyCnWEHvBytIj-gxgiE2XeM2Wg9rWRJ25oM",
-    authDomain: "volunteerstudio-ccb6f.firebaseapp.com",
-    databaseURL: "https://volunteerstudio-ccb6f.firebaseio.com",
-    projectId: "volunteerstudio-ccb6f",
-    storageBucket: "volunteerstudio-ccb6f.appspot.com",
-    messagingSenderId: "218989674613",
-    appId: "1:218989674613:web:748f631cc88eac08"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+// // Our web apps Firebase configuration
+// var firebaseConfig = {
+//     apiKey: "AIzaSyCnWEHvBytIj-gxgiE2XeM2Wg9rWRJ25oM",
+//     authDomain: "volunteerstudio-ccb6f.firebaseapp.com",
+//     databaseURL: "https://volunteerstudio-ccb6f.firebaseio.com",
+//     projectId: "volunteerstudio-ccb6f",
+//     storageBucket: "volunteerstudio-ccb6f.appspot.com",
+//     messagingSenderId: "218989674613",
+//     appId: "1:218989674613:web:748f631cc88eac08"
+//   };
+//   // Initialize Firebase
+//   firebase.initializeApp(firebaseConfig);
   
   // Reference messages collection
   var database = firebase.database();
-  var user = firebase.auth().currentUser;
- 
-  var postsRef = database.ref('Users/' + user + '/posts');
+//   var currentUser;
+  var postRef;
+  
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+    // currentUser = user.uid;
+    // console.log(currentUser);
+     postsRef = database.ref('Users/' + user.uid + '/posts');
+    } else {
+      // User not logged in or has just logged out.
+    }
+  });
   
   // Listen for form submit
   document.getElementById('submitButton').addEventListener('click', submitForm);
@@ -36,14 +45,14 @@ var firebaseConfig = {
     var description = getInputVal('description');
     // var image = getInputVal('file1');
     console.log('grabbed data');
-    console.log(user);
-    
-    // Save message
-    saveMessage(phone, address, category, role, eventName, volunteers, description);
-    console.log('saved data');
-  
-    // Clear form
-    document.getElementById('postForm').reset();
+    if (phone !="" && address !="" && eventName !="" && role !="" && category !="" && volunteers !="" && description !=""){
+        saveMessage(phone, address, eventName, role, category, volunteers, description);
+        console.log('saved data');
+        // Clear form
+        document.getElementById('postForm').reset();
+    }else{
+        alert("Please input all the blank!");
+    }
   }
   
   // Function to get get form values
@@ -53,7 +62,7 @@ var firebaseConfig = {
   }
   
   // Save message to firebase
-  function saveMessage(phone, address, eventName, volunteers, description, category, role){
+  function saveMessage(phone, address, eventName, role, category, volunteers, description){
     var newPostsRef = postsRef.push();
     newPostsRef.set({
       eventName: eventName,
@@ -64,16 +73,10 @@ var firebaseConfig = {
       volunteers: volunteers,
       description: description,
     });
+
+    
   }
 
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      // User logged in already or has just logged in.
-      console.log(user.uid);
-    } else {
-      // User not logged in or has just logged out.
-    }
-  });
     // var rootRef = firebase.database().ref();
     // rootRef.once("value")
     //   .then(function(snapshot) {
