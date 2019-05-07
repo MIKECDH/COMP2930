@@ -86,18 +86,23 @@
   <div class="container-fluid mainContainer">
 
     <!-- 고친부분 시작!!!-->
-    <br><br><br>
-    <h2 style="text-align: center">Volunteer Search for your community</h2><br>
+    <br>
+    <div class="col-sm-12 text-center" id="welcomeText" >
+      <h2>Volunteer Search for your community</h2>
+      <hr><br>
+    </div>
+
+
+      
 
     <!-- 고친부분 끝!!!-->
     <div class="row" id="searchbar">
 
+      <div id="search" class="col-sm-12 text-center">
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
           <div class="input-group">
             <div class="input-group-btn search-panel">
-              <button id="buttonMap" class="btn success">Map</button>
-              <button id="buttonCategory" class="btn success">Category!</button>
 
 
               <!-- <span id="search_concept"><span class="glyphicon glyphicon-align-justify"> </span>
@@ -122,21 +127,106 @@
             <button type="button" class="btn btn-primary">Youth Development</button>
             <button type="button" class="btn btn-primary">Environment</button>
             <button type="button" class="btn btn-primary">Education</button>
-            <!-- <span class="label label-default labelBox">Seniors</span>
-            <span class="label label-default labelBox">Disability</span>
-            <span class="label label-default labelBox">Sports</span>
-            <span class="label label-default labelBox">Youth Development</span>
-            <span class="label label-default labelBox">Environment</span>
-            <span class="label label-default labelBox">Education</span> -->
           </h2>
 
 
           <!-- 고친부분 끝!!!-->
-
         </div>
-
       </div>
+    </div>
 
+    <div class="row">
+        <div id="table">
+            <table class="table table-hover" style="margin: 0 30px 0 30px; width:80%; margin:0 auto; margin-top:40px;" >
+                <thead>
+                    <tr class="tableTitle">
+                        <th>No.</th>
+                        <th>Organizer</th>
+                        <th>Title</th>
+                        <th>Where</th>
+                        <th>When</th>
+                        <th>No.People</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>31</td>
+                        <td>Ecowoman</td>
+                        <td>Trip to White Rock!</td>
+                        <td>White Rock</td>
+                        <td>3rd May, 11:00AM (4 hours)</td>
+                        <td>3/6</td>
+                    </tr>
+
+                    <tr>
+                        <td>32</td>
+                        <td>LoveNature</td>
+                        <td>Going to Grouse Mountain</td>
+                        <td>Grouse Mt.</td>
+                        <td>3rd May, 11:00AM - 4th May, 8:00 PM (~Days)</td>
+                        <td>12/15</td>
+                    </tr>
+
+                    <tr class='clickable-row' data-href="board2.html">
+                        <td>33</td>
+                        <td>afs1234</td>
+                        <td>Anyone to work at dt?</td>
+                        <td>Granville street</td>
+                        <td>1st June, 1:00PM (2 hours)</td>
+                        <td>3/6</td>
+                    </tr>
+
+                    <tr>
+                        <td>34</td>
+                        <td>Jane Doe</td>
+                        <td>Quick Cleanup</td>
+                        <td>Burnaby</td>
+                        <td>10th May, 1:00PM (2 Hours)</td>
+                        <td>4/6</td>
+                    </tr>
+
+                    <tr>
+                        <td>35</td>
+                        <td>John Dough</td>
+                        <td>Cleanup around Metropolis Mall</td>
+                        <td>Metrotown</td>
+                        <td>14th May, 10:00AM (5 Hours)</td>
+                        <td>8/12</td>
+                    </tr>
+
+                    <tr>
+                        <td>36</td>
+                        <td>Jannette Doh</td>
+                        <td>Clean up at South-Arm</td>
+                        <td>Richmond</td>
+                        <td>14th May, 11:00AM (6 Hours)</td>
+                        <td>2/8</td>
+                    </tr>
+
+                    <tr>
+                        <td>37</td>
+                        <td>Bobby Bob Bobbleso</td>
+                        <td>Cleaning BCIT Parking Lots</td>
+                        <td>BCIT Burnaby</td>
+                        <td>19th May, 1:00PM (4 Hours)</td>
+                        <td>6/8</td>
+                    </tr>
+
+                    <tr>
+                        <td>38</td>
+                        <td>Smithy Smith Smiths</td>
+                        <td>Ecotrip in Downtown Vancouver</td>
+                        <td>Surrey</td>
+                        <td>15th May, 10:00AM (8 Hours)</td>
+                        <td>7/10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+<<<<<<< HEAD
     </div>
     <div class="row">
       <div class="page-header" id="post1">
@@ -171,19 +261,25 @@
       </div>
     </div>
   </div>
+=======
 
-  <script>
+
+>>>>>>> af345126e9dbe2e01b54d973a76575f2c4199472
+
+   
+
+  <!-- <script>
     $(document).ready(function () {
       $('#buttonCategory').click(function () {
         $('#category').toggle();
-      });
+      }); -->
 
-      // $('button.navbar-toggle').click(function () {
+      <!-- // $('button.navbar-toggle').click(function () {
       //   $('nav.navbar').toggleClass("open");
       // });
 
     });
-  </script>
+  </script> -->
 
   <!--Link Firebase File-->
   <script src='../JS/firebase.js'></script>
