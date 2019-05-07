@@ -84,5 +84,60 @@
             <img src="../PICTURE/signup.jpg" alt="">
         </div>
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <!-- Firebase snippet -->
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+        <script>
+          
+          // firebase email authentification global variable
+          var firebaseEmailAuth;
+          // firebase db module global variable
+          var firebaseDatabase;
+          // information of user. object type
+          var userInfo;
+
+          // Initialize Firebase
+          var firebaseConfig = {
+          apiKey: "AIzaSyDC58G-LwPQE8YWd-Sc4Q4V_C7sRJNS9dA",
+          authDomain: "team14-comp2930.firebaseapp.com",
+          databaseURL: "https://team14-comp2930.firebaseio.com",
+          projectId: "team14-comp2930",
+          storageBucket: "team14-comp2930.appspot.com",
+          messagingSenderId: "164661704915",
+          appId: "1:164661704915:web:2c97f9fb5011032d"
+        };
+          firebase.initializeApp(firebaseConfig);
+
+          firebaseEmailAuth=firebase.auth();
+          firebaseDatabase=firebase.database();
+
+          $(document).ready(function() {
+
+            // function working when submit button is clicked
+            $(document).on('click', '.join', function() {
+              var email=$('#email').val();
+              var password=$('#pwd').val();
+              name=$('#name').val();
+
+              
+              firebaseEmailAuth.createUserWithEmailAndPassword(email,password).catch(function(error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if (errorCode == 'auth/weak-password') {
+                  alert('The password is too weak.');
+                } else {
+                  alert(errorMessage);
+                }
+                console.log(error);
+              })
+
+            });
+          });
+        </script>
+=======
+>>>>>>> 6c6e9a355582dc812b6f57b1a2e7a94872b65f85
+=======
+>>>>>>> 6c6e9a355582dc812b6f57b1a2e7a94872b65f85
     </body>
 </html>
