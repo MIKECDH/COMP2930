@@ -6,7 +6,14 @@ body {
   margin: 0;
   padding: 0;
 }
+.tableTitle th {
+  background-color: #E4EFF9;
+  text-align: left;
+}
 
+table td {
+  height:80px;
+}
 #Logo {
   margin-top: 5px;
   height: 75px;
@@ -31,7 +38,7 @@ body {
 
 .mainContainer {
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 
 nav.navbar.open {
@@ -44,6 +51,7 @@ nav.navbar.open {
 
 #category {
   text-align: center;
+  margin-bottom:40px;
 }
 
 .labelBox {

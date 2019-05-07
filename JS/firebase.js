@@ -33,7 +33,7 @@ var uiConfig = {
   credentialHelper: firebaseui.auth.CredentialHelper.NONE,
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: 'index.html',
+  signInSuccessUrl: '#',
   signInOptions: [
     firebase.auth.EmailAuthProvider.PROVIDER_ID,
   ],
@@ -58,7 +58,7 @@ function logout() {
   }).catch(function (error) {
     // An error happened.
   });
-  location.href = "index.html"
+  location.href = "#"
 
 }
 
