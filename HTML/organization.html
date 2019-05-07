@@ -31,7 +31,7 @@
 
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" id="navBar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -53,7 +53,7 @@
       </div>
     </div>
   </nav>
-
+  <form id="postForm">
   <div id ="fullcontainer">
   <!--body part-->
 
@@ -81,7 +81,7 @@
             <label for="name">Event</label>
           </div>
           <div class="form-group col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="text" class="form-control" id="name" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
+            <input type="text" class="form-control" id="eventName" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
@@ -96,7 +96,6 @@
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
             <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" style="margin-bottom:5px;" required/> 
-            <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
           </div>
 
 
@@ -104,7 +103,7 @@
             <label for="name">Category</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <select class="form-control">
+            <select class="form-control" id="category">
               <option>Disabilities</option>
               <option>Seniors</option>
               <option>Education</option>
@@ -118,7 +117,7 @@
             <label for="name">Role</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <textarea class="form-control" id="description" rows="5"></textarea> 
+            <textarea class="form-control" id="role" rows="5"></textarea> 
           </div>
             
         </div>
@@ -128,21 +127,21 @@
             <label for="name">Volunteers</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="number"  min="1" max="20" required/>   
+            <input type="number" id="volunteerCount"  min="1" max="20" required/>   
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
             <label for="name">ABCDEFG</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="text" class="form-control" id="phone" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
+            <input type="text" class="form-control"  pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
             <label for="name">HIJKLMN</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
+            <input type="text" class="form-control"  pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
@@ -155,11 +154,27 @@
     </div>
     <div class="col-sm-12 text-center">
       <div class="row btn-group">
-        <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary text-center">Submit</button>
+        <button id="submitButton" type="button" class="btn btn-info btn-lg btn-secondary text-center">Submit</button>
       </div>
     </div>
-
-  
+  </form>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src ="../JS/post.js"></script>
+<script>
+  document.getElementById('navBar').addEventListener("click",function(){
+    if(document.querySelector('#fullcontainer').style.zIndex != -1){
+      let css = document.querySelector('#fullcontainer');
+      css.style.zIndex = -1;
+      console.log('sent to back');
+      console.log(document.querySelector('#fullcontainer').style.zIndex);
+    }else{
+      let css = document.querySelector('#fullcontainer');
+      css.style.zIndex = 1;
+      console.log('send to front');
+      console.log(document.querySelector('#fullcontainer').style.zIndex);
+    }
+  });
+</script>
 </body>
 
 </html>

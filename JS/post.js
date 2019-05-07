@@ -13,29 +13,33 @@ var firebaseConfig = {
   
   // Reference messages collection
   var database = firebase.database();
-  var postsRef = database.ref('users/' + userId + '/posts');
+  var user = firebase.auth().currentUser;
+ 
+  var postsRef = database.ref('Users/' + user + '/posts');
   
   // Listen for form submit
-  document.getElementById('submit').addEventListener('click', submitForm);
+  document.getElementById('submitButton').addEventListener('click', submitForm);
   
   // Submit form
   function submitForm(e){
     e.preventDefault();
   
     // Get values
-    var name = getInputVal('name');
+    // var name = getInputVal('name');
     var phone = getInputVal('phone');
-    var location = getInputVal('location');
-    var email = getInputVal('email');
+    var address = getInputVal('address');
+    // var email = getInputVal('email');
+    var category = getInputVal('category');
     var eventName = getInputVal('eventName');
+    var role = getInputVal('role');
     var volunteers = getInputVal('volunteerCount');
     var description = getInputVal('description');
-    var qualifications = getInputVal('qualification');
-    var image = getInputVal('file1');
+    // var image = getInputVal('file1');
     console.log('grabbed data');
+    console.log(user);
     
     // Save message
-    saveMessage(name, phone, location, email, eventName, volunteers, description, qualifications, image);
+    saveMessage(phone, address, category, role, eventName, volunteers, description);
     console.log('saved data');
   
     // Clear form
@@ -49,23 +53,29 @@ var firebaseConfig = {
   }
   
   // Save message to firebase
-  function saveMessage(name, phone, location, email, eventName, volunteers, description, qualifications, image){
+  function saveMessage(phone, address, eventName, volunteers, description, category, role){
     var newPostsRef = postsRef.push();
     newPostsRef.set({
-      name: name,
-      phone:phone,
-      location: location,
-      email: email,
       eventName: eventName,
+      category: category,
+      role: role,
+      phone:phone,
+      address: address,
       volunteers: volunteers,
       description: description,
-      qualifications: qualifications,
-      image: image
     });
   }
 
-    var rootRef = firebase.database().ref();
-    rootRef.once("value")
-      .then(function(snapshot) {
-        document.getElementById('thelabel').innerHTML = snapshot.child("posts/-LeEIGg-K9gInntyN72o/description").val();
-      });
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User logged in already or has just logged in.
+      console.log(user.uid);
+    } else {
+      // User not logged in or has just logged out.
+    }
+  });
+    // var rootRef = firebase.database().ref();
+    // rootRef.once("value")
+    //   .then(function(snapshot) {
+    //     document.getElementById('thelabel').innerHTML = snapshot.child("posts/-LeEIGg-K9gInntyN72o/description").val();
+    //   });
