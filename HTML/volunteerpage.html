@@ -23,38 +23,39 @@
 </head>
 
 <body>
-  <nav id="navbarMain" class="navbar navbar-default shadow-sm" style="height: 85px;">
+  <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-left navbar-link" href="#">
+        <a class="navbar-left" href="#">
           <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
         </a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right navbar-link">
-          <li class="nav-item"><a href="index.html">Home</a></li>
-          <li class="nav-item"><a href="#">Volunteering</a></li>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
           <li class="nav-item"><a href="organization.html">Organization</a></li>
           <li class="nav-item"><a href="portfolio.html">Feature</a></li>
-          <li class="nav-item"><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li class="nav-item"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container-fluid">
+  <div class="container-fluid mainContainer">
 
 
 
     <!-- 고친부분 시작!!!-->
-  <br><br><br>  
-  <h2 style="text-align: center">Volunteer Search for your community</h2><br>
+    <br><br><br>
+    <h2 style="text-align: center">Volunteer Search for your community</h2><br>
 
     <!-- 고친부분 끝!!!-->
     <div class="row" id="searchbar">
@@ -63,13 +64,14 @@
         <div class="col-xs-8 col-xs-offset-2">
           <div class="input-group">
             <div class="input-group-btn search-panel">
+              <button id="buttonMap" class="btn success">Map</button>
               <button id="buttonCategory" class="btn success">Category!</button>
 
 
-                <!-- <span id="search_concept"><span class="glyphicon glyphicon-align-justify"> </span>
+              <!-- <span id="search_concept"><span class="glyphicon glyphicon-align-justify"> </span>
                   <span class="caret"> </span> -->
 
-                </button>
+              </button>
             </div>
             <input type="hidden" name="search_param" value="all" id="search_param">
             <input type="text" class="form-control" name="x" placeholder="Search term...">
@@ -78,24 +80,31 @@
             </span>
           </div>
 
-    <!-- 고친부분 시작!!!-->
+          <!-- 고친부분 시작!!!-->
 
-          <h2 id="category" style="text-align: center">
-            <span class="label label-default">Seniors</span>
-            <span class="label label-default">Disability</span>
-            <span class="label label-default">Sports</span>
-            <span class="label label-default">Youth Development</span>
-            <span class="label label-default">Environment</span>
-            <span class="label label-default">Education</span>
+          <h2 id="category">
+
+            <button type="button" class="btn btn-primary">Senior</button>
+            <button type="button" class="btn btn-primary">Disability</button>
+            <button type="button" class="btn btn-primary">Sports</button>
+            <button type="button" class="btn btn-primary">Youth Development</button>
+            <button type="button" class="btn btn-primary">Environment</button>
+            <button type="button" class="btn btn-primary">Education</button>
+            <!-- <span class="label label-default labelBox">Seniors</span>
+            <span class="label label-default labelBox">Disability</span>
+            <span class="label label-default labelBox">Sports</span>
+            <span class="label label-default labelBox">Youth Development</span>
+            <span class="label label-default labelBox">Environment</span>
+            <span class="label label-default labelBox">Education</span> -->
           </h2>
 
-          
-    <!-- 고친부분 끝!!!-->
-          
+
+          <!-- 고친부분 끝!!!-->
+
         </div>
-        
+
       </div>
-      
+
 
 
     </div>
@@ -132,11 +141,17 @@
       </div>
     </div>
   </div>
+
   <script>
-    $(document).ready(function() {
-      $('#buttonCategory').click(function(){
+    $(document).ready(function () {
+      $('#buttonCategory').click(function () {
         $('#category').toggle();
       });
+
+      // $('button.navbar-toggle').click(function () {
+      //   $('nav.navbar').toggleClass("open");
+      // });
+
     });
   </script>
 
