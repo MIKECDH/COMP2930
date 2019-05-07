@@ -19,6 +19,15 @@
   <!-- Portfolio CSS -->
   <link rel="stylesheet" type="text/css" href="../CSS/portfolio.css">
 
+  <!-- Firebase login UI -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
+  <!-- Firebase CSS -->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
   <!-- Font Style -->
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -27,40 +36,50 @@
 </head>
 
 <body>
-    
 
-    
   <!-- nav bar -->
   <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-        <a class="navbar-left" href="#">
-          <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
-        </a>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-left" href="#">
+            <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
+            <li class="active nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+            <li class="nav-item"><a href="organization.html">Organization</a></li>
+            <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+            <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li class="nav-item" id="logout2" style="display: none">
+              <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active nav-item"><a href="#">Home</a></li>
-          <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-          <li class="nav-item"><a href="organization.html">Organization</a></li>
-          <li class="nav-item"><a href="portfolio.html">Feature</a></li>
-          <li class="nav-item"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
     
-    
-<div class="container text-center">    
-  <h2>My Portfolio</h2><hr><br>
-  <div class="row">
-    
+  <!-- Main Content -->
+  <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
+
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+
+      <div class="modal-content" style>
+
+        <div class="modal-body">
+          <div id="firebaseui-auth-container"></div>
+
+          <div id="loader">Loading...</div>
+        </div>
       
     <!-- User Profile -->
     <div class="col-sm-1"></div>
@@ -72,146 +91,177 @@
           <h5 class="text-left"><span class="label label-default">Sports</span>
             <span class="label label-default">Youth Development</span></h5><br>
             <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p>
-        </div>
-        <button type="button" class="btn btn-info btn-md text-center btn-block">Edit profile</button>
-      </div><br><br>
-    </div>
-      
-      
-    <!-- Organization Volunteering History -->
-    <div class="col-sm-1"> </div>
-    <div class="col-sm-6"> 
-      <h4 class="text-left">Organization Volunteer</h4><br>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-11"> 
-            
-            <div class="row">
-                
-              <!-- Trigger the modal with a button -->
-              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
-                <p>BCIT</p>
-              </div>
-              <div class="col-sm-2 text-left">
-                <h4>Role</h4><br>
-                <h4>Period</h4>
-              </div>
-              <div class="col-sm-7 text-left">
-                <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
-                <p>Aug.2016 ~ Sep.2016</p>
-              </div>
-            </div><hr>
-            
-            <div class="row">
-                
-              <!-- Trigger the modal with a button -->
-              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
-                <p>BCIT</p>
-              </div>
-                
-              <div class="col-sm-2 text-left">
-                <h4>Role</h4><br>
-                <h4>Period</h4>
-              </div>
-              <div class="col-sm-7 text-left">
-                <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
-                <p>Aug.2016 ~ Sep.2016</p>
-              </div>
-            </div><hr><br><br>
-        </div>
-        
-      <!-- Personal Volunteering History -->
-      <h4 class="text-left">Personal Volunteer</h4><br>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-11"> 
-            
-            <div class="row">
-                
-              <!-- Trigger the modal with a button -->
-              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
-                <p>BCIT</p>
-              </div>
 
-              <div class="col-sm-2 text-left">
-                <h4>Role</h4><br>
-                <h4>Period</h4>
-              </div>
-              <div class="col-sm-7 text-left">
-                <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
-                <p>Aug.2016 ~ Sep.2016</p>
-              </div>
-            </div>
-  
-        </div>
+
+      </div>
+
     </div>
   </div>
-    
-<div class="container">
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-          <h4 class="modal-title">Review and Rate <span class="glyphicon glyphicon-pencil"></span></h4>
 
+  <div class="container text-center">
+    <h2>My Portfolio</h2>
+    <hr><br>
+    <div class="row">
+
+
+      <!-- User Profile -->
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3"><br>
+        <div class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+          <div class="caption">
+            <h3 class="text-left">Stella Kim</h3>
+            <h5 class="text-left"><span class="label label-default">Sports</span>
+              <span class="label label-default">Youth Development</span></h5><br>
+            <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p>
+          </div>
+          <button type="button" class="btn btn-info btn-md text-center btn-block">Edit profile</button>
+        </div><br><br>
+      </div>
+
+
+      <!-- Organization Volunteering History -->
+      <div class="col-sm-1"> </div>
+      <div class="col-sm-6">
+        <h4 class="text-left">Organization Volunteer</h4><br>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-11">
+
+          <div class="row">
+
+            <!-- Trigger the modal with a button -->
+            <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
+              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
+              <p>BCIT</p>
+            </div>
+            <div class="col-sm-2 text-left">
+              <h4>Role</h4><br>
+              <h4>Period</h4>
+            </div>
+            <div class="col-sm-7 text-left">
+              <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
+              <p>Aug.2016 ~ Sep.2016</p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+
+            <!-- Trigger the modal with a button -->
+            <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
+              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
+              <p>BCIT</p>
+            </div>
+
+            <div class="col-sm-2 text-left">
+              <h4>Role</h4><br>
+              <h4>Period</h4>
+            </div>
+            <div class="col-sm-7 text-left">
+              <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
+              <p>Aug.2016 ~ Sep.2016</p>
+            </div>
+          </div>
+          <hr><br><br>
         </div>
 
+        <!-- Personal Volunteering History -->
+        <h4 class="text-left">Personal Volunteer</h4><br>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-11">
 
-        <div class="modal-body">
-          <div class="col-xs-5">
-          <img alt="profile" src="https://placehold.it/150x80?text=IMAGE" width="200" height="200" style = "border-radius: 10px" class="img-responsive">
-          <br>
-          <p>Organization</p>
+          <div class="row">
+
+            <!-- Trigger the modal with a button -->
+            <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
+              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
+              <p>BCIT</p>
+            </div>
+
+            <div class="col-sm-2 text-left">
+              <h4>Role</h4><br>
+              <h4>Period</h4>
+            </div>
+            <div class="col-sm-7 text-left">
+              <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
+              <p>Aug.2016 ~ Sep.2016</p>
+            </div>
           </div>
 
-          <div class="col-xs-7">
-          <label for="Textarea" id ="thelabel">Description:</label>
-          <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
-          
-        </div>
-
-
-        <div class="rate">
-
-          <p>Rating:</p>
-          <input type="radio" id="star5" name="rate" value="5" />
-          <label for="star5" title="text">5 stars</label>
-          <input type="radio" id="star4" name="rate" value="4" />
-          <label for="star4" title="text">4 stars</label>
-          <input type="radio" id="star3" name="rate" value="3" />
-          <label for="star3" title="text">3 stars</label>
-          <input type="radio" id="star2" name="rate" value="2" />
-          <label for="star2" title="text">2 stars</label>
-          <input type="radio" id="star1" name="rate" value="1" />
-          <label for="star1" title="text">1 star</label>
-        </div>
-
-        <div class="col-sm-2"></div>
-
-        <div class="modal-footer">
-          <div class="col-sm-12 text-center">
-          <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
         </div>
       </div>
-      
     </div>
-  </div>
-  
-</div>
-</div>
-</div>
-</div><br>
 
-<footer class="container-fluid text-left"><hr>
-  <p>&copy; 2019 The Sprinters. All rights reserved.</p>
-</footer>
-    
+    <div class="container">
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+              <h4 class="modal-title">Review and Rate <span class="glyphicon glyphicon-pencil"></span></h4>
+
+            </div>
+
+
+            <div class="modal-body">
+              <div class="col-xs-5">
+                <img alt="profile" src="https://placehold.it/150x80?text=IMAGE" width="200" height="200"
+                  style="border-radius: 10px" class="img-responsive">
+                <br>
+                <p>Organization</p>
+              </div>
+
+              <div class="col-xs-7">
+                <label for="Textarea" id="thelabel">Description:</label>
+                <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
+
+              </div>
+
+
+              <div class="rate">
+
+                <p>Rating:</p>
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+              </div>
+
+              <div class="col-sm-2"></div>
+
+              <div class="modal-footer">
+                <div class="col-sm-12 text-center">
+                  <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div><br>
+
+  <footer class="container-fluid text-left">
+    <hr>
+    <p>&copy; 2019 The Sprinters. All rights reserved.</p>
+  </footer>
+
+  <!--Link Firebase File-->
+  <script src='../JS/firebase.js'></script>
+
 </body>
 
 </html>

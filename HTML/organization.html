@@ -16,49 +16,109 @@
   <!-- Index CSS -->
   <link rel="stylesheet" type="text/css" href="../CSS/organization.css">
 
+  <!-- Firebase login UI -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
+  <!-- Firebase CSS -->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
   <!-- Font Style -->
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
-
   </style>
 </head>
 
 <body>
+    <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar"
+              aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-left" href="#">
+              <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
+              <li class="active nav-item"><a href="index.html">Home</a></li>
+              <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+              <li class="nav-item"><a href="organization.html">Organization</a></li>
+              <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+              <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                  <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li class="nav-item" id="logout2" style="display: none">
+                <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Main Content -->
+    <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
 
 
-
-  <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
-
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-left navbar-link" href="#">
-          <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="active nav-item"><a href="index.html">Home</a></li>
-          <li class="active nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-          <li class="active nav-item"><a href="#">Organization</a></li>
-          <li class="active nav-item"><a href="portfolio.html">Feature</a></li>
-          <li class="active nav-item"><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li class="active nav-item"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+        <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar"
+                  aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-left" href="#">
+                  <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+                </a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
+                  <li class="active nav-item"><a href="index.html">Home</a></li>
+                  <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+                  <li class="nav-item"><a href="organization.html">Organization</a></li>
+                  <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+                  <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                      <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  <li class="nav-item" id="logout2" style="display: none">
+                    <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+  <form id="postForm">
   <div id ="fullcontainer">
   <!--body part-->
+      <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+  
+        <div class="modal-content" style>
+  
+          <div class="modal-body">
+            <div id="firebaseui-auth-container"></div>
+  
+            <div id="loader">Loading...</div>
+          </div>
+  
+        </div>
+  
+      </div>
+    </div>
 
-    <div class="container-fluid" >
-      <div class="col-sm-12 text-center" id="welcomeText" >
+  <div id="fullcontainer">
+    <!--body part-->
+
+
+    <div class="container-fluid">
+      <div class="col-sm-12 text-center" id="welcomeText">
         <h2>Post your help !</h2>
         <hr><br>
       </div>
@@ -66,13 +126,14 @@
       <!--the person and organization part-->
       <div class="col-sm-12 text-center">
         <div class="row btn-group">
-          <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary text-center">Person help</button>
+          <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary text-center">Person
+            help</button>
           <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary">Organization</button>
         </div>
       </div>
 
 
-      <div class="form-group" >
+      <div class="form-group">
         <div class="col-sm-2 text-left" style="margin-top:30px;">
         </div>
         <div class="col-sm-4 text-left" style="margin-top:30px;">
@@ -80,14 +141,15 @@
             <label for="name">Event</label>
           </div>
           <div class="form-group col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="text" class="form-control" id="name" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
+            <input type="text" class="form-control" id="eventName" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
             <label for="name">Phone</label>
           </div>
-          <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="text" class="form-control" id="phone" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
+            <input type="text" class="form-control" id="phone" pattern="[A-Za-z]{8,15}" placeholder="Enter your name"
+              required />
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
@@ -95,7 +157,6 @@
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
             <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" style="margin-bottom:5px;" required/> 
-            <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
           </div>
 
 
@@ -103,7 +164,7 @@
             <label for="name">Category</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <select class="form-control">
+            <select class="form-control" id="category">
               <option>Disabilities</option>
               <option>Seniors</option>
               <option>Education</option>
@@ -117,9 +178,9 @@
             <label for="name">Role</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <textarea class="form-control" id="description" rows="5"></textarea> 
+            <textarea class="form-control" id="role" rows="5"></textarea> 
           </div>
-            
+
         </div>
 
         <div class="col-sm-4 text-left" style="margin-top:30px;">
@@ -127,38 +188,54 @@
             <label for="name">Volunteers</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="number"  min="1" max="20" required/>   
+            <input type="number" id="volunteerCount"  min="1" max="20" required/>   
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
             <label for="name">ABCDEFG</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="text" class="form-control" id="phone" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
+            <input type="text" class="form-control"  pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
             <label for="name">HIJKLMN</label>
           </div>
           <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
-            <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
+            <input type="text" class="form-control"  pattern="[A-Za-z]{8,15}" placeholder="Enter your name" required/>   
           </div>
 
           <div class="col-sm-3 text-left" style="margin-bottom: 20px">
             <label for="name">Description</label>
           </div>
-          <div class="col-sm-8 text-left"  style="margin-bottom: 20px">
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
             <textarea class="form-control" id="description" rows="10"></textarea>
           </div>
         </div>
     </div>
     <div class="col-sm-12 text-center">
       <div class="row btn-group">
-        <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary text-center">Submit</button>
+        <button id="submitButton" type="button" class="btn btn-info btn-lg btn-secondary text-center">Submit</button>
       </div>
     </div>
-
-  
+  </form>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src ="../JS/post.js"></script>
+<script>
+  document.getElementById('navBar').addEventListener("click",function(){
+    if(document.querySelector('#fullcontainer').style.zIndex != -1){
+      let css = document.querySelector('#fullcontainer');
+      css.style.zIndex = -1;
+      console.log('sent to back');
+      console.log(document.querySelector('#fullcontainer').style.zIndex);
+    }else{
+      let css = document.querySelector('#fullcontainer');
+      css.style.zIndex = 1;
+      console.log('send to front');
+      console.log(document.querySelector('#fullcontainer').style.zIndex);
+    }
+  });
+</script>
 </body>
 
 </html>
@@ -168,7 +245,9 @@
 <!--
 
 
+      <!--Link Firebase File-->
+      <script src='../JS/firebase.js'></script>
 
-  
--->
+</body>
 
+</html>
