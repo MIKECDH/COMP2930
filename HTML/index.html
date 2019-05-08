@@ -34,7 +34,7 @@
   <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar"
+        <button type="button" class="navbar-toggle collapsed" id="navBar" data-toggle="collapse" data-target="#myNavbar"
           aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -46,7 +46,7 @@
         </a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
+        <ul class="nav navbar-nav navbar-right vertCent" style="visibility: hidden">
           <li class="active nav-item"><a href="index.html">Home</a></li>
           <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
           <li class="nav-item"><a href="organization.html">Organization</a></li>
@@ -60,19 +60,6 @@
       </div>
     </div>
   </nav>
-
-  <div class="container-fluid">
-    <div id="backgroundMain">
-      <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 leftSideBG">
-        <img class="mainBG" src="../PICTURE/KakaoTalk_Photo_2019-05-03-12-47-28.jpeg">
-      </div>
-      <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12" id="welcomeText">
-        <p id="para1">
-          Connecting Volunteers <span>with</span> Individuals & Organizations
-        </p>
-      </div>
-    </div>
-  </div>
 
   <!-- Main Content -->
   <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
@@ -91,6 +78,40 @@
 
     </div>
   </div>
+
+  <div id="mainContainer">
+    <div class="container-fluid">
+      <div id="backgroundMain">
+        <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 leftSideBG">
+            <!-- <p id="para1">
+                Connecting Volunteers with Individuals & Organizations
+              </p> -->
+          <img class="mainBG" src="../PICTURE/KakaoTalk_Photo_2019-05-03-12-47-28.jpeg">
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12" id="welcomeText">
+          <p id="para1">
+            Connecting Volunteers with Individuals & Organizations
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('navBar').addEventListener("click", function () {
+      if (document.querySelector('#backgroundMain').style.zIndex != -1) {
+        let css = document.querySelector('#backgroundMain');
+        css.style.zIndex = -1;
+        console.log('sent to back');
+        console.log(document.querySelector('#backgroundMain').style.zIndex);
+      } else {
+        let css = document.querySelector('#backgroundMain');
+        css.style.zIndex = 1;
+        console.log('send to front');
+        console.log(document.querySelector('#backgroundMain').style.zIndex);
+      }
+    });
+  </script>
 
   <!--Link Firebase File-->
   <script src='../JS/firebase.js'></script>
