@@ -3,13 +3,15 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - 85px);
-  font-family: Roboto,Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
+
 #Logo {
   margin-top: 5px;
   height: 75px;
   width: auto;
 }
+
 #para1 {
   font-size: 36pt;
   letter-spacing: 10px;
@@ -31,43 +33,51 @@ body {
 
 }
 
-#textmid{
-      position: absolute;
-      /*width:500px;
+#textmid {
+  position: absolute;
+  /*width:500px;
       height:400px;
       left:550px;
       top:40px;*/
-      background-color: grey;
-    }
+  background-color: grey;
+}
 
-#smallUpload{
+#smallUpload {
   font-size: 8pt;
 
 }
 
-#file1{
+#file1 {
   background-color: grey;
 }
 
 .navbar-nav li a {
-  line-height: 55px;
+  line-height: 53px;
   font-size: 1.1em;
   letter-spacing: 2px;
   background-color: #f8f8f8 !important;
 }
+
 .nav-item {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.navbar-toggle {
+  margin-top: 25px;
+}
+
 .buttonMain {
   display: flex;
   /*justify-content: flex-start;*/
   justify-content: space-evenly;
 }
+
 .buttonMain button {
   background-color: whitesmoke;
   margin: 20px 0 0 30px;
 }
+
 #fullcontainer {
   z-index: 0;
   position: relative;
@@ -164,5 +174,3 @@ body {
     font-size: 10pt;
   }
 }
-
-
