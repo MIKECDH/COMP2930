@@ -39,6 +39,7 @@
 
   <!-- nav bar -->
   <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
+
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" id="navBar" data-toggle="collapse" data-target="#myNavbar"
@@ -64,10 +65,10 @@
             <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
           </li>
         </ul>
-      </div>
-    </div>
-  </nav>
 
+      </div>
+    </nav>
+    
   <!-- Main Content -->
   <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
 
@@ -92,6 +93,7 @@
       <div class="row">
 
 
+
         <!-- User Profile -->
         <div class="col-sm-1"></div>
         <div class="col-sm-3"><br>
@@ -107,6 +109,7 @@
               data-target="#myModal2">Edit profile</button>
           </div><br><br>
         </div>
+
 
 
         <!-- Organization Volunteering History -->
@@ -235,16 +238,18 @@
                 </div>
 
               </div>
+
             </div>
 
           </div>
+
         </div>
       </div>
     </div><br>
 
   </div>
 
-  <div>
+
     <div class="modal fade text-center" id="myModal2" role="dialog" style="margin:0px auto; width:40%;">
       <div class="modal-content">
         <div class="container text-center" style="width:100%;">
@@ -329,6 +334,7 @@
           </div>
         </div>
       </div>
+
     </div>
     </div>
 
@@ -349,15 +355,17 @@
     </script>
 
 
-    <!--Link Firebase File-->
-    <script src='../JS/firebase.js'></script>
-    <script>
+
+  <!--Link Firebase File-->
+  <script src='../JS/firebase.js'></script>
+  <script>
       $(document).ready(function () {
-        $('#buttonClose').click(function () {
-          window.open('portfolio.html', '_self');
-        });
+          $('#buttonClose').click(function () {
+              window.open('portfolio.html', '_self');
+          });
       });
-    </script>
+  </script>
+
 
 </body>
 
