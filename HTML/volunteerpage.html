@@ -29,7 +29,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
   </style>
-
 </head>
 
 <body>
@@ -122,7 +121,7 @@
 
               <h2 id="category">
 
-                <button type="button" id="senior" class="btn btn-info">Senior</button>
+                <button type="button" class="btn btn-info">Senior</button>
                 <button type="button" class="btn btn-info">Disability</button>
                 <button type="button" class="btn btn-info">Sports</button>
                 <button type="button" class="btn btn-info">Youth Development</button>
@@ -140,8 +139,7 @@
           <div id="table">
             <table class="table table-hover" style="margin: 0 30px 0 30px; width:80%; margin:0 auto; margin-top:40px;">
               <thead>
-
-                <tr class="tableTitle" id="titleForTable">
+                <tr class="tableTitle">
                   <th>No.</th>
                   <th>Organizer</th>
                   <th>Title</th>
@@ -150,8 +148,78 @@
                   <th>No.People</th>
                 </tr>
               </thead>
-              <tbody id="mainTable">
+              <tbody>
+                <tr>
+                  <td>31</td>
+                  <td>Ecowoman</td>
+                  <td>Trip to White Rock!</td>
+                  <td>White Rock</td>
+                  <td>3rd May, 11:00AM (4 hours)</td>
+                  <td>3/6</td>
+                </tr>
 
+                <tr>
+                  <td>32</td>
+                  <td>LoveNature</td>
+                  <td>Going to Grouse Mountain</td>
+                  <td>Grouse Mt.</td>
+                  <td>3rd May, 11:00AM - 4th May, 8:00 PM (~Days)</td>
+                  <td>12/15</td>
+                </tr>
+
+                <tr class='clickable-row' data-href="board2.html">
+                  <td>33</td>
+                  <td>afs1234</td>
+                  <td>Anyone to work at dt?</td>
+                  <td>Granville street</td>
+                  <td>1st June, 1:00PM (2 hours)</td>
+                  <td>3/6</td>
+                </tr>
+
+                <tr>
+                  <td>34</td>
+                  <td>Jane Doe</td>
+                  <td>Quick Cleanup</td>
+                  <td>Burnaby</td>
+                  <td>10th May, 1:00PM (2 Hours)</td>
+                  <td>4/6</td>
+                </tr>
+
+                <tr>
+                  <td>35</td>
+                  <td>John Dough</td>
+                  <td>Cleanup around Metropolis Mall</td>
+                  <td>Metrotown</td>
+                  <td>14th May, 10:00AM (5 Hours)</td>
+                  <td>8/12</td>
+                </tr>
+
+                <tr>
+                  <td>36</td>
+                  <td>Jannette Doh</td>
+                  <td>Clean up at South-Arm</td>
+                  <td>Richmond</td>
+                  <td>14th May, 11:00AM (6 Hours)</td>
+                  <td>2/8</td>
+                </tr>
+
+                <tr>
+                  <td>37</td>
+                  <td>Bobby Bob Bobbleso</td>
+                  <td>Cleaning BCIT Parking Lots</td>
+                  <td>BCIT Burnaby</td>
+                  <td>19th May, 1:00PM (4 Hours)</td>
+                  <td>6/8</td>
+                </tr>
+
+                <tr>
+                  <td>38</td>
+                  <td>Smithy Smith Smiths</td>
+                  <td>Ecotrip in Downtown Vancouver</td>
+                  <td>Surrey</td>
+                  <td>15th May, 10:00AM (8 Hours)</td>
+                  <td>7/10</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -171,14 +239,30 @@
             console.log('send to front');
             console.log(document.querySelector('#mainContainer').style.zIndex);
           }
-        });          
+        });
       </script>
 
 
+
+
+
+
+
+      <!-- <script>
+    $(document).ready(function () {
+      $('#buttonCategory').click(function () {
+        $('#category').toggle();
+      }); -->
+
+      <!-- // $('button.navbar-toggle').click(function () {
+      //   $('nav.navbar').toggleClass("open");
+      // });
+
+    });
+  </script> -->
+
       <!--Link Firebase File-->
       <script src='../JS/firebase.js'></script>
-      <!--Link Table Firebase File-->
-      <script src='../JS/readFirebase.js'></script>
 
 </body>
 

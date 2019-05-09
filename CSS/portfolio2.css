@@ -85,22 +85,12 @@ body {
 }
 
 
-#backgroundMain{
+#backgroundMain {
   position: relative;
   z-index: 0;
 }
-
-
-#myModel {
-  z-index: 0;
-}
-
-.row {
-
 #row2 {
-
   height:600px;
-
 }
 /* md */
 @media screen and (max-width: 991px) {
@@ -198,9 +188,9 @@ body {
   #row2 {
     height:230px;
   }
-  #mainContainer {
+  /*#mainContainer {
     display: none;
-  }
+  }*/
   #pictureDiv {
     height:240px;
   }
