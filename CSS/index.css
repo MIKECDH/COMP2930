@@ -1,5 +1,5 @@
 body {
-  font-family: Roboto ,Arial, Helvetica, sans-serif;
+  font-family: 'roboto', sans-serif;
   /* background-image: url(../PICTURE/daniel-chekalov-614447-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: cover; */
@@ -8,6 +8,17 @@ body {
 .mainBG {
   height: auto;
   width: 100%;
+}
+#firstPara {
+  font-size: 36pt;
+  text-align: center;
+  width:500px;
+  position: absolute;
+  bottom: 450px;
+  right: 550px;
+  color: black;
+  letter-spacing: 4px;
+
 }
 
 #navbarMain {
@@ -59,12 +70,23 @@ body {
   background-color: whitesmoke;
   margin-top: 50px;
 }
+#firstBGdiv {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
 
 #backgroundMain {
   position: relative;
   z-index: 0;
 }
-
+.row {
+  height:600px;
+}
 /* md */
 @media screen and (max-width: 991px) {
   #para1 {
