@@ -85,46 +85,10 @@ body {
 }
 
 
-#backgroundMain{
+#backgroundMain {
   position: relative;
   z-index: 0;
 }
-
-p {font-size: 16px;}
-
-.margin {margin-bottom: 45px;}
-
-.bg-1 { 
-  height: 100vh;
-}
-
-.bg-2 { 
-  background-color: #f2f2f2;
-  height: 95vh;
-}
-
-.bg-2 img {
-  width: 400px;
-  height: 350px;
-}
-#mission {
-
-  font-size: 25px;
-  width:600px;
-  margin:0 auto;
-  margin-top:30px;
-}
-
-
-.bg-3 { 
-  background-color: #ffffff; /* White */
-  color: #555555;
-  height: 70vh;
-}
-#myModel {
-  z-index: 0;
-}
-
 #row2 {
   height:600px;
 }
