@@ -92,84 +92,84 @@
 
       <!--the person and organization part-->
       <form id="postForm">
-        <div class="col-sm-12 text-center">
-          <div class="row btn-group">
-            <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary text-center">Person
-              help</button>
-            <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary">Organization</button>
+      <div class="col-sm-12 text-center">
+        <div class="row btn-group">
+          <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary text-center">Person
+            help</button>
+          <button id="newPostBtn" type="button" class="btn btn-info btn-lg btn-secondary">Organization</button>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-2 text-left" style="margin-top:30px;">
+        </div>
+        <div class="col-sm-4 text-left" style="margin-top:30px;">
+          <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+            <label for="name">Event Name</label>
           </div>
+          <div class="form-group col-sm-8 text-left" style="margin-bottom: 20px">
+            <input type="text" class="form-control" id="eventName" pattern="[A-Za-z]{8,15}" placeholder="Enter your name"
+              required />
+          </div>
+
+          <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+            <label for="name">Phone</label>
+          </div>
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
+            <input type="text" class="form-control" id="phone" pattern="[A-Za-z]{8,15}" placeholder="Enter your name"
+              required />
+          </div>
+
+          <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+            <label for="name">Address</label>
+          </div>
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
+            <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}" placeholder="Enter your name"
+              style="margin-bottom:5px;" required />
+          </div>
+
+
+          <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+            <label for="name">Category</label>
+          </div>
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
+            <select class="form-control" id="category">
+              <option>Disabilities</option>
+              <option>Seniors</option>
+              <option>Education</option>
+              <option>Sports</option>
+              <option>Environment</option>
+              <option>Youth Development</option>
+            </select>
+          </div>
+
+          <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+            <label for="name">Role</label>
+          </div>
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
+            <textarea class="form-control" id="role" rows="5"></textarea>
+          </div>
+
         </div>
 
-
-        <div class="form-group">
-          <div class="col-sm-2 text-left" style="margin-top:30px;">
+        <div class="col-sm-4 text-left" style="margin-top:30px;">
+          <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+            <label for="name">Volunteers</label>
           </div>
-          <div class="col-sm-4 text-left" style="margin-top:30px;">
-            <div class="col-sm-3 text-left" style="margin-bottom: 20px">
-              <label for="name">Event Name</label>
-            </div>
-            <div class="form-group col-sm-8 text-left" style="margin-bottom: 20px">
-              <input type="text" class="form-control" id="eventName" pattern="[A-Za-z]{8,15}"
-                placeholder="Enter your name" required />
-            </div>
-
-            <div class="col-sm-3 text-left" style="margin-bottom: 20px">
-              <label for="name">Phone</label>
-            </div>
-            <div class="col-sm-8 text-left" style="margin-bottom: 20px">
-              <input type="text" class="form-control" id="phone" pattern="[A-Za-z]{8,15}" placeholder="Enter your name"
-                required />
-            </div>
-
-            <div class="col-sm-3 text-left" style="margin-bottom: 20px">
-              <label for="name">Address</label>
-            </div>
-            <div class="col-sm-8 text-left" style="margin-bottom: 20px">
-              <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}"
-                placeholder="Enter your name" style="margin-bottom:5px;" required />
-            </div>
-
-
-            <div class="col-sm-3 text-left" style="margin-bottom: 20px">
-              <label for="name">Category</label>
-            </div>
-            <div class="col-sm-8 text-left" style="margin-bottom: 20px">
-              <select class="form-control" id="category">
-                <option>Disabilities</option>
-                <option>Seniors</option>
-                <option>Education</option>
-                <option>Sports</option>
-                <option>Environment</option>
-                <option>Youth Development</option>
-              </select>
-            </div>
-
-            <div class="col-sm-3 text-left" style="margin-bottom: 20px">
-              <label for="name">Role</label>
-            </div>
-            <div class="col-sm-8 text-left" style="margin-bottom: 20px">
-              <textarea class="form-control" id="role" rows="5"></textarea>
-            </div>
-
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
+            <input type="number" id="volunteerCount" min="1" max="20" required />
           </div>
 
-          <div class="col-sm-4 text-left" style="margin-top:30px;">
-            <div class="col-sm-3 text-left" style="margin-bottom: 20px">
-              <label for="name">Volunteers</label>
-            </div>
-            <div class="col-sm-8 text-left" style="margin-bottom: 20px">
-              <input type="number" id="volunteerCount" min="1" max="20" required />
-            </div>
+          <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+            <label for="name">Date</label>
+          </div>
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
+            <input type="text" class="form-control" id="phone" pattern="[A-Za-z]{8,15}" placeholder="Enter the Date"
+              required />
+          </div>
 
-            <div class="col-sm-3 text-left" style="margin-bottom: 20px">
-              <label for="name">Date</label>
-            </div>
-            <div class="col-sm-8 text-left" style="margin-bottom: 20px">
-              <input type="text" class="form-control" id="phone" pattern="[A-Za-z]{8,15}" placeholder="Enter the Date"
-                required />
-            </div>
-
-            <!-- <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+          <!-- <div class="col-sm-3 text-left" style="margin-bottom: 20px">
             <label for="name">HIJKLMN</label>
           </div>
           <div class="col-sm-8 text-left" style="margin-bottom: 20px">
@@ -177,20 +177,19 @@
               required />
           </div> -->
 
-            <div class="col-sm-3 text-left" style="margin-bottom: 20px">
-              <label for="name">Description</label>
-            </div>
-            <div class="col-sm-8 text-left" style="margin-bottom: 20px">
-              <textarea class="form-control" id="description" rows="10"></textarea>
-            </div>
+          <div class="col-sm-3 text-left" style="margin-bottom: 20px">
+            <label for="name">Description</label>
+          </div>
+          <div class="col-sm-8 text-left" style="margin-bottom: 20px">
+            <textarea class="form-control" id="description" rows="10"></textarea>
           </div>
         </div>
-        <div class="col-sm-12 text-center">
-          <div class="row btn-group">
-            <button id="submitButton" type="button"
-              class="btn btn-info btn-lg btn-secondary text-center">Submit</button>
-          </div>
+      </div>
+      <div class="col-sm-12 text-center">
+        <div class="row btn-group">
+          <button id="submitButton" type="button" class="btn btn-info btn-lg btn-secondary text-center">Submit</button>
         </div>
+      </div>
       </form>
       <script>
         document.getElementById('navBar').addEventListener("click", function () {
@@ -208,8 +207,8 @@
         });
       </script>
 
-      <script src='../JS/firebase.js'></script>
-      <script src="../JS/post.js"></script>
+<script src='../JS/firebase.js'></script>
+<script src="../JS/post.js"></script>
 </body>
 
 </html>
