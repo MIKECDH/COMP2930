@@ -84,9 +84,11 @@ body {
   position: relative;
   z-index: 0;
 }
+
 .row {
   height:600px;
 }
+
 /* md */
 @media screen and (max-width: 991px) {
   #para1 {

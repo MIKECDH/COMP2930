@@ -1,17 +1,4 @@
-// // Our web apps Firebase configuration
-// var firebaseConfig = {
-//     apiKey: "AIzaSyCnWEHvBytIj-gxgiE2XeM2Wg9rWRJ25oM",
-//     authDomain: "volunteerstudio-ccb6f.firebaseapp.com",
-//     databaseURL: "https://volunteerstudio-ccb6f.firebaseio.com",
-//     projectId: "volunteerstudio-ccb6f",
-//     storageBucket: "volunteerstudio-ccb6f.appspot.com",
-//     messagingSenderId: "218989674613",
-//     appId: "1:218989674613:web:748f631cc88eac08"
-//   };
-//   // Initialize Firebase
-//   firebase.initializeApp(firebaseConfig);
-  
-  // Reference messages collection
+    // Reference messages collection
   var database = firebase.database();
 //   var currentUser;
   var postRef;
@@ -77,8 +64,16 @@
     
   }
 
-    // var rootRef = firebase.database().ref();
-    // rootRef.once("value")
-    //   .then(function(snapshot) {
-    //     document.getElementById('thelabel').innerHTML = snapshot.child("posts/-LeEIGg-K9gInntyN72o/description").val();
-    //   });
+  var query = firebase.database().ref("Users").orderByKey();
+  query.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var key = childSnapshot.key;
+      childSnapshot.child('posts').forEach(function(snapshot){
+        var val = snapshot.val();
+        console.log(val.description);
+      });
+      
+      
+  });
+});
