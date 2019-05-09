@@ -65,6 +65,7 @@ body {
   z-index: 0;
 }
 
+<<<<<<< HEAD
 p {font-size: 16px;}
 
 .margin {margin-bottom: 45px;}
@@ -95,6 +96,10 @@ p {font-size: 16px;}
   background-color: #ffffff; /* White */
   color: #555555;
   height: 70vh;
+=======
+#myModel {
+  z-index: 0;
+>>>>>>> 52723849d373485983f76675f3d54f5c609d6ca5
 }
 
 /* md */
