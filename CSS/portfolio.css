@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+      
 *{
     margin: 0;
     padding: 0;
@@ -7,34 +9,6 @@
     position: relative;
     /* z-index: 0; */
 }
-
-#navbarMain {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar-toggle {
-    margin-top: 25px;
-  }
-  
-  #Logo {
-    margin-top: 5px;
-    height: 75px;
-    width: auto;
-  }
-
-  .navbar-nav li a {
-    line-height: 53px;
-    font-size: 1.1em;
-    letter-spacing: 2px;
-    background-color: #f8f8f8 !important;
-  }
-  
-  .nav-item {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
 .rate {
     float: left;
     height: 46px;
