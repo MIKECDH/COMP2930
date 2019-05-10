@@ -14,7 +14,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
   <!-- Index CSS -->
-  <link rel="stylesheet" type="text/css" href="../CSS/index.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/portfolio2.css">
 
   <!-- Portfolio CSS -->
   <link rel="stylesheet" type="text/css" href="../CSS/portfolio.css">
@@ -65,8 +65,9 @@
           </li>
         </ul>
       </div>
-    </nav>
-    
+    </div>
+  </nav>
+
   <!-- Main Content -->
   <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
 
@@ -234,16 +235,20 @@
                 </div>
 
               </div>
-
             </div>
 
           </div>
-
         </div>
       </div>
     </div><br>
 
+<<<<<<< HEAD:HTML/portfolio.html
 
+=======
+  </div>
+
+  <div>
+>>>>>>> cf821dafd143216404cbfc532ab31163541e7cf3:public/HTML/portfolio.html
     <div class="modal fade text-center" id="myModal2" role="dialog" style="margin:0px auto; width:40%;">
       <div class="modal-content">
         <div class="container text-center" style="width:100%;">
@@ -328,7 +333,6 @@
           </div>
         </div>
       </div>
-
     </div>
     </div>
 
@@ -336,14 +340,12 @@
       document.getElementById('navBar').addEventListener("click", function () {
         if (document.querySelector('#mainContainer').style.zIndex != -1) {
           let css = document.querySelector('#mainContainer');
-          let model = document.querySelector('#myModal');
           css.style.zIndex = -1;
-          console.log(model.style.zIndex);
           console.log('sent to back');
           console.log(document.querySelector('#mainContainer').style.zIndex);
         } else {
           let css = document.querySelector('#mainContainer');
-          css.style.zIndex = 0;
+          css.style.zIndex = 1;
           console.log('send to front');
           console.log(document.querySelector('#mainContainer').style.zIndex);
         }
@@ -355,9 +357,9 @@
   <script src='../JS/firebase.js'></script>
   <script>
       $(document).ready(function () {
-          $('#buttonClose').click(function () {
-              window.open('portfolio.html', '_self');
-          });
+        $('#buttonClose').click(function () {
+          window.open('portfolio.html', '_self');
+        });
       });
   </script>
 
