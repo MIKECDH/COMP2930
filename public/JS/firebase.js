@@ -59,7 +59,6 @@ function logout() {
     // An error happened.
   });
   location.href = "#"
-
 }
 
 function checkProfileExists(success, fail) {
