@@ -59,6 +59,7 @@
       address: address,
       volunteers: volunteers,
       description: description,
+      applicants: 0
     });
 
     

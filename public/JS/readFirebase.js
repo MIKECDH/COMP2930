@@ -1,15 +1,18 @@
 var x = 0;
+var postRef;
+var database = firebase.database();
+
 var query = firebase.database().ref("Users").orderByKey();
 query.once("value")
-  .then(function (snapshot) {
-    snapshot.forEach(function (childSnapshot) {
+  .then(function (snapshot0) {
+    snapshot0.forEach(function (childSnapshot) {
       var name0 = childSnapshot.val();
 
-      //console.log(name0);
+      console.log(name0);
 
       childSnapshot.child('posts').forEach(function (snapshot) {
         var val = snapshot.val();
-        //console.log(val.description);
+        console.log(val.description);
         // Creating a table and tr element using JSDOM
         var table = document.getElementById('mainTable');
         var tr = document.createElement('tr');
@@ -55,13 +58,34 @@ query.once("value")
             $('.HideOnClick').html(divTwoText).css("display", "block");
             $('.ShowOnClick').html(divOneText);
           }
-          console.log("hello");
+  
           $('#descriptPara').html(val.description);
           $('#rolePara').html(val.role);
           $('#userEmail').html(name0.email)
 
+          $('#applyButton').attr('id', 'applyButton' + x);
+          $('#applyButton' + x).click(function () {
+            firebase.auth().onAuthStateChanged((user) => {
+              if (user) {               
+              console.log(user.email);
+              //post uid
+              console.log(snapshot.key);
+              //post owner uid
+              console.log(childSnapshot.key);
+              postsRef = database.ref('Users/' + childSnapshot.key + '/posts/' + snapshot.key + '/applicants');
+
+              postsRef.transaction(function(currentApplicants) {               
+                return (currentApplicants) + 1;
+              });
+
+              } else {
+              }
+            });
+          })
+
         });
 
+        
         x++;
 
         console.log('success');
