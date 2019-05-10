@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+          <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <!-- Index CSS -->
+         <link rel="stylesheet" type="text/css" href="../CSS/signup.css">
+
+           <!-- Font Style -->
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Roboto');
+        </style>
+    </head>
+    <body>
+      <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-left" href="#">
+              <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active nav-item"><a href="#">Home</a></li>
+              <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+              <li class="nav-item"><a href="organization.html">Organization</a></li>
+              <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+              <li class="nav-item"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+          
+        <div class="container">
+            <h2>Sign up for better community!</h2>
+            <br><br>
+            <form class="form-horizontal" action="/action_page.php">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Email:</label>
+                <div class="col-sm-7">
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="fullname">Full name:</label>
+                <div class="col-sm-7">          
+                <input type="text" class="form-control" id="fullname" placeholder="Enter your actual name" name="fullname">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="username">User name:</label>
+                <div class="col-sm-7">          
+                <input type="text" class="form-control" id="username" placeholder="Enter your user name" name="username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Password:</label>
+                <div class="col-sm-7">          
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                </div>
+            </div>
+            <div class="form-group">        
+                <div class="col-sm-offset-8 col-sm-10">
+                <button type="submit" class="btn btn-primary join">Submit</button>
+                </div>
+            </div>
+            </form>
+            <img src="../PICTURE/signup.jpg" alt="">
+        </div>
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <!-- Firebase snippet -->
+        <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+        <script>
+          
+          // firebase email authentification global variable
+          var firebaseEmailAuth;
+          // firebase db module global variable
+          var firebaseDatabase;
+          // information of user. object type
+          var userInfo;
+
+          // Initialize Firebase
+          var firebaseConfig = {
+          apiKey: "AIzaSyDC58G-LwPQE8YWd-Sc4Q4V_C7sRJNS9dA",
+          authDomain: "team14-comp2930.firebaseapp.com",
+          databaseURL: "https://team14-comp2930.firebaseio.com",
+          projectId: "team14-comp2930",
+          storageBucket: "team14-comp2930.appspot.com",
+          messagingSenderId: "164661704915",
+          appId: "1:164661704915:web:2c97f9fb5011032d"
+        };
+          firebase.initializeApp(firebaseConfig);
+
+          firebaseEmailAuth=firebase.auth();
+          firebaseDatabase=firebase.database();
+
+          $(document).ready(function() {
+
+            // function working when submit button is clicked
+            $(document).on('click', '.join', function() {
+              var email=$('#email').val();
+              var password=$('#pwd').val();
+              name=$('#name').val();
+
+              
+              firebaseEmailAuth.createUserWithEmailAndPassword(email,password).catch(function(error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if (errorCode == 'auth/weak-password') {
+                  alert('The password is too weak.');
+                } else {
+                  alert(errorMessage);
+                }
+                console.log(error);
+              })
+
+            });
+          });
+        </script>
+=======
+>>>>>>> 6c6e9a355582dc812b6f57b1a2e7a94872b65f85
+=======
+>>>>>>> 6c6e9a355582dc812b6f57b1a2e7a94872b65f85
+    </body>
+</html>
