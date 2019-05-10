@@ -1,46 +1,239 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-      
-*{
+body {
+    font-family: 'roboto', sans-serif;
+    /* background-image: url(../PICTURE/daniel-chekalov-614447-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  
+  .mainBG {
+    height: auto;
+    width: 100%;
+  }
+  #firstPara {
+    font-size: 36pt;
+    text-align: center;
+    margin:0 auto;
+    margin-top:0px;
+    width:500px;
+    color: black;
+  
+  }
+  #pictureDiv {
+    background-image:url('../PICTURE/charity-cheerful-community-service-1345081.jpg');
+    background-repeat: no-repeat;
+    height:650px;
+    background-size: 100% auto;
+    margin-bottom:0px;
+  }
+  
+  #navbarMain {
     margin: 0;
     padding: 0;
-}
-
-#mainContainer {
+  }
+  
+  .navbar-toggle {
+    margin-top: 25px;
+  }
+  
+  #Logo {
+    margin-top: 5px;
+    height: 75px;
+    width: auto;
+  }
+  
+  #para1 {
+    font-size: 36pt;
+    letter-spacing: 6px;
+    line-height: 200px;
+    font-weight: 500;
+    margin-top: 100px;
+  }
+  
+  #backgroundImg {
+    height: 60%;
+    width: 75%;
+  }
+  
+  .navbar-nav li a {
+    line-height: 53px;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    background-color: #f8f8f8 !important;
+  }
+  
+  .nav-item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .buttonMain {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .buttonMain button {
+    background-color: whitesmoke;
+    margin-top: 50px;
+  }
+  #firstBGdiv {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
     position: relative;
-    /* z-index: 0; */
-}
-.rate {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
-}
-.rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-}
-.rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
-}
-.rate:not(:checked) > label:before {
-    content: '★ ';
-}
-.rate > input:checked ~ label {
-    color: #ffc700;    
-}
-.rate:not(:checked) > label:hover,
-.rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
-}
-.rate > input:checked + label:hover,
-.rate > input:checked + label:hover ~ label,
-.rate > input:checked ~ label:hover,
-.rate > input:checked ~ label:hover ~ label,
-.rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
-}
+  }
+  
+  
+  #backgroundMain {
+    position: relative;
+    z-index: 0;
+  }
+  #row2 {
+    height:600px;
+  }
+  /* md */
+  @media screen and (max-width: 991px) {
+    #para1 {
+      font-size: 26pt;
+      letter-spacing: 6px;
+      line-height: 75px;
+      font-weight: 500;
+      margin-top: 0;
+      text-align: center;
+    }
+  
+    .navbar-header {
+      float: none;
+    }
+  
+    .navbar-left,
+    .navbar-right {
+      float: none !important;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  
+    .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+  
+    .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+    }
+  
+    .navbar-collapse.collapse {
+      display: none !important;
+    }
+  
+    .navbar-nav {
+      float: none !important;
+      margin-top: 7.5px;
+    }
+  
+    .navbar-nav>li {
+      float: none;
+    }
+  
+    .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  
+    .collapse.in {
+      display: block !important;
+    }
+    #firstPara {
+      font-size:25px;
+    }
+    #pictureDiv {
+      height:430px;
+    }
+    #row2 {
+      height:450px;
+    }
+  }
+  
+  /* xs < 768 */
+  @media screen and (max-width: 767px) {
+    #para1 {
+      font-size: 22pt;
+      letter-spacing: 6px;
+      line-height: 50px;
+      font-weight: 500;
+      margin-top: 0;
+      text-align: center;
+    }
+  
+    .buttonMain {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  
+    .buttonMain button {
+      background-color: whitesmoke;
+      margin: 30px 0 0 0;
+      font-size: 10pt;
+    }
+    #firstPara {
+      font-size:15px;
+    }
+    #pictureDiv {
+      height:300px;
+    }  
+    #row2 {
+      height:230px;
+    }
+    /*#mainContainer {
+      display: none;
+    }*/
+    #pictureDiv {
+      height:240px;
+    }
+  }
+  
+  /* lg */
+  @media screen and (min-width: 991px) {
+    #para1 {
+      font-size: 30pt;
+      letter-spacing: 8px;
+      line-height: 75px;
+      font-weight: 500;
+      margin-top: 50px;
+    }
+    #firstPara {
+      font-size:35px;
+    }
+    #pictureDiv {
+      height:550px;
+    }  
+    #row2 {
+      height:550px;
+    }
+  }
+  
+  /* xlg */
+  @media screen and (min-width: 1200px) {
+    #para1 {
+      font-size: 36pt;
+      letter-spacing: 8px;
+      line-height: 90px;
+      font-weight: 350;
+      margin-top: 130px;
+      /* color: #f8f8f8;
+      text-shadow: 1px 1px 2px gray; */
+    }
+    #firstPara {
+      font-size:50px;
+    }
+    #pictureDiv {
+      height:650px;
+    }
+    #row2 {
+      height:660px;
+    }
+  }
