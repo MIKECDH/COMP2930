@@ -52,6 +52,16 @@ body {
     font-weight: bold;
     
 }
+.nav-item {
+  padding-left:10px;
+  padding-right:10px;
+  font-weight:400;
+}
+
+.navbar-nav li a {
+  font-size: 1.0em;
+  letter-spacing: 2px;
+}
 
 #Logo {
     margin-top: -20px;
