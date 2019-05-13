@@ -100,29 +100,18 @@ function loadnavbar() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       //User is logged in
-      $("#signup").hide();
-      $("#signup2").hide();
       $("#login").hide();
       $("#login2").hide();
-      $("#myprofile").show();
-      $("#myprofile2").show();
       $("#logout").show();
       $("#logout2").show();
-      $("#mylistings").show();
-      $("#mylistings2").show();
+
 
       var navb = document.getElementsByClassName("navbar-nav");
       navb[0].style.visibility = "visible";
     } else {
 
-      $("#myprofile").hide();
-      $("#myprofile2").hide();
-      $("#mylistings").hide();
-      $("#mylistings2").hide();
       $("#logout").hide();
       $("#logout2").hide();
-      $("#signup").show();
-      $("#signup2").show();
       $("#login").show();
       $("#login2").show();
       var navb = document.getElementsByClassName("navbar-nav");
