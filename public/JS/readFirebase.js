@@ -32,7 +32,7 @@ query.once("value")
         td1.appendChild(node1);
         // The fourth cell in the row grabbing the date of the event from database
         var td2 = document.createElement('td');
-        var node2 = document.createTextNode('today!');
+        var node2 = document.createTextNode(val.date);
         td2.appendChild(node2);
         // The fifth cell in the row grabbing the number of volunteers needed
         var td3 = document.createElement('td');
@@ -104,6 +104,9 @@ query.once("value")
               }
             });
           })
+          $('#backButton').click(function () {
+            window.open('volunteerpage.html', '_self');
+          });
         });
         x++;
       });
@@ -145,7 +148,7 @@ function sortCategory(category) {
               td1.appendChild(node1);
               // The fourth cell in the row grabbing the date of the event from database
               var td2 = document.createElement('td');
-              var node2 = document.createTextNode('today!');
+              var node2 = document.createTextNode(value.date);
               td2.appendChild(node2);
               // The fifth cell in the row grabbing the number of volunteers needed
               var td3 = document.createElement('td');
@@ -169,6 +172,7 @@ function sortCategory(category) {
                   $('.HideOnClick').html(divTwoText).css("display", "block");
                   $('.ShowOnClick').html(divOneText);
                 }
+
 
                 $('#descriptPara').html(value.description);
                 $('#rolePara').html(value.role);
@@ -213,7 +217,11 @@ function sortCategory(category) {
                     }
                   });
                 })
+                $('#backButton').click(function () {
+                  window.open('volunteerpage.html', '_self');
+                });
               });
+
               x++;
               console.log('success');
             }
@@ -229,4 +237,3 @@ sortCategory('Sports');
 sortCategory('Education');
 sortCategory('Environment');
 sortCategory('YouthDevelopment');
-
