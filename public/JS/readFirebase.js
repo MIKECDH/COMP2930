@@ -104,6 +104,9 @@ query.once("value")
               }
             });
           })
+          $('#backButton').click(function () {
+            window.open('volunteerpage.html', '_self');
+          });
         });
         x++;
       });
@@ -170,6 +173,7 @@ function sortCategory(category) {
                   $('.ShowOnClick').html(divOneText);
                 }
 
+
                 $('#descriptPara').html(value.description);
                 $('#rolePara').html(value.role);
                 $('#userEmail').html(snapshot1.email)
@@ -213,7 +217,11 @@ function sortCategory(category) {
                     }
                   });
                 })
+                $('#backButton').click(function () {
+                  window.open('volunteerpage.html', '_self');
+                });
               });
+
               x++;
               console.log('success');
             }
@@ -229,4 +237,3 @@ sortCategory('Sports');
 sortCategory('Education');
 sortCategory('Environment');
 sortCategory('YouthDevelopment');
-
