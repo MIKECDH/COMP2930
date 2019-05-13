@@ -32,7 +32,7 @@ query.once("value")
         td1.appendChild(node1);
         // The fourth cell in the row grabbing the date of the event from database
         var td2 = document.createElement('td');
-        var node2 = document.createTextNode('today!');
+        var node2 = document.createTextNode(val.date);
         td2.appendChild(node2);
         // The fifth cell in the row grabbing the number of volunteers needed
         var td3 = document.createElement('td');
@@ -145,7 +145,7 @@ function sortCategory(category) {
               td1.appendChild(node1);
               // The fourth cell in the row grabbing the date of the event from database
               var td2 = document.createElement('td');
-              var node2 = document.createTextNode('today!');
+              var node2 = document.createTextNode(value.date);
               td2.appendChild(node2);
               // The fifth cell in the row grabbing the number of volunteers needed
               var td3 = document.createElement('td');

@@ -68,16 +68,3 @@
         
       }
     
-      var query = firebase.database().ref("Users").orderByKey();
-      query.once("value")
-      .then(function(snapshot) {
-        snapshot.forEach(function(childSnapshot) {
-          var key = childSnapshot.key;
-          childSnapshot.child('posts').forEach(function(snapshot){
-            var val = snapshot.val();
-            console.log(val.description);
-          });
-          
-          
-      });
-    });
