@@ -27,6 +27,8 @@
     @import url('https://fonts.googleapis.com/css?family=Roboto');
   </style>
 
+<script src="https://rawgit.com/WeiChiaChang/Easter-egg/master/easter-eggs-collection.js"></script>
+
 </head>
 
 <body>
@@ -79,45 +81,41 @@
     </div>
   </div>
 
-  <div class="row" id="row2">
-    <div class="container-fluid mainContainer">
-      <div id="pictureDiv" class="col-lg-12"><br><br>
-        <div id="firstPara"> Join Volunteer for your Community!</div>
-      </div>
-    </div>
-  </div>
-
-
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center" style="padding:0px;">
   <div id="mainContainer">
-    <div class="container-fluid">
-      <div id="backgroundMain">
-        <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12 leftSideBG">
-            <!-- <p id="para1">
-                Connecting Volunteers with Individuals & Organizations
-              </p> -->
-          <img class="mainBG" src="../PICTURE/KakaoTalk_Photo_2019-05-03-12-47-28.jpeg">
-        </div>
-        <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12" id="welcomeText">
-          <p id="para1">
-            Connecting Volunteers with Individuals & Organizations
-          </p>
+      <div class="container-fluid" style="padding:0px;">
+        <div id="backgroundMain">
+            <img class="mainBG" src="../PICTURE/first_part.png" id="bg1">
         </div>
       </div>
     </div>
-  </div>
+</div>
 
 
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center" style="padding:0px;">
+  <div id="mainContainer">
+      <div class="container-fluid" style="padding:0px;">
+        <div id="backgroundMain">
+            <img class="mainBG" src="../PICTURE/second_part.png" id="bg2">
+        </div>
+      </div>
+    </div>
+</div>
 
-  <div class="row" style="background-color: rgb(247, 228, 172); margin-bottom: 0px;"><br><br>
+
+<!-- Third Container -->
+  <div class="row"><br><br>
     <div class="container text-center">    
-      <h2>About Volunteer Studio</h2><br><br>
+      <h3>About Volunteer Studio</h3><br><br>
         <div class="col-sm-4">
             <div class="thumbnail">
               <div class="caption">
                 <h3 class="text-center">STEP 1</h3>
-                <h4 class="text-center">Find our volunteers with category</h4>
+                <h4 class="text-center">Find volunteer opportunities with categories</h4>
               </div>  
-              <img src="../PICTURE/feature1.png" class="img-responsive" alt="Image">
+              <img src="../PICTURE/feature1.png" class="img-responsive" alt="Image" id="feature1">
             </div>
         </div>
   
@@ -125,9 +123,9 @@
           <div class="thumbnail">
             <div class="caption">
               <h3 class="text-center">STEP 2</h3>
-              <h4 class="text-center">Work for your neighbor and community</h4>
+              <h4 class="text-center">Work for your neighbour and community</h4>
             </div>  
-            <img src="../PICTURE/volunteer.png" class="img-responsive" alt="Image">
+            <img src="../PICTURE/feature2.png" class="img-responsive" alt="Image" id="feature2">
           </div>
       </div>
       <div class="col-sm-4">
@@ -136,13 +134,12 @@
             <h3 class="text-center">STEP 3</h3>
             <h4 class="text-center">Get certificates for your future!</h4>
           </div>  
-          <img src="../PICTURE/certificate.png" class="img-responsive" alt="Image">
+          <img src="../PICTURE/feature3.png" class="img-responsive" alt="Image" id="feature3">
         </div>
       </div>
   
       </div>
     </div>
-  </div>
 
   <script>
     document.getElementById('navBar').addEventListener("click", function () {
