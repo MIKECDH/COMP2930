@@ -14,7 +14,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
   <!-- Index CSS -->
-  <link rel="stylesheet" type="text/css" href="../CSS/index.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../CSS/index.css"> -->
 
     <!-- Volunteering detail CSS -->
   <link rel="stylesheet" type="text/css" href="../CSS/volunteering_details.css">
@@ -139,19 +139,14 @@
           </h1><br>
           <div class="col-sm-11">
             <div class="row text-left">
-              
               <h3>Description</h3>
-              <p id="descriptPara"></p><br>
-
+              <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
               <h3>Role</h3>
-              <p id="rolePara"></p><br>
-
+              <p>aefjlajfaowiefkanfjknflwe</p><br>
               <h3>Qualification</h3>
-              <p id="qualPara"></p><br>
-
+              <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
               <h3>How To Apply</h3>
-              <p id="userEmail"></p>
-
+              <p>adufaine123@gmail.com</p>
             </div>
           </div>
         </div>
@@ -160,11 +155,47 @@
 
         <!-- Buttons -->
         <div class="col-sm-3"> <br>
-          <button type="button" class="btn btn-default">
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1">
             <span class="glyphicon glyphicon-envelope"></span> Apply</button>
+
           <button type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-heart-empty"></span> Save</button>
           <div><br></div>
+
+        <!--apply pop out-->
+        <div id="applyModal">
+          <div class="modal fade text-center" id="myModal1" role="dialog" style="margin:0px auto; width:60%;">
+            <div class="modal-content">
+              <div class="container text-center" style="width:100%;">
+                <h2 style="margin-top: 50px">Apply for Volunteer</h2>
+                <hr>
+
+                <div class="row">
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10">
+                    <div style="text-align: left;">
+                    <label for="Textarea" id ="thelabel">To: uglyryan@gmail.com</label>
+                    </div>
+                    <br>
+                    <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
+                </div>
+                <div class ="col-sm-1"></div>
+              </div>
+
+
+
+                
+                <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
+                  <button type='submit' id="buttonClose" class="btn btn-info btn-lg">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      
+
 
           <!-- Map and Reviews -->
           <div class="thumbnail">
@@ -178,7 +209,7 @@
             </div>
             <!--</a>-->
           </div>
-        </div>
+        
         <div class="col-sm-2"></div>
 
       </div>
@@ -209,6 +240,13 @@
   
   <!--Link Firebase File-->
   <script src='../JS/firebase.js'></script>
+  <script>
+      $(document).ready(function () {
+        $('#buttonClose').click(function () {
+          window.open('volunteering_details.html', '_self');
+        });
+      });
+    </script>
 
 </body>
 
