@@ -327,14 +327,14 @@
             */
 
             document.getElementById('navBar').addEventListener("click", function () {
-            if (document.querySelector('#main1').style.zIndex != -1) {
+            if (document.querySelector('#main1').style.zIndex != -1050) {
                 let css = document.querySelector('#main1');
-                css.style.zIndex = -1;
+                css.style.zIndex = -1050;
                 console.log('sent to back');
                 console.log(document.querySelector('#main1').style.zIndex);
             } else {
                 let css = document.querySelector('#main1');
-                css.style.zIndex = 1;
+                css.style.zIndex = 1200;
                 console.log('send to front');
                 console.log(document.querySelector('#main1').style.zIndex);
             }
