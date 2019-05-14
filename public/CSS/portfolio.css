@@ -8,6 +8,9 @@
 #mainContainer {
     position: relative;
     /* z-index: 0; */
+    background-image:url('../PICTURE/background44.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 .rate {
     float: left;
