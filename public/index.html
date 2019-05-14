@@ -47,7 +47,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="#">Home</a></li>
+                        <li class="nav-item"><a href="index.html">Home</a></li>
                         <li class="nav-item"><a href="html/volunteerpage.html">Volunteering</a></li>
                         <li class="nav-item"><a href="html/organization.html">Organization</a></li>
                         <li class="nav-item"><a href="html/portfolio.html">Feature</a></li>
@@ -327,14 +327,14 @@
             */
 
             document.getElementById('navBar').addEventListener("click", function () {
-            if (document.querySelector('#main1').style.zIndex != -1) {
+            if (document.querySelector('#main1').style.zIndex != -1050) {
                 let css = document.querySelector('#main1');
-                css.style.zIndex = -1;
+                css.style.zIndex = -1050;
                 console.log('sent to back');
                 console.log(document.querySelector('#main1').style.zIndex);
             } else {
                 let css = document.querySelector('#main1');
-                css.style.zIndex = 1;
+                css.style.zIndex = 1200;
                 console.log('send to front');
                 console.log(document.querySelector('#main1').style.zIndex);
             }
