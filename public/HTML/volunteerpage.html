@@ -33,35 +33,35 @@
 </head>
 
 <body>
-  <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" id="navBar" data-toggle="collapse" data-target="#myNavbar"
-          aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-left" href="#">
-          <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
-          <li class="active nav-item"><a href="../index.html">Home</a></li>
-          <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-          <li class="nav-item"><a href="organization.html">Organization</a></li>
-          <li class="nav-item"><a href="portfolio.html">Feature</a></li>
-          <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
-              <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li class="nav-item" id="logout2" style="display: none">
-            <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <!-- Fixed Nav -->
+        <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">
+                      <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+                  </a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="nav-item"><a href="../index.html">Home</a></li>
+                      <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+                      <li class="nav-item"><a href="organization.html">Organization</a></li>
+                      <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+                      <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                          <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      <li class="nav-item" id="logout2" style="display: none">
+                          <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
 
   <!-- Main Content -->
   <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
@@ -79,7 +79,7 @@
       </div>
 
     </div>
-  </div>
+  </div><br><br>
 
   <div id="mainContainer">
   <div class="HideOnClick" style="display: block">
@@ -89,225 +89,204 @@
         <!-- 고친부분 시작!!!-->
         <br>
         <div class="col-sm-12 text-center" id="welcomeText">
-          <h2>Volunteer Search for your community</h2>
-          <hr><br>
+          <h2>Volunteer Search for your community</h2><br>
         </div>
 
         <!-- 고친부분 끝!!!-->
-        <!-- <div class="row" id="searchbar">
+        <div class="row">
 
-          <div id="search" class="col-sm-12 text-center">
-            <div class="row">
-              <div class="col-xs-8 col-xs-offset-2">
-                <div class="input-group">
-                  <div class="input-group-btn search-panel">
+          <!-- 고친부분 시작!!!-->
 
+          <h2 id="category">
 
-                  <span id="search_concept"><span class="glyphicon glyphicon-align-justify"> </span>
-                  <span class="caret"> </span> 
-
-                    </button>
-                  </div>
-                  <input type="hidden" name="search_param" value="all" id="search_param">
-                  <input type="text" class="form-control" name="x" placeholder="Search term...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span
-                        class="glyphicon glyphicon-search"></span></button>
-                  </span>
-                </div> -->
-
-                <!-- 고친부분 시작!!!-->
-
-                <h2 id="category">
-
-                  <button type="button" id="Seniors" class="btn btn-info">Senior</button>
-                  <button type="button" id="Disabilities"class="btn btn-info">Disability</button>
-                  <button type="button" id="Sports" class="btn btn-info">Sports</button>
-                  <button type="button" id="YouthDevelopment" class="btn btn-info">Youth Development</button>
-                  <button type="button" id="Environment" class="btn btn-info">Environment</button>
-                  <button type="button" id="Education" class="btn btn-info">Education</button>
-                </h2>
+            <button type="button" id="Seniors" class="btn btn-info">Senior</button>
+            <button type="button" id="Disabilities" class="btn btn-info">Disability</button>
+            <button type="button" id="Sports" class="btn btn-info">Sports</button>
+            <button type="button" id="YouthDevelopment" class="btn btn-info">Youth Development</button>
+            <button type="button" id="Environment" class="btn btn-info">Environment</button>
+            <button type="button" id="Education" class="btn btn-info">Education</button>
+          </h2>
 
 
-                <!-- 고친부분 끝!!!-->
+          <!-- 고친부분 끝!!!-->
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="tableRow">
+      <div id="table">
+        <table class="table table-hover" style="margin: 0 30px 0 30px; width:80%; margin:0 auto; margin-top:40px;">
+          <thead>
+
+            <tr class="tableTitle" id="titleForTable">
+              <th>No.</th>
+              <th>Organizer</th>
+              <th>Title</th>
+              <th>Where</th>
+              <th>When</th>
+              <th>Volunteers Needed</th>
+            </tr>
+          </thead>
+          <tbody id="mainTable">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- VOLUNTEER DETAIL PAGE -->
+  <div class="ShowOnClick" style="display: none">
+    <div class="container-fluid"><br>
+
+      <div class="col-sm-12 text-center">
+
+        <!-- Trigger the modal with a button -->
+        <h4><a href="#" data-toggle="modal" data-target="#myModal">
+            <span class="glyphicon glyphicon-user"></span>
+            <u id="applicants"></u></a>
+        </h4><br>
+      </div>
+
+      <!-- Modal for list -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">List for applying people</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
+                  <h4 class="text-center">Brandon</h4><br>
+                </div>
+                <div class="col-md-4">
+                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
+                  <h4 class="text-center">Eric</h4><br>
+                </div>
+                <div class="col-md-4">
+                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
+                  <h4 class="text-center">Ryan</h4><br>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="row" id="tableRow">
-            <div id="table">
-              <table class="table table-hover"
-                style="margin: 0 30px 0 30px; width:80%; margin:0 auto; margin-top:40px;">
-                <thead>
-
-                  <tr class="tableTitle" id="titleForTable">
-                    <th>No.</th>
-                    <th>Organizer</th>
-                    <th>Title</th>
-                    <th>Where</th>
-                    <th>When</th>
-                    <th>Volunteers Needed</th>
-                  </tr>
-                </thead>
-                <tbody id="mainTable">
-
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- VOLUNTEER DETAIL PAGE -->
-      <div class="ShowOnClick" style="display: none">
-        <div class="container-fluid"><br>
 
-          <div class="col-sm-12 text-center">
 
-            <!-- Trigger the modal with a button -->
-            <h4><a href="#" data-toggle="modal" data-target="#myModal">
-                <span class="glyphicon glyphicon-user"></span>
-                <u id="applicants"></u></a>
-            </h4><br>
+      <div class="row">
+        <!-- Volunteering Details -->
+        <div class="col-sm-2"></div>
+        <div class="col-sm-5">
+          <h1 class="text-left">BCIT<br>
+            <h3 class="text-left"><span class="btn btn-info btn-md btn-secondary text-center">Sports</span>
+              <span class="btn btn-info btn-md btn-secondary text-center">Youth Development</span></h3>
+
+          </h1><br>
+          <div class="col-sm-11">
+            <div class="row text-left">
+
+              <h3>Description</h3>
+              <p id="descriptPara"></p><br>
+
+              <h3>Role</h3>
+              <p id="rolePara"></p><br>
+
+              <h3>How To Apply</h3>
+              <p id="userEmail"></p>
+            </div>
           </div>
+        </div>
 
-          <!-- Modal for list -->
-          <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
 
-              <!-- Modal content-->
+
+        <!-- Buttons --> Î
+        <div class="col-sm-3"> <br>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1" id="firstButton">
+            <span class="glyphicon glyphicon-envelope"></span> Apply</button>
+
+          <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-heart-empty"></span> Save</button>
+          <div><br></div>
+
+          <!--apply pop out-->
+          <div id="applyModal">
+            <div class="modal fade text-center" id="myModal1" role="dialog" style="margin:0px auto; width:60%;">
               <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">List for applying people</h4>
-                </div>
-                <div class="modal-body">
+                <div class="container text-center" style="width:100%;">
+                  <h2 style="margin-top: 50px">Apply for Volunteer</h2>
+                  <hr>
                   <div class="row">
-                    <div class="col-md-4">
-                      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                      <h4 class="text-center">Brandon</h4><br>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                      <div style="text-align: left;">
+                        <label for="Textarea" id="theLabel"></label>
+                      </div>
+                      <br>
+                      <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
                     </div>
-                    <div class="col-md-4">
-                      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                      <h4 class="text-center">Eric</h4><br>
-                    </div>
-                    <div class="col-md-4">
-                      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                      <h4 class="text-center">Ryan</h4><br>
-                    </div>
+                    <div class="col-sm-1"></div>
+                  </div>
+                  <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
+                    <button type='submit' id="applyButton" class="btn btn-info btn-lg">Apply</button>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 
 
-
-          <div class="row">
-            <!-- Volunteering Details -->
-            <div class="col-sm-2"></div>
-            <div class="col-sm-5">
-              <h1 class="text-left">BCIT<br>
-                <h3 class="text-left"><span class="btn btn-info btn-md btn-secondary text-center">Sports</span>
-                  <span class="btn btn-info btn-md btn-secondary text-center">Youth Development</span></h3>
-
-              </h1><br>
-              <div class="col-sm-11">
-                <div class="row text-left">
-
-                  <h3>Description</h3>
-                  <p id="descriptPara"></p><br>
-
-                  <h3>Role</h3>
-                  <p id="rolePara"></p><br>
-
-                  <h3>How To Apply</h3>
-                  <p id="userEmail"></p>
-                </div>
-              </div>
+          <!-- Map and Reviews -->
+          <div class="thumbnail">
+            <!-- <a href="googleMap.jpg" target="_blank"> -->
+            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+            <div class="caption text-left">
+              <h4>Volunteer Evaluation:</h4>
+              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="rating">
+              <h4>Volunteer Reviews (00):</h4>
+              <p>hdfhwdfwoejpqendjoendoqiendowejnds<br>nadoianoidnfeonfoirfelrfnelrrnl.</p>
             </div>
-
-
-
-            <!-- Buttons -->           Î
-            <div class="col-sm-3"> <br>
-              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1" id="firstButton">
-                <span class="glyphicon glyphicon-envelope"></span> Apply</button>
-
-              <button type="button" class="btn btn-default">
-                <span class="glyphicon glyphicon-heart-empty"></span> Save</button>
-              <div><br></div>
-
-              <!--apply pop out-->
-              <div id="applyModal">
-                <div class="modal fade text-center" id="myModal1" role="dialog" style="margin:0px auto; width:60%;">
-                  <div class="modal-content">
-                    <div class="container text-center" style="width:100%;">
-                      <h2 style="margin-top: 50px">Apply for Volunteer</h2>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-1"></div>
-                        <div class="col-sm-10">
-                          <div style="text-align: left;">
-                            <label for="Textarea" id="theLabel"></label>
-                          </div>
-                          <br>
-                          <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
-                        </div>
-                        <div class="col-sm-1"></div>
-                      </div>
-                      <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
-                        <button type='submit' id="applyButton" class="btn btn-info btn-lg">Apply</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <!-- Map and Reviews -->
-              <div class="thumbnail">
-                <!-- <a href="googleMap.jpg" target="_blank"> -->
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
-                <div class="caption text-left">
-                  <h4>Volunteer Evaluation:</h4>
-                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="rating">
-                  <h4>Volunteer Reviews (00):</h4>
-                  <p>hdfhwdfwoejpqendjoendoqiendowejnds<br>nadoianoidnfeonfoirfelrfnelrrnl.</p>
-                </div>
-                <!--</a>-->
-              </div>
-            </div>
-            <div class="col-sm-2"></div>
-
+            <!--</a>-->
           </div>
-        </div><br>
+          <button type="button" id="backButton" class="btn btn-info">Back</button>
+        </div>
+        <div class="col-sm-2"></div>
+
       </div>
+    </div><br>
+  </div>
 
 
 
 
-      <script>
-        document.getElementById('navBar').addEventListener("click", function () {
-          if (document.querySelector('#mainContainer').style.zIndex != -1050) {
-            let css = document.querySelector('#mainContainer');
-            css.style.zIndex = -1050;
-            console.log('sent to back');
-            console.log(document.querySelector('#mainContainer').style.zIndex);
-          } else {
-            let css = document.querySelector('#mainContainer');
-            css.style.zIndex = 1200;
-            console.log('send to front');
-            console.log(document.querySelector('#mainContainer').style.zIndex);
-          }
-        });
-      </script>
+  <script>
+    document.getElementById('navBar').addEventListener("click", function () {
+      if (document.querySelector('#mainContainer').style.zIndex != -1050) {
+        let css = document.querySelector('#mainContainer');
+        css.style.zIndex = -1050;
+        console.log('sent to back');
+        console.log(document.querySelector('#mainContainer').style.zIndex);
+      } else {
+        let css = document.querySelector('#mainContainer');
+        css.style.zIndex = 1200;
+        console.log('send to front');
+        console.log(document.querySelector('#mainContainer').style.zIndex);
+      }
+    });
+  </script>
 
-      <!--Link Firebase File-->
-      <script src='../JS/firebase.js'></script>
-      <!--Link Table Firebase File-->
-      <script src='../JS/readFirebase.js'></script>
+  <!--Link Firebase File-->
+  <script src='../JS/firebase.js'></script>
+  <!--Link Table Firebase File-->
+  <script src='../JS/readFirebase.js'></script>
 
 </body>
 

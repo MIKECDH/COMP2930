@@ -9,6 +9,9 @@
 
         
         <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+                
+        <!-- Portfolio CSS -->
+        <link rel="stylesheet" type="text/css" href="CSS/index.css">
 
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -26,123 +29,6 @@
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
 
-        <style>
-            /* Nav / Navbar Styles
-            ===================================*/
-            .navbar {
-                background: transparent;
-                border-bottom: none;
-                padding: 30px 0;
-                transition-duration: 0.6s;
-                
-            }
-            .navbar-default .navbar-brand,
-            .navbar-default .navbar-nav>li>a {
-                color: black;
-                font-weight: bold;
-                
-            }
-
-            #Logo {
-                margin-top: -20px;
-                height: 60px;
-                width: auto;
-            }
-
-            /* jQuery Styles
-            ===================================*/
-            .navbar-scroll {
-                background: #e7eaea;
-                padding: 0;
-                box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
-                transition-duration: 0.6s;
-            }
-            .nav-dropdown-scroll {
-                background: #e7eaea;
-                box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
-            }
-
-            .imgwrapper {
-                background-size:stretch;
-                background-image: url("picture/bgFinal2.jpg");
-                background-repeat: no-repeat;
-                background-attachment: scroll;
-                background-position: center center;
-                background-size: cover;
-                height:1000px;
-                text-align:center;
-            }
-
-            .word {
-                font-size:40px;
-                color:black;
-                font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-                font-style: italic;
-                padding-top:150px;
-            }
-
-
-            
-            .page-section {
-                padding: 100px 0;
-            }
-
-            .page-section h2.section-heading {
-                font-size: 40px;
-                margin-top: 0;
-                margin-bottom: 15px;
-            }
-
-            .page-section h3.section-subheading {
-                font-size: 16px;
-                font-weight: 400;
-                font-style: italic;
-                margin-bottom: 75px;
-                text-transform: none;
-                font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-            }
-
-
-            #services {
-                background-color:#f8f9fa;
-            }
-
-
-            .team-member {
-                margin-bottom: 50px;
-                text-align: center;
-            }
-
-            .team-member img {
-                width: 150px;
-                height: 225px;
-                border: 7px solid #fff;
-            }
-
-            .team-member h4 {
-                margin-top: 25px;
-                margin-bottom: 0;
-                text-transform: none;
-            }
-
-            .team-member p {
-                margin-top: 0;
-            }
-
-
-
-
-            footer .glyphicon {
-                font-size: 20px;
-                margin-bottom: 20px;
-                color: #f7d43b;
-            }
-            @keyframes roll {
-                from { transform: rotate(0deg) }
-                to   { transform: rotate(360deg) }
-            }
-
-        </style>
     </head>
     <body>
         <!-- Fixed Nav -->
@@ -173,7 +59,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>	
+        </nav>   
 
         <!-- Main Content -->
         <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
@@ -196,11 +82,11 @@
 
         <!-- First div-->
         <div class="imgwrapper" id="main1">
-            <div class="word"> Welcome to Volunteer studio
+            <div class="word"><p>Welcome to VolunteerStudio</p>
                     
             </div>
-            <button id="newPostBtn" type="button" class="btn btn-warning btn-lg btn-secondary text-center" onclick="myFunction()">We connect you to your community</button>
-            
+            <!-- <button id="newPostBtn" type="button" class="btn btn-warning btn-lg btn-secondary text-center" onclick="myFunction()">We connect you to your community</button> -->
+            <a class="btn btn-warning btn-xl text-uppercase js-scroll-trigger" href="#services">We connect you to your community</a>
             
 
         </div>
@@ -217,19 +103,19 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <img src="picture/feature1.png" style="width:80%;">
-                    <h4 class="service-heading">E-Commerce</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <img src="picture/feature1.jpg" style="width:80%; height:70%">
+                    <h4 class="service-heading">STEP 1</h4>
+                    <p class="text-muted" style="font-weight:bold;">Find the category for your volunteer works.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="picture/volunteer.png" style="width:80%;">
-                    <h4 class="service-heading">Responsive Design</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <img src="picture/feature2.jpg" style="width:80%; height:70%">
+                    <h4 class="service-heading">STEP 2</h4>
+                    <p class="text-muted" style="font-weight:bold;">Volunteer for your community!</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="picture/certificate.png" style="width:80%;">
-                    <h4 class="service-heading">Web Security</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <img src="picture/feature3.jpg" style="width:80%; height:70%">
+                    <h4 class="service-heading">STEP 3</h4>
+                    <p class="text-muted" style="font-weight:bold;">Get certificates for your future!</p>
                 </div>
             </div>
             </div>
@@ -246,7 +132,7 @@
                 <div class="row">
                 <div class="col-sm-4">
                     <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="picture/brandon.png" alt="">
+                        <img class="img-circle" src="picture/yun.jpg" alt="">
                     <h4>Kay Garland</h4>
                     <p class="text-muted">Lead Designer</p>
                     <ul class="list-inline social-buttons">
@@ -270,7 +156,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="picture/eric.png" alt="">
+                        <img class="img-circle" src="picture/yun.jpg" alt="">
                     <h4>Larry Parker</h4>
                     <p class="text-muted">Lead Marketer</p>
                     <ul class="list-inline social-buttons">
@@ -294,7 +180,7 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                    <img class="mx-auto rounded-circle" src="picture/yuni.png" alt="">
+                        <img class="img-circle" src="picture/yun.jpg" alt="">
                     <h4>Diana Pertersen</h4>
                     <p class="text-muted">Lead Developer</p>
                     <ul class="list-inline social-buttons">
@@ -321,7 +207,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="picture/mike.png" alt="">
+                        <img class="img-circle" src="picture/yun.jpg" alt="">
                         <h4>Kay Garland</h4>
                         <p class="text-muted">Lead Designer</p>
                         <ul class="list-inline social-buttons">
@@ -345,7 +231,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="picture/yun.png" alt="">
+                        <img class="mx-auto rounded-circle img-circle" src="picture/yun.jpg" alt="">
                         <h4>Larry Parker</h4>
                         <p class="text-muted">Lead Marketer</p>
                         <ul class="list-inline social-buttons">
@@ -377,7 +263,7 @@
 
         <section class="page-section" id="services">
             <div class="container">
-                <div class="row">
+                <div class="row text-center">
                     <a href="#main1" title="To Top">
                         <span class="glyphicon glyphicon-chevron-up"></span>
                     </a>
@@ -392,8 +278,37 @@
 
 
 
-        <!-- //Close Fixed Nav -->	
+        <!-- //Close Fixed Nav -->   
         <script>
+            /*
+            function for smooth a scroll up.down
+            */
+
+            $(document).ready(function(){
+            // Add smooth scrolling to all links in navbar + footer link
+                $("a").on('click', function(event) {
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function(){
+                
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                    } // End if
+                });
+
+            });
+
             // Change pos/background/padding/add shadow on nav when scroll event happens 
             $(function(){
                 var navbar = $('.navbar');
@@ -406,6 +321,10 @@
                     }
                 });
             });
+
+            /*
+            function for firebase Login and Logout 
+            */
 
             document.getElementById('navBar').addEventListener("click", function () {
             if (document.querySelector('#main1').style.zIndex != -1) {
@@ -422,7 +341,9 @@
             });
 
 
-                        
+            /*
+                function for Easter Egg 1
+            */
             function team() {
             "use strict"
 
@@ -435,9 +356,9 @@
                 var shock = document.createElement('div')
                 var img = new Image()
                 img.src = data
-                img.style.width = '1050px'
-                img.style.height = '300px'
-                img.style.transition = '7s all'
+                img.style.width = '1550px'
+                img.style.height = '400px'
+                img.style.transition = '11s all'
                 img.style.position = 'fixed'
                 img.style.left = '-1100px'
                 img.style.bottom = 'calc(-50% + 420px)'
@@ -480,7 +401,9 @@
             }
             team();
 
-
+            /*
+                function for Easter Egg 2
+            */
             function roll() {
             "use strict"
 
@@ -490,7 +413,7 @@
 
             let roll = function () {
 
-                document.body.style.animation="roll 4s 1";
+                document.body.style.animation="roll 6s 1";
             }
 
             let record = function (e) {
@@ -520,19 +443,7 @@
 
 
 
-            function myFunction() {
-                if(this.hash !=="") {
-                    event.preventDefault();
 
-                    var hash=this.hash;
-
-                    $('html, body').animate({
-                        scrollTop:$(hash).offset().top
-                    }, 900, function() {
-                        window.location.hash='#services';
-                    });
-                }
-            };
             
 
         </script>
