@@ -2,6 +2,16 @@ body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
+#map {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#showMap{
+  text-align: center;
+}
+
 #navbarMain {
   margin: 0;
   padding: 0;
