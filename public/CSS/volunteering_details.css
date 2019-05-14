@@ -53,6 +53,16 @@ body {
   background-size: cover; */
 }
 
+#forimg{
+      
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  opacity: 0.6;
+
+
+}
+
 .mainBG {
   height: auto;
   width: 100%;
