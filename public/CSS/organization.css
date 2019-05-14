@@ -1,18 +1,17 @@
 body {
-  /*background-image: url(../PICTURE/leone-venter-469710-unsplash.jpg);*/
+  /* background-image: url(../PICTURE/aerial-shot-beach-beautiful-2246950.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 85px);
+  height: auto;
+  width: 100%; */
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-
-#para1 {
-  font-size: 36pt;
-  letter-spacing: 10px;
-  line-height: 120px;
-  font-weight: 500;
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 
 #posthelp {
   font-size: 50pt;
@@ -26,6 +25,12 @@ body {
   font-size: 12pt;
   font-weight: bold;
 
+}
+
+.navbar-nav li a {
+  font-size: 1em;
+  letter-spacing: 2px;
+  /* background-color: #f8f8f8 !important; */
 }
 
 #textmid {
@@ -84,6 +89,7 @@ body {
 }
 
 #fullcontainer {
+  z-index: 0;
   position: relative;
 }
 
