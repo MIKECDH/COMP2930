@@ -1,10 +1,10 @@
   /* Nav / Navbar Styles
             ===================================*/
-            .navbar {
-              background: transparent;
-              border-bottom: none;
-              padding: 30px 0;
-              transition-duration: 0.6s;
+          .navbar {
+            background: transparent;
+            border-bottom: none;
+            padding: 30px 0;
+            transition-duration: 0.6s;
               
           }
           .navbar-default .navbar-brand,
@@ -96,7 +96,7 @@
           }
 
           .team-member img {
-              width: 150px;
+              width: 225px;
               height: 225px;
               border: 7px solid #fff;
           }
