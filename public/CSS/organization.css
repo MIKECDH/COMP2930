@@ -98,7 +98,6 @@ body {
   position: relative;
 }
 
-
 .spanMain {
   font-size: 20pt;
   /*display: flex;*/
@@ -113,11 +112,6 @@ body {
 
 /* md */
 @media screen and (max-width: 991px) {
-  body {
-    background-attachment: fixed;
-    background-position: bottom center; 
-  }
-
   /*#para1 {
     font-size: 26pt;
     letter-spacing: 10px;
