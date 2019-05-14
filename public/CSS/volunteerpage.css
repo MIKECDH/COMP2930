@@ -1,5 +1,6 @@
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
+
   background-image:url('../PICTURE/blank-clean-color-889087.jpg');
   background-repeat:no-repeat;
   height: auto;
@@ -54,6 +55,23 @@ table td {
     width: auto;
 }
 
+#mainContainer {
+
+  text-align:center;
+}
+#mainDiv2 {
+  background-image: url('../PICTURE/bg8.png');
+
+  background-repeat:no-repeat;
+  width:100%;
+  height:auto;
+  background-size:auto;
+
+  background-attachment: fixed;
+  background-position: center;
+
+}
+
 /* jQuery Styles
 ===================================*/
 .navbar-scroll {
@@ -105,6 +123,11 @@ table td {
   height: 50px;
   width: auto;
 }
+#mainDiv2 {
+  background-attachment: fixed;
+  background-position: center;
+}
+
 
 /* md */
 @media screen and (max-width: 991px) {
