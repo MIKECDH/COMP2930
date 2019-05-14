@@ -8,7 +8,21 @@
 #mainContainer {
     position: relative;
     /* z-index: 0; */
+    background-image:url('../PICTURE/bg45.jpg');
+  
+    background-repeat:no-repeat;
+    width:100%;
+    height:auto;
+    background-size:cover;
+    
+    background-attachment: fixed;
+    background-position: center;
+    
 }
+#usercolor{
+    background-color: rgb(238,241,234);
+}
+
 .rate {
     float: left;
     height: 46px;
@@ -44,3 +58,73 @@
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+
+body {
+    font-family: 'roboto', sans-serif;
+    /* background-image: url(../PICTURE/daniel-chekalov-614447-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  .navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: black;
+    font-weight: bold;
+    
+}
+.nav-item {
+  padding-left:10px;
+  padding-right:10px;
+  font-weight:400;
+}
+
+.navbar-nav li a {
+  font-size: 1.0em;
+  letter-spacing: 2px;
+}
+
+#Logo {
+    margin-top: -20px;
+    height: 60px;
+    width: auto;
+}
+
+/* jQuery Styles
+===================================*/
+.navbar-scroll {
+    background: #e7eaea;
+    padding: 0;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.6s;
+}
+.nav-dropdown-scroll {
+    background: #e7eaea;
+    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
+}
+  
+  #backgroundMain {
+    position: relative;
+    z-index: 0;
+  }
+  /* md */
+  @media screen and (max-width: 991px) {
+    
+    .collapse.in {
+      display: block !important;
+    }
+  }
+  
+  /* xs < 768 */
+  @media screen and (max-width: 767px) {
+
+    /*#mainContainer {
+      display: none;
+    }*/
+  }
+  
+  /* lg */
+  @media screen and (min-width: 991px) {
+  }
+  
+  /* xlg */
+  @media screen and (min-width: 1200px) {
+  }

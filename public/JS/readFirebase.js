@@ -104,6 +104,9 @@ query.once("value")
               }
             });
           })
+          $('#backButton').click(function () {
+            window.open('volunteerpage.html', '_self');
+          });
         });
         x++;
       });
@@ -176,6 +179,7 @@ function sortCategory(category) {
                   $('#tableRow').html('');
                 }
 
+
                 $('#descriptPara').html(value.description);
                 $('#rolePara').html(value.role);
                 $('#userEmail').html(snapshot1.email)
@@ -219,7 +223,11 @@ function sortCategory(category) {
                     }
                   });
                 })
+                $('#backButton').click(function () {
+                  window.open('volunteerpage.html', '_self');
+                });
               });
+
               x++;
               console.log('success');
             }
