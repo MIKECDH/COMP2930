@@ -19,6 +19,10 @@
     background-position: center;
     
 }
+#usercolor{
+    background-color: rgb(238,241,234);
+}
+
 .rate {
     float: left;
     height: 46px;
