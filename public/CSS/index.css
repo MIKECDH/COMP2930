@@ -5,6 +5,8 @@
             border-bottom: none;
             padding: 30px 0;
             transition-duration: 0.6s;
+            
+            
               
           }
           .navbar-default .navbar-brand,
@@ -15,8 +17,8 @@
               
           }
           .nav-item {
-              padding-left:10px;
-              padding-right:10px;
+              padding-left:6px;
+              padding-right:6px;
               font-weight:400;
           }
 
