@@ -6,11 +6,12 @@ var query = firebase.database().ref("Users").orderByKey();
 query.once("value")
   .then(function (snapshot0) {
     snapshot0.forEach(function (childSnapshot) {
-      var name0 = childSnapshot.val();
-
+      var name = childSnapshot.val();
+      console.log(name);
+      
       childSnapshot.child('posts').forEach(function (snapshot) {
+        // POSTS
         var val = snapshot.val();
-
         // Creating a table and tr element using JSDOM
         var table = document.getElementById('mainTable');
         var tr = document.createElement('tr');
@@ -20,7 +21,7 @@ query.once("value")
         td4.appendChild(node4);
         // The first cell in the row grabbing poster name from database
         var td = document.createElement('td');
-        var node = document.createTextNode(name0.name);
+        var node = document.createTextNode(name.name);
         td.appendChild(node);
         // The second cell in the row grabbing the event name from database
         var td0 = document.createElement('td');
@@ -50,6 +51,8 @@ query.once("value")
         table.appendChild(tr);
 
         $(".clickable-row" + x).click(function () {
+          $.getScript( '../JS/geolocation.js');
+          $('#script').attr('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDaqqjObPbLckB-N709lZtUOBmhZhgajGA&callback=initMap');
           var divOneText = $('.HideOnClick').html();
           var divTwoText = $('.ShowOnClick').html();
           if (divOneText != '' && divTwoText != '') {
@@ -60,14 +63,14 @@ query.once("value")
 
           $('#descriptPara').html(val.description);
           $('#rolePara').html(val.role);
-          $('#userEmail').html(name0.email)
+          $('#userEmail').html(name.email)
           // Grabs number of applicants from database
           $('#applicants').html(val.applicants + ' people are applied in this opportunity.');
 
           // Gives applybuttons unique ids
           $('#applyButton').attr('id', 'applyButton' + x);
           $('#firstButton').click(function () {
-            $('#theLabel').html('To: ' + name0.email);
+            $('#theLabel').html('To: ' + name.email);
           })
 
           $('#applyButton' + x).click(function () {
@@ -85,15 +88,13 @@ query.once("value")
                   return (currentApplicants + 1);
                 });
 
-
                 var postsRef2 = database.ref('Users/' + user.uid + '/apply');
                 newPostsRef2 = postsRef2.push();
                 newPostsRef2.set({
-                  email: name0.email,
-                  postOwner: name0.name,
+                  email: name.email,
+                  postOwner: name.name,
                   event: val.eventName
                 })
-
 
                 window.setTimeout(function () {
                   window.open('volunteerpage.html', '_self');
@@ -113,6 +114,9 @@ query.once("value")
     });
   });
 
+
+
+
 function sortCategory(category) {
   $('#' + category).click(function () {
     x = 0;
@@ -121,12 +125,13 @@ function sortCategory(category) {
     var query1 = firebase.database().ref("Users").orderByKey();
     query1.once("value")
       .then(function (snapshot0) {
+        //console.log(snapshot0);
         snapshot0.forEach(function (snapshot1) {
           snapshot1.child('posts').forEach(function (snapshot2) {
             var value = snapshot2.val();
+           //console.log(value);
 
             if (value.category == category) {
-              console.log(category);
               // Creating a table and tr element using JSDOM
               var table = document.getElementById('mainTable');
               var tr = document.createElement('tr');
@@ -171,8 +176,8 @@ function sortCategory(category) {
                 if (divOneText != '' && divTwoText != '') {
                   $('.HideOnClick').html(divTwoText).css("display", "block");
                   $('.ShowOnClick').html(divOneText);
+                  $('#tableRow').html('');
                 }
-
 
                 $('#descriptPara').html(value.description);
                 $('#rolePara').html(value.role);
@@ -221,19 +226,16 @@ function sortCategory(category) {
                   window.open('volunteerpage.html', '_self');
                 });
               });
-
               x++;
-              console.log('success');
             }
           });
         });
       });
   });
 }
-
 sortCategory('Seniors');
 sortCategory('Disabilities');
 sortCategory('Sports');
-sortCategory('Education');
-sortCategory('Environment');
 sortCategory('YouthDevelopment');
+sortCategory('Environment');
+sortCategory('Education');

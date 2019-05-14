@@ -1,6 +1,15 @@
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
+}
 
+#map {
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#showMap{
+  text-align: center;
 }
 
 #navbarMain {
@@ -92,34 +101,11 @@ table td {
   width: auto;
 }
 
-/* #mainDiv1 {
-  background-image: url('../PICTURE/bg7.jpg');
-  background-size:100% 70%;
-  background-repeat:no-repeat;
-} */
-#mainDiv2 {
-  background-image: url('../PICTURE/bg8.png');
-  
-  background-repeat:no-repeat;
-  width:100%;
-  height:auto;
-  background-size:auto;
-  
-  background-attachment: fixed;
-  background-position: center;
-  
-}
-
 /* md */
 @media screen and (max-width: 991px) {
   #post1 p {
     font-size: 14pt;
     text-align: center;
-  }
-  
-  #mainDiv2 {
-    background-attachment: fixed;
-    background-position: center;
   }
 
   .navbar-header {
