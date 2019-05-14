@@ -318,7 +318,7 @@
 
 
           <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
-            <button type='submit' class="btn btn-info btn-lg">Save</button>
+            <button type='submit' id="buttonSave" class="btn btn-info btn-lg">Save</button>
             <button type='submit' id="buttonClose" class="btn btn-info btn-lg">Close</button>
           </div>
         </div>
@@ -347,12 +347,27 @@
   <script src='../JS/firebase.js'></script>
   <script>
       $(document).ready(function () {
+        $(document).on('click', '#buttonSave', function() {
+          changeButtonAction();
+        });
         $('#buttonClose').click(function () {
           window.open('portfolio.html', '_self');
         });
       });
-  </script>
+<<<<<<< HEAD
+    
+      function changeButtonAction() {
+        console.log("saved");
 
+        var changeBtn=document.getElementById("")
+      }
+
+    </script>
+=======
+  </script>
+>>>>>>> 0670816546bfd435cb69e2c994f97f8e3b7c8949
+
+    
 </body>
 
 </html>
