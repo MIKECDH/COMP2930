@@ -47,7 +47,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="#">Home</a></li>
+                        <li class="nav-item"><a href="index.html">Home</a></li>
                         <li class="nav-item"><a href="html/volunteerpage.html">Volunteering</a></li>
                         <li class="nav-item"><a href="html/organization.html">Organization</a></li>
                         <li class="nav-item"><a href="html/portfolio.html">Feature</a></li>
@@ -82,7 +82,7 @@
 
         <!-- First div-->
         <div class="imgwrapper" id="main1">
-            <div class="word"> Welcome to Volunteer studio
+            <div class="word"><p>Welcome to VolunteerStudio</p>
                     
             </div>
             <!-- <button id="newPostBtn" type="button" class="btn btn-warning btn-lg btn-secondary text-center" onclick="myFunction()">We connect you to your community</button> -->
@@ -327,129 +327,25 @@
             */
 
             document.getElementById('navBar').addEventListener("click", function () {
-            if (document.querySelector('#main1').style.zIndex != -1) {
+            if (document.querySelector('#main1').style.zIndex != -1050) {
                 let css = document.querySelector('#main1');
-                css.style.zIndex = -1;
+                css.style.zIndex = -1050;
                 console.log('sent to back');
                 console.log(document.querySelector('#main1').style.zIndex);
             } else {
                 let css = document.querySelector('#main1');
-                css.style.zIndex = 1;
+                css.style.zIndex = 1200;
                 console.log('send to front');
                 console.log(document.querySelector('#main1').style.zIndex);
             }
             });
 
 
-            /*
-                function for Easter Egg 1
-            */
-            function team() {
-            "use strict"
-
-            let key = [84, 69, 65, 77]
-            let ck = 0
-            let max = key.length
-
-            let team = function () {
-
-                var shock = document.createElement('div')
-                var img = new Image()
-                img.src = data
-                img.style.width = '1550px'
-                img.style.height = '400px'
-                img.style.transition = '11s all'
-                img.style.position = 'fixed'
-                img.style.left = '-1100px'
-                img.style.bottom = 'calc(-50% + 420px)'
-                img.style.zIndex = 999999
-
-                document.body.appendChild(img)
-
-                window.setTimeout(function () {
-                img.style.left = 'calc(100% + 500px)'
-                }, 50)
-
-                window.setTimeout(function () {
-                img.parentNode.removeChild(img)
-                }, 7300)
-
-            }
-
-            let record = function (e) {
-
-                if (e.which === key[ck]) {
-                ck++
-                } else {
-                ck = 0
-                }
-
-                if (ck >= max) {
-                team()
-                ck = 0
-                }
-
-            }
-
-            let init = function (data) {
-                document.addEventListener('keyup', record)
-            }
-
-            let data = 'animation.gif';
-
-            init(data)
-            }
-            team();
-
-            /*
-                function for Easter Egg 2
-            */
-            function roll() {
-            "use strict"
-
-            let key = [82, 79, 76, 76]
-            let ck = 0
-            let max = key.length
-
-            let roll = function () {
-
-                document.body.style.animation="roll 6s 1";
-            }
-
-            let record = function (e) {
-
-                if (e.which === key[ck]) {
-                ck++
-                } else {
-                ck = 0
-                }
-
-                if (ck >= max) {
-                roll()
-                ck = 0
-                }
-
-            }
-
-            let init = function () {
-                document.addEventListener('keyup', record)
-            }
-
-            init()
-            }
-            roll();
-
-
-
-
-
-
-            
-
         </script>
           <!--Link Firebase File-->
         <script src='JS/firebase.js'></script>
-
+          <!--Link to easter egg file-->
+        <script src='JS/easterEgg.js'></script>
     </body>
 
 </html>
