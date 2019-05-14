@@ -1,5 +1,6 @@
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
+
 }
 
 #navbarMain {
@@ -77,10 +78,22 @@ table td {
   width: auto;
 }
 
-#mainDiv {
-  background-image: url('../PICTURE/pic2.jpg');
+/* #mainDiv1 {
+  background-image: url('../PICTURE/bg7.jpg');
   background-size:100% 70%;
   background-repeat:no-repeat;
+} */
+#mainDiv2 {
+  background-image: url('../PICTURE/bg8.png');
+  
+  background-repeat:no-repeat;
+  width:100%;
+  height:auto;
+  background-size:auto;
+  
+  background-attachment: fixed;
+  background-position: center;
+  
 }
 
 /* md */
@@ -88,6 +101,11 @@ table td {
   #post1 p {
     font-size: 14pt;
     text-align: center;
+  }
+  
+  #mainDiv2 {
+    background-attachment: fixed;
+    background-position: center;
   }
 
   .navbar-header {

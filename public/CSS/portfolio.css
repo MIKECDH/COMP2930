@@ -8,9 +8,13 @@
 #mainContainer {
     position: relative;
     /* z-index: 0; */
-    background-image:url('../PICTURE/background44.jpg');
-    background-repeat:no-repeat;
-    background-size:cover;
+    background-image:url('../PICTURE/bg45.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height:1000px;
+    text-align:center;
 }
 .rate {
     float: left;
