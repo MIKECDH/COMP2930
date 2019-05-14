@@ -8,10 +8,10 @@ query.once("value")
     snapshot0.forEach(function (childSnapshot) {
       var name = childSnapshot.val();
       console.log(name);
-
+      
       childSnapshot.child('posts').forEach(function (snapshot) {
+        // POSTS
         var val = snapshot.val();
-
         // Creating a table and tr element using JSDOM
         var table = document.getElementById('mainTable');
         var tr = document.createElement('tr');
@@ -114,6 +114,9 @@ query.once("value")
     });
   });
 
+
+
+
 function sortCategory(category) {
   $('#' + category).click(function () {
     x = 0;
@@ -122,9 +125,11 @@ function sortCategory(category) {
     var query1 = firebase.database().ref("Users").orderByKey();
     query1.once("value")
       .then(function (snapshot0) {
+        //console.log(snapshot0);
         snapshot0.forEach(function (snapshot1) {
           snapshot1.child('posts').forEach(function (snapshot2) {
             var value = snapshot2.val();
+           //console.log(value);
 
             if (value.category == category) {
               // Creating a table and tr element using JSDOM
@@ -171,6 +176,7 @@ function sortCategory(category) {
                 if (divOneText != '' && divTwoText != '') {
                   $('.HideOnClick').html(divTwoText).css("display", "block");
                   $('.ShowOnClick').html(divOneText);
+                  $('#tableRow').html('');
                 }
 
                 $('#descriptPara').html(value.description);
@@ -227,10 +233,9 @@ function sortCategory(category) {
       });
   });
 }
-
 sortCategory('Seniors');
 sortCategory('Disabilities');
 sortCategory('Sports');
-sortCategory('Education');
-sortCategory('Environment');
 sortCategory('YouthDevelopment');
+sortCategory('Environment');
+sortCategory('Education');

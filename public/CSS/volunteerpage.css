@@ -26,26 +26,40 @@ table td {
   height: 80px;
 }
 
-#Logo {
-  margin-top: 5px;
-  height: 75px;
-  width: auto;
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: black;
+    font-weight: bold;
+    
+}
+.nav-item {
+  padding-left:10px;
+  padding-right:10px;
+  font-weight:400;
 }
 
 .navbar-nav li a {
-  line-height: 53px;
-  font-size: 1.1em;
+  font-size: 1.0em;
   letter-spacing: 2px;
-  background-color: #f8f8f8 !important;
 }
 
-.nav-item {
-  padding-left: 10px;
-  padding-right: 10px;
+#Logo {
+    margin-top: -20px;
+    height: 60px;
+    width: auto;
 }
 
-.navbar-toggle {
-  margin-top: 25px;
+/* jQuery Styles
+===================================*/
+.navbar-scroll {
+    background: #e7eaea;
+    padding: 0;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.6s;
+}
+.nav-dropdown-scroll {
+    background: #e7eaea;
+    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
 }
 
 #mainContainer {
