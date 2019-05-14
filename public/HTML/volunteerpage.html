@@ -105,8 +105,10 @@
             <button type="button" id="YouthDevelopment" class="btn btn-info">Youth Development</button>
             <button type="button" id="Environment" class="btn btn-info">Environment</button>
             <button type="button" id="Education" class="btn btn-info">Education</button>
-          </h2>
+            <button type="button" id="showMap" class="btn btn-info">Show Map</button>
 
+          </h2>
+          <button type="button" id="showMap" class="btn btn-info">Show Map</button>
 
           <!-- 고친부분 끝!!!-->
         </div>
@@ -247,13 +249,8 @@
           <!-- Map and Reviews -->
           <div class="thumbnail">
             <!-- <a href="googleMap.jpg" target="_blank"> -->
-            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
-            <div class="caption text-left">
-              <h4>Volunteer Evaluation:</h4>
-              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="rating">
-              <h4>Volunteer Reviews (00):</h4>
-              <p>hdfhwdfwoejpqendjoendoqiendowejnds<br>nadoianoidnfeonfoirfelrfnelrrnl.</p>
-            </div>
+            <div id='map'></div>
+            
             <!--</a>-->
           </div>
           <button type="button" id="backButton" class="btn btn-info">Back</button>
@@ -287,7 +284,9 @@
   <script src='../JS/firebase.js'></script>
   <!--Link Table Firebase File-->
   <script src='../JS/readFirebase.js'></script>
-
+  <!--Link Geolocation API-->
+  <!-- <script src='../JS/geolocation.js'></script> -->
+  <script id='script' aysnc defer></script>
 </body>
 
 </html>

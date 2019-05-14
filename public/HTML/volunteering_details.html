@@ -32,6 +32,13 @@
   <style>
     @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+    #map {
+      height: 300px;
+      width: 300px;
+      margin: 0 auto;
+    }
+
+
     #forimg{
       
       position: absolute;
@@ -212,7 +219,7 @@
           <!-- Map and Reviews -->
           <div class="thumbnail">
             <!-- <a href="googleMap.jpg" target="_blank"> -->
-            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+            <div id='map'></div>
             <div class="caption text-left">
               <h4>Volunteer Evaluation:</h4>
               <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="rating">
@@ -252,6 +259,10 @@
   
   <!--Link Firebase File-->
   <script src='../JS/firebase.js'></script>
+  <script src='../JS/geolocation.js'></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaqqjObPbLckB-N709lZtUOBmhZhgajGA&callback=initMap">
+  </script>
   <script>
       $(document).ready(function () {
         $('#buttonClose').click(function () {
