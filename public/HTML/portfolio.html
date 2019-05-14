@@ -13,9 +13,6 @@
   <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-  <!-- Index CSS -->
-  <link rel="stylesheet" type="text/css" href="../CSS/portfolio2.css">
-
   <!-- Portfolio CSS -->
   <link rel="stylesheet" type="text/css" href="../CSS/portfolio.css">
 
@@ -36,37 +33,35 @@
 </head>
 
 <body>
-
-  <!-- nav bar -->
-  <nav id="navbarMain" class="navbar navbar-default" style="height: 85px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" id="navBar" data-toggle="collapse" data-target="#myNavbar"
-          aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-left" href="#">
-          <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
-        </a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right" style="visibility: hidden">
-          <li class="active nav-item"><a href="../index.html">Home</a></li>
-          <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-          <li class="nav-item"><a href="organization.html">Organization</a></li>
-          <li class="nav-item"><a href="portfolio.html">Feature</a></li>
-          <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
-              <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          <li class="nav-item" id="logout2" style="display: none">
-            <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        <!-- Fixed Nav -->
+        <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">
+                      <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+                  </a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="nav-item"><a href="../index.html">Home</a></li>
+                      <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+                      <li class="nav-item"><a href="organization.html">Organization</a></li>
+                      <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+                      <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                          <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                      <li class="nav-item" id="logout2" style="display: none">
+                          <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
 
   <!-- Main Content -->
   <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
@@ -83,12 +78,11 @@
       </div>
 
     </div>
-  </div>
+  </div><br><br><br>
 
   <div id="mainContainer">
     <div class="container text-center">
-      <h2>My Portfolio</h2>
-      <hr><br>
+      <h2>My Portfolio</h2><hr><br>
       <div class="row">
 
 
@@ -349,15 +343,15 @@
     </script>
 
 
-    <!--Link Firebase File-->
-    <script src='../JS/firebase.js'></script>
-    <script>
+  <!--Link Firebase File-->
+  <script src='../JS/firebase.js'></script>
+  <script>
       $(document).ready(function () {
         $('#buttonClose').click(function () {
           window.open('portfolio.html', '_self');
         });
       });
-    </script>
+  </script>
 
 </body>
 

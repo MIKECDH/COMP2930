@@ -6,11 +6,6 @@ body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-#Logo {
-  margin-top: 5px;
-  height: 75px;
-  width: auto;
-}
 
 #para1 {
   font-size: 36pt;
@@ -51,20 +46,40 @@ body {
   background-color: grey;
 }
 
-.navbar-nav li a {
-  line-height: 53px;
-  font-size: 1.1em;
-  letter-spacing: 2px;
-  background-color: #f8f8f8 !important;
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: black;
+    font-weight: bold;
+    
 }
-
 .nav-item {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left:10px;
+  padding-right:10px;
+  font-weight:400;
 }
 
-.navbar-toggle {
-  margin-top: 25px;
+.navbar-nav li a {
+  font-size: 1.0em;
+  letter-spacing: 2px;
+}
+
+#Logo {
+    margin-top: -20px;
+    height: 60px;
+    width: auto;
+}
+
+/* jQuery Styles
+===================================*/
+.navbar-scroll {
+    background: #e7eaea;
+    padding: 0;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.6s;
+}
+.nav-dropdown-scroll {
+    background: #e7eaea;
+    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
 }
 
 .buttonMain {
@@ -142,7 +157,6 @@ body {
   .navbar-nav>li {
     float: none;
   }
-
   .navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -151,6 +165,7 @@ body {
   .collapse.in {
     display: block !important;
   }
+  
 }
 
 /* xs < 768 */
@@ -174,4 +189,5 @@ body {
     margin: 30px 0 0 0;
     font-size: 10pt;
   }
+
 }
