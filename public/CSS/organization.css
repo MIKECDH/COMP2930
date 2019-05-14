@@ -6,13 +6,11 @@ body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }  
 
-
-#para1 {
-  font-size: 36pt;
-  letter-spacing: 10px;
-  line-height: 120px;
-  font-weight: 500;
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 
 #posthelp {
   font-size: 50pt;
@@ -26,6 +24,12 @@ body {
   font-size: 12pt;
   font-weight: bold;
 
+}
+
+.navbar-nav li a {
+  font-size: 1em;
+  letter-spacing: 2px;
+  /* background-color: #f8f8f8 !important; */
 }
 
 #textmid {
@@ -49,7 +53,7 @@ body {
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
     color: black;
-    font-weight: bold;
+    font-weight: 400;
     
 }
 .nav-item {
