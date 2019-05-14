@@ -1,8 +1,8 @@
 body {
-  /*background-image: url(../PICTURE/leone-venter-469710-unsplash.jpg);*/
+  background-image: url(../PICTURE/plush-design-studio-483666-unsplash.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 85px);
+  background-size: 100%;
+  height: 100vh;
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
@@ -113,6 +113,11 @@ body {
 
 /* md */
 @media screen and (max-width: 991px) {
+  body {
+    background-attachment: fixed;
+    background-position: bottom center; 
+  }
+
   /*#para1 {
     font-size: 26pt;
     letter-spacing: 10px;
