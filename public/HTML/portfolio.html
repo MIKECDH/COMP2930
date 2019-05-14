@@ -360,8 +360,10 @@
 
 
           <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
+
             <button type='submit' class="btn btn-info btn-lg">Save</button>
             <button type='submit' id="buttonClose1" class="btn btn-info btn-lg">Close</button>
+
           </div>
         </div>
       </div>
@@ -392,11 +394,14 @@
   <!--close button-->
   <script>
       $(document).ready(function () {
+        $(document).on('click', '#buttonSave', function() {
+          changeButtonAction();
+        });
         $('#buttonClose').click(function () {
           window.open('portfolio.html', '_self');
         });
       });
-  </script>
+
   <!--close button-->
   <script>
       $(document).ready(function () {
@@ -406,6 +411,8 @@
       });
   </script>
 
+
+    
 </body>
 
 </html>
