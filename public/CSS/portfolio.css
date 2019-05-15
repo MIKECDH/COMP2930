@@ -12,6 +12,11 @@ body {
   background-size: cover;
 }
 
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 #mainContainer {
     position: relative;
 
@@ -68,6 +73,13 @@ body {
     font-weight: bold;
     
 }
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: black;
+    font-weight: 400;
+    
+}
 .nav-item {
   padding-left:10px;
   padding-right:10px;
@@ -84,9 +96,6 @@ body {
     height: 60px;
     width: auto;
 }
-#myScrollspy {
-  margin-bottom:0px;
-}
 
 /* jQuery Styles
 ===================================*/
@@ -99,8 +108,7 @@ body {
 .nav-dropdown-scroll {
     background: #e7eaea;
     box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
-}
-  
+} 
   #backgroundMain {
     position: relative;
     z-index: 0;
@@ -108,6 +116,47 @@ body {
   /* md */
   @media screen and (max-width: 991px) {
     
+
+    .navbar-header {
+      float: none;
+    }
+  
+    .navbar-left,
+    .navbar-right {
+      float: none !important;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  
+    .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+  
+    .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+    }
+  
+    .navbar-collapse.collapse {
+      display: none !important;
+    }
+  
+    .navbar-nav {
+      float: none !important;
+      margin-top: 7.5px;
+    }
+  
+    .navbar-nav>li {
+      float: none;
+    }
+    .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  
     .collapse.in {
       display: block !important;
     }
@@ -119,6 +168,14 @@ body {
     /*#mainContainer {
       display: none;
     }*/
+
+    #mytitle{
+      padding-top: 0px;
+    }
+
+    .row h4, .row p{
+      text-align: center;
+    }
   }
   
   /* lg */
