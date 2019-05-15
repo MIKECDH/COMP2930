@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image:url('../PICTURE/art-art-materials-blank-416346.jpg');
+  background-image:url('../PICTURE/bg00.jpg');
   background-repeat:no-repeat;
   height: auto;
   width: 100%;
@@ -16,9 +16,9 @@ body {
     position: relative;
 
 }
-#usercolor{
-    /* background-color: rgb(238,241,234); */
-}
+/* #usercolor{
+    background-color: rgb(238,241,234);
+} */
 
 .rate {
     float: left;
