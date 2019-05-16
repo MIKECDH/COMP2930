@@ -27,9 +27,9 @@ query.once("value")
         var td0 = document.createElement('td');
         var node0 = document.createTextNode(val.eventName);
         td0.appendChild(node0);
-        // The third cell in the row grabbing the event address from database
+        // The third cell in the row grabbing the city from database
         var td1 = document.createElement('td');
-        var node1 = document.createTextNode(val.address);
+        var node1 = document.createTextNode(val.city);
         td1.appendChild(node1);
         // The fourth cell in the row grabbing the date of the event from database
         var td2 = document.createElement('td');
@@ -147,9 +147,9 @@ function sortCategory(category) {
               var td0 = document.createElement('td');
               var node0 = document.createTextNode(value.eventName);
               td0.appendChild(node0);
-              // The third cell in the row grabbing the event address from database
+              // The third cell in the row grabbing the city from database
               var td1 = document.createElement('td');
-              var node1 = document.createTextNode(value.address);
+              var node1 = document.createTextNode(value.city);
               td1.appendChild(node1);
               // The fourth cell in the row grabbing the date of the event from database
               var td2 = document.createElement('td');
