@@ -1,13 +1,20 @@
 body {
+
   background-image: url(../PICTURE/bg3.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  height:800px;
-  text-align: center;
+  height: 800px;
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }  
+
+.navbar {
+  background: transparent;
+  border-bottom: none;
+  padding: 15px 0;
+  transition-duration: 0.6s;
+}
 
 .nav-item {
   padding-left: 10px;
@@ -62,12 +69,6 @@ body {
 .nav-item {
   padding-left:10px;
   padding-right:10px;
-  font-weight:400;
-}
-
-.navbar-nav li a {
-  font-size: 1.0em;
-  letter-spacing: 2px;
 }
 
 #Logo {
@@ -101,7 +102,6 @@ body {
 }
 
 #fullcontainer {
-  z-index: 0;
   position: relative;
 }
 
