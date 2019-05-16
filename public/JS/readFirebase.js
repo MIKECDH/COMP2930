@@ -17,9 +17,9 @@ query.once("value")
         var table = document.getElementById('mainTable');
         var tr = document.createElement('tr');
         // The first cell in the row grabbing poster name from database
-        var td4 = document.createElement('td');
-        var node4 = document.createTextNode(x);
-        td4.appendChild(node4);
+        // var td4 = document.createElement('td');
+        // var node4 = document.createTextNode(x);
+        // td4.appendChild(node4);
         // The first cell in the row grabbing poster name from database
         var td = document.createElement('td');
         var node = document.createTextNode(name.name);
@@ -28,26 +28,26 @@ query.once("value")
         var td0 = document.createElement('td');
         var node0 = document.createTextNode(val.eventName);
         td0.appendChild(node0);
-        // The third cell in the row grabbing the event address from database
+        // The third cell in the row grabbing the city from database
         var td1 = document.createElement('td');
-        var node1 = document.createTextNode(val.address);
+        var node1 = document.createTextNode(val.city);
         td1.appendChild(node1);
         // The fourth cell in the row grabbing the date of the event from database
         var td2 = document.createElement('td');
         var node2 = document.createTextNode(val.date);
         td2.appendChild(node2);
         // The fifth cell in the row grabbing the number of volunteers needed
-        var td3 = document.createElement('td');
-        var node3 = document.createTextNode(val.volunteers);
-        td3.appendChild(node3);
+        // var td3 = document.createElement('td');
+        // var node3 = document.createTextNode(val.volunteers);
+        // td3.appendChild(node3);
 
         // Appending the previous cells to tr
-        tr.appendChild(td4);
+        // tr.appendChild(td4);
         tr.appendChild(td);
         tr.appendChild(td0);
         tr.appendChild(td1);
         tr.appendChild(td2);
-        tr.appendChild(td3);
+        // tr.appendChild(td3);
         tr.className = 'clickable-row' + x;
         table.appendChild(tr);
 
@@ -63,10 +63,15 @@ query.once("value")
             $('.ShowOnClick').html(divOneText);
             $('#tableRow').html('');
           }
+          //
+          $('#buttonCategory').html(val.category);
+          //
 
           $('#descriptPara').html(val.description);
           $('#rolePara').html(val.role);
-          $('#userEmail').html(name.email)
+          $('#userEmail').html(name.email);
+          $('#theLocation').html(val.address);
+          $('#theNumber').html(val.volunteers);
           // Grabs number of applicants from database
           $('#applicants').html(val.applicants + ' people are applied in this opportunity.');
 
@@ -151,9 +156,9 @@ function sortCategory(category) {
               var td0 = document.createElement('td');
               var node0 = document.createTextNode(value.eventName);
               td0.appendChild(node0);
-              // The third cell in the row grabbing the event address from database
+              // The third cell in the row grabbing the city from database
               var td1 = document.createElement('td');
-              var node1 = document.createTextNode(value.address);
+              var node1 = document.createTextNode(value.city);
               td1.appendChild(node1);
               // The fourth cell in the row grabbing the date of the event from database
               var td2 = document.createElement('td');
@@ -182,17 +187,19 @@ function sortCategory(category) {
                   $('.ShowOnClick').html(divOneText);
                   $('#tableRow').html('');
                 }
-
+                $('#buttonCategory').html(value.category);
                 $('#descriptPara').html(value.description);
                 $('#rolePara').html(value.role);
-                $('#userEmail').html(snapshot1.email)
+                $('#userEmail').html(snapshot1.val().email);
+                $('#theLocation').html(value.address);
+                $('#theNumber').html(value.volunteers);
                 // Grabs number of applicants from database
                 $('#applicants').html(value.applicants + ' people are applied in this opportunity.');
                 // Gives applybuttons unique ids
                 $('#applyButton').attr('id', 'applyButton' + x);
 
                 $('#firstButton').click(function () {
-                  $('#theLabel').html('To: ' + snapshot1.email);
+                  $('#theLabel').html('To: ' + snapshot1.val().email);
                 })
 
                 $('#applyButton' + x).click(function () {

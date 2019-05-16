@@ -79,6 +79,7 @@
       </div>
 
     </div>
+
   </div><br><br><br>
 
   <div id="mainContainer">
@@ -87,7 +88,6 @@
       <div class="container-fluid">
 
         <!-- 고친부분 시작!!!-->
-        <br>
         <div class="col-sm-12 text-center" id="welcomeText">
           <h2>Volunteer Search for your community</h2><br>
         </div>
@@ -120,12 +120,12 @@
           <thead>
 
             <tr class="tableTitle" id="titleForTable">
-              <th>No.</th>
+              <!-- <th>No.</th> -->
               <th>Organizer</th>
               <th>Title</th>
               <th>Where</th>
               <th>When</th>
-              <th>Volunteers Needed</th>
+              <!-- <th>Volunteers Needed</th> -->
             </tr>
           </thead>
           <tbody id="mainTable">
@@ -187,13 +187,11 @@
         <!-- Volunteering Details -->
         <div class="col-sm-2"></div>
         <div class="col-sm-5">
-          <h1 class="text-left" id="postInfo">BCIT<br>
-            <h3 class="text-left"><span class="btn btn-info btn-md btn-secondary text-center">Sports</span>
-              <span class="btn btn-info btn-md btn-secondary text-center">Youth Development</span></h3>
 
           </h1><br>
           <div class="col-sm-11">
             <div class="row text-left" id="postInfo">
+
 
               <h3>Description</h3>
               <p id="descriptPara"></p><br>
@@ -202,7 +200,15 @@
               <p id="rolePara"></p><br>
 
               <h3>How To Apply</h3>
-              <p id="userEmail"></p>
+              <p id="userEmail"></p><br>
+
+              <h3>Address</h3>
+              <p id="theLocation"></p><br>
+
+              <h3>Number of Volunteer</h3>
+              <p id="theNumber"></p>
+
+
             </div>
           </div>
         </div>
@@ -211,11 +217,11 @@
 
         <!-- Buttons --> 
         <div class="col-sm-3"> <br>
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1" id="firstButton">
+          <button type="button" class="btn btn-" data-toggle="modal" data-target="#myModal1" id="firstButton">
             <span class="glyphicon glyphicon-envelope"></span> Apply</button>
 
-          <button type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-heart-empty"></span> Save</button>
+          <button type="button" class="btn btn-warning" id="backButton">
+            <span class="glyphicon glyphicon-log-out"></span> Back</button>
           <div><br></div>
 
           <!--apply pop out-->
@@ -248,11 +254,15 @@
           <!-- Map and Reviews -->
           <div class="thumbnail">
             <!-- <a href="googleMap.jpg" target="_blank"> -->
-            <div id='map'></div>
-            
+            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+            <div class="caption text-left">
+              <h4>Volunteer Evaluation:</h4>
+              <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="rating">
+              <h4>Volunteer Reviews (00):</h4>
+              <p>hdfhwdfwoejpqendjoendoqiendowejnds<br>nadoianoidnfeonfoirfelrfnelrrnl.</p>
+            </div>
             <!--</a>-->
           </div>
-          <button type="button" id="backButton" class="btn btn-info">Back</button>
         </div>
         <div class="col-sm-2"></div>
 
@@ -283,9 +293,7 @@
   <script src='../JS/firebase.js'></script>
   <!--Link Table Firebase File-->
   <script src='../JS/readFirebase.js'></script>
-  <!--Link Geolocation API-->
-  <!-- <script src='../JS/geolocation.js'></script> -->
-  <script id='script' aysnc defer></script>
+
 </body>
 
 </html>

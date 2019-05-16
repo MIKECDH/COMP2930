@@ -24,6 +24,7 @@
         // var name = getInputVal('name');
         var phone = getInputVal('phone');
         var address = getInputVal('address');
+        var city = getInputVal('city');
         // var email = getInputVal('email');
         var category = getInputVal('category').replace(/\s/g, '');
         console.log(getInputVal('category').replace(/\s/g, ''));
@@ -34,8 +35,8 @@
         var date = getInputVal('date');
         // var image = getInputVal('file1');
         console.log('grabbed data');
-        if (phone !="" && address !="" && eventName !="" && role !="" && category !="" && volunteers !="" && description !="" && date != ""){
-            saveMessage(phone, address, eventName, role, category, volunteers, description, date);
+        if (phone !="" && address !="" && city != "" && eventName !="" && role !="" && category !="" && volunteers !="" && description !="" && date != ""){
+            saveMessage(phone, address, city, eventName, role, category, volunteers, description, date);
             console.log('saved data');
             // Clear form
             document.getElementById('postForm').reset();
@@ -51,7 +52,7 @@
       }
       
       // Save message to firebase
-      function saveMessage(phone, address, eventName, role, category, volunteers, description, date){
+      function saveMessage(phone, address, city, eventName, role, category, volunteers, description, date){
         var newPostsRef = postsRef.push();
         newPostsRef.set({
           eventName: eventName,
@@ -59,6 +60,7 @@
           role: role,
           phone:phone,
           address: address,
+          city: city,
           volunteers: volunteers,
           description: description,
           applicants: 0,
@@ -67,4 +69,3 @@
     
         
       }
-    

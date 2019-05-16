@@ -15,8 +15,11 @@
               
           }
           .nav-item {
-              padding-left:10px;
-              padding-right:10px;
+
+              padding-left:6px;
+              padding-right:6px;
+              font-weight:400;
+
           }
 
           .navbar-nav li a {

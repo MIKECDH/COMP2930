@@ -32,6 +32,7 @@
 </head>
 
 <body>
+
   <!-- Fixed Nav -->
   <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
     <div class="container">
@@ -129,6 +130,15 @@
             <div class="col-sm-8 text-left" style="margin-bottom: 20px">
               <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}"
                 placeholder="Enter Work Location" style="margin-bottom:5px;" required />
+              <select class="form-control" id="city">
+                <option>Burnaby</option>
+                <option>Coquitlam</option>
+                <option>Delta</option>
+                <option>Langley</option>
+                <option>Richmond</option>
+                <option>Surrey</option>
+                <option>Vancouver</option>
+              </select>
             </div>
 
 
@@ -167,8 +177,8 @@
               <label for="name">Date</label>
             </div>
             <div class="col-sm-8 text-left" style="margin-bottom: 20px">
-              <input type="text" class="form-control" id="date" pattern="[A-Za-z]{8,15}"
-                placeholder="MMM DD, YYYY (ex. May 13, 2019)" required />
+              <input type="date" class="form-control" id="date" pattern="[A-Za-z]{8,15}"
+                placeholder="MM DD, YYYY (ex. May 13, 2019)" required />
             </div>
 
             <div class="col-sm-3 text-left" style="margin-bottom: 20px">
