@@ -116,12 +116,12 @@
           <thead>
 
             <tr class="tableTitle" id="titleForTable">
-              <th>No.</th>
+              <!-- <th>No.</th> -->
               <th>Organizer</th>
               <th>Title</th>
               <th>Where</th>
               <th>When</th>
-              <th>Volunteers Needed</th>
+              <!-- <th>Volunteers Needed</th> -->
             </tr>
           </thead>
           <tbody id="mainTable">
@@ -183,13 +183,14 @@
         <!-- Volunteering Details -->
         <div class="col-sm-2"></div>
         <div class="col-sm-5">
-          <h1 class="text-left">BCIT<br>
-            <h3 class="text-left"><span class="btn btn-info btn-md btn-secondary text-center">Sports</span>
-              <span class="btn btn-info btn-md btn-secondary text-center">Youth Development</span></h3>
+          <h1 class="text-left">BCIT
+            <h3 class="text-left"><span id="buttonCategory" class="btn btn-info btn-md btn-secondary text-center">Sports</span></h3>
+              
 
           </h1><br>
           <div class="col-sm-11">
             <div class="row text-left">
+
 
               <h3>Description</h3>
               <p id="descriptPara"></p><br>
@@ -198,7 +199,15 @@
               <p id="rolePara"></p><br>
 
               <h3>How To Apply</h3>
-              <p id="userEmail"></p>
+              <p id="userEmail"></p><br>
+
+              <h3>Address</h3>
+              <p id="theLocation"></p><br>
+
+              <h3>Number of Volunteer</h3>
+              <p id="theNumber"></p>
+
+
             </div>
           </div>
         </div>
@@ -207,11 +216,11 @@
 
         <!-- Buttons --> Î
         <div class="col-sm-3"> <br>
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1" id="firstButton">
+          <button type="button" class="btn btn-" data-toggle="modal" data-target="#myModal1" id="firstButton">
             <span class="glyphicon glyphicon-envelope"></span> Apply</button>
 
-          <button type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-heart-empty"></span> Save</button>
+          <button type="button" class="btn btn-warning" id="backButton">
+            <span class="glyphicon glyphicon-log-out"></span> Back</button>
           <div><br></div>
 
           <!--apply pop out-->
@@ -253,7 +262,6 @@
             </div>
             <!--</a>-->
           </div>
-          <button type="button" id="backButton" class="btn btn-info">Back</button>
         </div>
         <div class="col-sm-2"></div>
 
