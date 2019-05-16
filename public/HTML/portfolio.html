@@ -93,8 +93,9 @@
           <div class="thumbnail" id ="usercolor">
             <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
             <div class="caption">
-              <h3 class="text-left">Stella Kim</h3>
-              <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p>
+
+              <h3 id="nameUser" class="text-left">Stella Kim</h3>
+              <p id="descriptionUser" class="text-left"></p>
             </div>
             <button type="button" class="btn btn-info btn-md text-center btn-block" data-toggle="modal"
               data-target="#myModal2">Edit profile</button>
@@ -254,8 +255,8 @@
             <div class="col-sm-5">
               <h4 class="category"><span class="glyphicon glyphicon-user"></span> Name</h4>
             </div>
-            <div class="col-sm-5">
-              <input type="text" name="title" style="height: 30px;">
+            <div class="col-sm-3">
+              <input type="text" name="title" id="editName" style="height: 30px;">
             </div>
             <div class="col-sm-1"></div>
           </div>
@@ -267,16 +268,18 @@
               <h4 class="category"><span class="glyphicon glyphicon-pencil"></span> About me</h4>
             </div>
 
-            <div class="col-sm-5">
-              <textarea cols="22" rows="4"></textarea>
+
+            <div class="col-sm-3">
+              <textarea cols="25" rows="4" id="editDescription"style="margin-top:5px;"></textarea>
+
             </div>
             <div class="col-sm-1"></div>
           </div>
 
+          <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
+            <button type='submit' id="saveButton" class="btn btn-info btn-lg">Save</button>
+            <button type='submit' id="buttonClose" class="btn btn-info btn-lg">Close</button>
 
-          <div class="col-sm-12" id="buttonsize">
-            <button type='submit' class="btn btn-info btn-lg"><span id ="btc">Save</span></button>
-            <button type='submit' id="buttonClose" class="btn btn-info btn-lg"><span id ="btc">Close</span></button>
           </div>
         </div>
       </div>
@@ -352,6 +355,9 @@
 
   <!--Link Firebase File-->
   <script src='../JS/firebase.js'></script>
+
+  <script src="../JS/editProfile.js"></script>
+
   <!--close button-->
   <script>
       $(document).ready(function () {
