@@ -1,7 +1,6 @@
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-
-  background-image:url('../PICTURE/brick-wall-color-design-1985167.jpg');
+  background-image:url('../PICTURE/bg2.jpeg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -31,12 +30,11 @@ body {
   color:black;
 }
 
-#table1 {
-  margin: 40px auto 0 auto;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0);
-  width: 80%;
-  color:black;
+.table.table-hover {
+  margin: 0 30px 0 30px; 
+  width:80%; 
+  margin:0 auto; 
+  margin-top:40px;
 }
 
 #mainTable td {
@@ -65,13 +63,21 @@ table td {
 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
-    color:black;
+    color: black;
+    font-weight: bold;
+    
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: black;
     font-weight: 400;
     
 }
 .nav-item {
   padding-left:10px;
   padding-right:10px;
+  font-weight:400;
 }
 
 .navbar-nav li a {
