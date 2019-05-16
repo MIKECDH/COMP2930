@@ -1,71 +1,89 @@
       
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-image:url('../PICTURE/bg00.jpg');
-  background-repeat:no-repeat;
-  height: auto;
-  width: 100%;
-  background-size: cover;
+font-family: 'roboto', sans-serif;
+background-image:url('../PICTURE/bg00.jpg');
+background-repeat:no-repeat;
+background-size: cover;
+height: 100vh;
 }
 
 #mainContainer {
-    position: relative;
+  position: relative;
 
 }
 /* #usercolor{
-    background-color: rgb(238,241,234);
+  background-color: rgb(238,241,234);
 } */
 
 .rate {
-    float: left;
-    height: 46px;
-    padding: 0 10px;
+  float: left;
+  height: 46px;
+  padding: 0 10px;
 }
 .rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+  position:absolute;
+  top:-9999px;
 }
 .rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+  float:right;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:30px;
+  color:#ccc;
 }
 .rate:not(:checked) > label:before {
-    content: '★ ';
+  content: '★ ';
 }
 .rate > input:checked ~ label {
-    color: #ffc700;    
+  color: #ffc700;    
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+  color: #deb217;  
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
+  color: #c59b08;
 }
 
-body {
-    font-family: 'roboto', sans-serif;
-    /* background-image: url(../PICTURE/daniel-chekalov-614447-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; */
+#rsize{
+margin-top: 50px; 
   }
-  .navbar-default .navbar-brand,
+#modalHeight {
+height: 450px;
+}
+
+#insideRow {
+margin-top: 25px;
+}
+
+
+input[type=file] {
+text-align: center !important;
+margin-left: 50px;
+}
+
+.navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
     color: black;
     font-weight: bold;
+    
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+    color: black;
+    font-weight: 400;
     
 }
 .nav-item {
@@ -84,26 +102,6 @@ body {
     height: 60px;
     width: auto;
 }
-#myScrollspy {
-  margin-bottom:0px;
-}
-#rsize{
-  margin-top: 50px; 
-    }
-#modalHeight {
-  height: 450px;
-}
-
-#insideRow {
-  margin-top: 25px;
-}
-
-
-input[type=file] {
-  text-align: center !important;
-  margin-left: 50px;
-}
-
 
 /* jQuery Styles
 ===================================*/
@@ -116,96 +114,157 @@ input[type=file] {
 .nav-dropdown-scroll {
     background: #e7eaea;
     box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
+} 
+
+
+#backgroundMain {
+  position: relative;
 }
-  
-  #backgroundMain {
-    position: relative;
-  }
-  #buttonsize{
-    height: 80px; 
-    margin-top: 40px;
-  }
+#buttonsize{
+  height: 80px; 
+  margin-top: 40px;
+}
 
 
   /* md */
- /* @media screen and (max-width: 991px) {
+  @media screen and (max-width: 991px) {
     
+
+    .navbar-header {
+      float: none;
+    }
+  
+    .navbar-left,
+    .navbar-right {
+      float: none !important;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  
+    .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+  
+    .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+    }
+  
+    .navbar-collapse.collapse {
+      display: none !important;
+    }
+  
+    .navbar-nav {
+      float: none !important;
+      margin-top: 7.5px;
+    }
+  
+    .navbar-nav>li {
+      float: none;
+    }
+    .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  
     .collapse.in {
       display: block !important;
     }
+  }
+  
+
+/* xs < 768 */
+@media screen and (max-width: 767px) {
+  body {
+    height: initial;
+    }
+
+  /*#mainContainer {
+    display: none;
   }*/
+
+  input[type=file] {
+text-align: center !important;
+margin-left: 5px;
+}
+
+  #modalHeight {
+height: 600px;
+}
   
-  /* xs < 768 */
-  @media screen and (max-width: 767px) {
+  #btc{
+    font-size: 7pt;
+  }
+  #rsize{
+    font-size: 17pt;
+    letter-spacing: 1.2px;
+    /*line-height: 30px;*/
+    font-weight: 500;
+    margin-top: 0;
+    text-align: center;
+    padding:2px; 
+  }
+  #buttonsize{
+    padding:2px;
+  }
 
-    /*#mainContainer {
-      display: none;
-    }*/
+  #mytitle{
+    padding-top: 0px;
+  }
 
-    input[type=file] {
+  .row h4, .row p{
+    text-align: center;
+  }
+  .thumbnail{
+    width: 75%;
+    margin: 0 auto;
+  }
+  .caption h3{
+    text-align: center;
+  }
+}
+
+/* lg */
+@media screen and (min-width: 900px) {
+  #btc{
+    font-size: 15pt;
+  }
+  #rsize{
+    font-size: 25pt;
+    letter-spacing: 1.2px;
+    line-height: 30px;
+    font-weight: 500;
+    margin-top: 15px;
+    text-align: center; 
+  }
+   #picUpload{
   text-align: center !important;
-  margin-left: 5px;
 }
 
-    #modalHeight {
-  height: 600px;
 }
-    
-    #btc{
-      font-size: 7pt;
-    }
-    #rsize{
-      font-size: 17pt;
-      letter-spacing: 1.2px;
-      /*line-height: 30px;*/
-      font-weight: 500;
-      margin-top: 0;
-      text-align: center;
-      padding:2px; 
-    }
-    #buttonsize{
-      padding:2px;
-    }
+
+
+
+
+/* xlg */
+@media screen and (min-width: 1500px) {
+  #btc{
+    font-size: 15pt;
   }
-  
-  /* lg */
-  @media screen and (min-width: 900px) {
-    #btc{
-      font-size: 15pt;
-    }
-    #rsize{
-      font-size: 25pt;
-      letter-spacing: 1.2px;
-      line-height: 30px;
-      font-weight: 500;
-      margin-top: 15px;
-      text-align: center; 
-    }
-     #picUpload{
-    text-align: center !important;
+ #rsize{
+    font-size: 30pt;
+    letter-spacing: 1.7px;
+    line-height: 30px;
+    font-weight: 700;
+    margin-top: 15px;
+    text-align: center; 
   }
 
-  }
+  #picUpload{
+  text-align: center !important;
+}
 
- 
-  
-  
-  /* xlg */
-  @media screen and (min-width: 1500px) {
-    #btc{
-      font-size: 15pt;
-    }
-   #rsize{
-      font-size: 30pt;
-      letter-spacing: 1.7px;
-      line-height: 30px;
-      font-weight: 700;
-      margin-top: 15px;
-      text-align: center; 
-    }
-
-    #picUpload{
-    text-align: center !important;
-  }
-
-  }
+}
