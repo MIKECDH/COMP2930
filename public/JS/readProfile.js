@@ -150,12 +150,11 @@ firebase.auth().onAuthStateChanged(function (user) {
   // Submit form
   function submitForm(e){
     e.preventDefault();
-    var name = getInputVal('name');
     var description = getInputVal('description');
     console.log('grabbed data');
 
-    if (name !="" && description !=""){
-        saveMessage(name, description);
+    if (description !=""){
+        saveMessage(description);
         console.log('saved data');
         document.getElementById('saveprofile').reset();
     }else{
@@ -168,10 +167,8 @@ firebase.auth().onAuthStateChanged(function (user) {
   function saveMessage(name, description){
     var newPostsRef = postRef.push();
     newPostsRef.set({
-      name: name,
       description: description
     });
 
     
   }
-
