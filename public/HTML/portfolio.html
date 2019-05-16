@@ -83,7 +83,7 @@
 
   <div id="mainContainer">
     <div class="container text-center">
-      <h2 id="mytitle">My Portfolio</h2>
+      <h2>My Portfolio</h2>
       <div class="row">
 
 
@@ -94,8 +94,6 @@
             <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
             <div class="caption">
               <h3 class="text-left">Stella Kim</h3>
-              <h5 class="text-left"><span class="label label-default">Sports</span>
-                <span class="label label-default">Youth Development</span></h5><br>
               <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p>
             </div>
             <button type="button" class="btn btn-info btn-md text-center btn-block" data-toggle="modal"
@@ -109,7 +107,7 @@
         <!-- Organization Volunteering History -->
         <div class="col-sm-1"> </div>
         <div class="col-sm-6"><hr>
-          <h4 class="text-center" id="experiences">Volunteer Experiences</h4><hr>
+          <h4 class="text-center">Volunteer Experiences</h4><hr>
           <div class="col-sm-1"></div>
           <div class="col-sm-11">
 
@@ -117,24 +115,13 @@
 
               <!-- Trigger the modal with a button -->
               <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <h3>BCIT</h3><br>
+                <p>BCIT</p>
               </div>
               <div class="col-sm-9 text-left">
-                <h4>Role </h4><p> sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p>
-                <h4>Period </h4><p> Aug.2016 ~ Sep.2016</p>
-              </div>
-            </div>
-            <hr>
-
-            <div class="row">
-
-              <!-- Trigger the modal with a button -->
-              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <h3>BCIT</h3><br>
-              </div>
-              <div class="col-sm-9 text-left">
-                <h4>Role </h4><p> sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p>
-                <h4>Period </h4><p> Aug.2016 ~ Sep.2016</p>
+                <h4>Role </h4>
+                <p> sdofsodfjwsemfkfnwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p>
+                <h4>Period </h4>
+                <p> Aug.2016 ~ Sep.2016</p>
               </div>
             </div>
             <hr>
@@ -149,14 +136,15 @@
 
               <!-- Trigger the modal with a button -->
               <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <h3>BCIT</h3><br>
+                <p>BCIT</p>
               </div>
               <div class="col-sm-9 text-left">
-                <h4>Role </h4><p> sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p>
-                <h4>Period </h4><p> Aug.2016 ~ Sep.2016</p>
+                <h4>Role </h4>
+                <p> sdofsodfjwsemfkfnwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p>
+                <h4>Period </h4>
+                <p> Aug.2016 ~ Sep.2016</p>
               </div>
             </div>
-            <hr>
 
           </div>
         </div>
@@ -165,7 +153,7 @@
       <div class="container">
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
+          <div class="modal-dialog modal-lg">
 
             <!-- Modal content-->
             <div class="modal-content">
@@ -229,60 +217,66 @@
 
 
   <!--edit profile pop out-->
-  <div>
+  <!-- <div> -->
 
-    <div class="modal fade text-center" id="myModal2" role="dialog" style="margin:0px auto; width:40%;">
+    <div class="modal fade text-center" id="myModal2"  role="dialog-lg" style="margin:0px auto; width:50%;">
 
       <div class="modal-content">
         
-        <div class="container text-center" style="width:100%;">
-          
-          <h2 style="margin-top: 50px">Edit Profile</h2>
+        <div class="text-center" id="modalHeight">
+<!--           FIRST ROW -->
+          <!-- <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4">
+          <h2 id="rsize">Edit Profile</h2>
+          <hr>
+          </div>
+          <div class="col-sm-4"></div>
+          </div> -->
+          <h2 style="margin-top: 50px" id ="rsize">Edit Profile</h2>
           <hr>
 
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-              <h4 class="category" style="margin: 0"><span class="glyphicon glyphicon-picture"></span> Image</h4>
+<!--           //SECOND ROW IMAGE -->
+          <div class="row" id="insideRow">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
+              <h4 class="category" ><span class="glyphicon glyphicon-picture"></span> Image</h4>
             </div>
-            <div class="col-sm-3">
-              <div class="form-group row">
-                <div class="col-xs-4">
-                  <input type="file" class="form-control-file" id="file1">
-                </div>
-              </div>
+            <div class="col-sm-5" id="picUpload">      
+              <input type="file" id="file1">   
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
           </div>
 
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
+<!--           // THIRD ROW -->
+          <div class="row" id="insideRow">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
               <h4 class="category"><span class="glyphicon glyphicon-user"></span> Name</h4>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-5">
               <input type="text" name="title" style="height: 30px;">
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
           </div>
 
-          
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
+<!--           //FOURTH ROW -->
+          <div class="row" id="insideRow">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
               <h4 class="category"><span class="glyphicon glyphicon-pencil"></span> About me</h4>
             </div>
 
-            <div class="col-sm-3">
-              <textarea cols="25" rows="4" style="margin-top:5px;"></textarea>
+            <div class="col-sm-5">
+              <textarea cols="22" rows="4"></textarea>
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
           </div>
 
 
-          <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
-            <button type='submit' class="btn btn-info btn-lg">Save</button>
-            <button type='submit' id="buttonClose" class="btn btn-info btn-lg">Close</button>
+          <div class="col-sm-12" id="buttonsize">
+            <button type='submit' class="btn btn-info btn-lg"><span id ="btc">Save</span></button>
+            <button type='submit' id="buttonClose" class="btn btn-info btn-lg"><span id ="btc">Close</span></button>
           </div>
         </div>
       </div>
@@ -297,56 +291,56 @@
 
     <div>
 
-    <div class="modal fade text-center" id="myModal3" role="dialog" style="margin:0px auto; width:40%;">
+    <div class="modal fade text-center" id="myModal3"  role="dialog" style="margin:0px auto; width:50%;">
 
       <div class="modal-content">
         
-        <div class="container text-center" style="width:100%;">
+        <div class="text-center" id="modalHeight">
           
-          <h2 style="margin-top: 50px">Add Experience</h2>
+          <h2 style="margin-top: 50px" id ="rsize">Add Experience</h2>
           <hr>
 
-           <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
+           <div class="row" id="insideRow">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
               <h4 class="category"><span class="glyphicon glyphicon-briefcase"></span> Organization</h4>
               <h4>Individual</h4>
             </div>
-            <div class="col-sm-3">
-              <textarea cols="25" rows="4" style="margin-top:10px;"></textarea>
+            <div class="col-sm-5">
+              <textarea cols="22" rows="4" style="margin-top:10px;"></textarea>
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
             </div>
 
 
-            <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
+            <div class="row" id="insideRow">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
               <h4 class="category"><span class="glyphicon glyphicon-hand-up"></span> Role</h4>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-5">
               <input type="text" name="title" style="height: 30px; margin-top:10px;">
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
           </div>
 
 
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
+          <div class="row" id="insideRow">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-5">
               <h4 class="category"><span class="glyphicon glyphicon-calendar"></span> Date</h4>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-5">
               <input type="text" name="title" style="height: 30px; margin-top:10px;" placeholder="DD/MM/YYYY">
             </div>
-            <div class="col-sm-3"></div>
+            <div class="col-sm-1"></div>
           </div>
 
 
           <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
 
-            <button type='submit' class="btn btn-info btn-lg">Save</button>
-            <button type='submit' id="buttonClose1" class="btn btn-info btn-lg">Close</button>
+            <button type='submit' class="btn btn-info btn-lg"><span id ="btc">Save</span></button>
+            <button type='submit' id="buttonClose1" class="btn btn-info btn-lg"><span id ="btc">Close</span></button>
 
           </div>
         </div>
