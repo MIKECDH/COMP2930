@@ -353,23 +353,6 @@
 
 
 
-    <script>
-      document.getElementById('navBar').addEventListener("click", function () {
-        if (document.querySelector('#mainContainer').style.zIndex != -1) {
-          let css = document.querySelector('#mainContainer');
-          css.style.zIndex = -1;
-          console.log('sent to back');
-          console.log(document.querySelector('#mainContainer').style.zIndex);
-        } else {
-          let css = document.querySelector('#mainContainer');
-          css.style.zIndex = 1;
-          console.log('send to front');
-          console.log(document.querySelector('#mainContainer').style.zIndex);
-        }
-      });
-    </script>
-
-
   <!--Link Firebase File-->
   <script src='../JS/firebase.js'></script>
 
