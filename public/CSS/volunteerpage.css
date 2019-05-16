@@ -91,6 +91,10 @@ table td {
     width: auto;
 }
 
+h1, h3 {
+  text-align: left;
+}
+
 /* jQuery Styles
 ===================================*/
 .navbar-scroll {
@@ -241,6 +245,10 @@ table td {
 
   #mainTable td {
     font-size: 10pt;
+  }
+
+  h3, p, h1  {
+    text-align: center;
   }
 }
 

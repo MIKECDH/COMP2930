@@ -60,10 +60,15 @@ query.once("value")
             $('.ShowOnClick').html(divOneText);
             $('#tableRow').html('');
           }
+          //
+          $('#buttonCategory').html(val.category);
+          //
 
           $('#descriptPara').html(val.description);
           $('#rolePara').html(val.role);
-          $('#userEmail').html(name.email)
+          $('#userEmail').html(name.email);
+          $('#theLocation').html(val.city);
+          $('#theNumber').html(val.volunteers);
           // Grabs number of applicants from database
           $('#applicants').html(val.applicants + ' people are applied in this opportunity.');
 
