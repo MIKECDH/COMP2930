@@ -1,18 +1,19 @@
 body {
-<<<<<<< HEAD
-  /* background-image: url(../PICTURE/aerial-shot-beach-beautiful-2246950.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: auto;
-  width: 100%; */
-=======
   background-image: url(../PICTURE/organization_bg.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
-  height: 100vh;
->>>>>>> 9c2397baf4bce255312b86a020128c1b38511fa2
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  height: 800px;
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }  
+
+.navbar {
+  background: transparent;
+  border-bottom: none;
+  padding: 15px 0;
+  transition-duration: 0.6s;
+}
 
 .nav-item {
   padding-left: 10px;
@@ -61,18 +62,12 @@ body {
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
     color: black;
-    font-weight: bold;
+    font-weight: 400;
     
 }
 .nav-item {
   padding-left:10px;
   padding-right:10px;
-  font-weight:400;
-}
-
-.navbar-nav li a {
-  font-size: 1.0em;
-  letter-spacing: 2px;
 }
 
 #Logo {
@@ -106,7 +101,6 @@ body {
 }
 
 #fullcontainer {
-  z-index: 0;
   position: relative;
 }
 
