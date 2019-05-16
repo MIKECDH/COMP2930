@@ -1,6 +1,7 @@
 var x = 0;
 var postRef;
 var database = firebase.database();
+var tableRows = [];
 
 var query = firebase.database().ref("Users").orderByKey();
 query.once("value")
@@ -8,7 +9,7 @@ query.once("value")
     snapshot0.forEach(function (childSnapshot) {
       var name = childSnapshot.val();
       console.log(name);
-      
+
       childSnapshot.child('posts').forEach(function (snapshot) {
         // POSTS
         var val = snapshot.val();
@@ -50,8 +51,10 @@ query.once("value")
         tr.className = 'clickable-row' + x;
         table.appendChild(tr);
 
+
+
         $(".clickable-row" + x).click(function () {
-          $.getScript( '../JS/geolocation.js');
+          $.getScript('../JS/geolocation.js');
           $('#script').attr('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDaqqjObPbLckB-N709lZtUOBmhZhgajGA&callback=initMap');
           var divOneText = $('.HideOnClick').html();
           var divTwoText = $('.ShowOnClick').html();
@@ -75,6 +78,7 @@ query.once("value")
 
           $('#applyButton' + x).click(function () {
             firebase.auth().onAuthStateChanged((user) => {
+
               if (user) {
                 //console.log(user.email);
                 //post uid
@@ -129,7 +133,7 @@ function sortCategory(category) {
         snapshot0.forEach(function (snapshot1) {
           snapshot1.child('posts').forEach(function (snapshot2) {
             var value = snapshot2.val();
-           //console.log(value);
+            //console.log(value);
 
             if (value.category == category) {
               // Creating a table and tr element using JSDOM
