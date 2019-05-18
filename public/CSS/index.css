@@ -129,3 +129,15 @@
               from { transform: rotate(0deg) }
               to   { transform: rotate(360deg) }
           }
+
+
+        input {
+            display: none;
+        }
+        span#content, span#content1, span#content2, span#content3, span#content4 {
+            display: none;
+        }
+        input#show:checked ~ span#content, input#show1:checked ~ span#content1, input#show2:checked ~ span#content2,
+        input#show3:checked ~ span#content3, input#show4:checked ~ span#content4 {
+            display: block;
+        }
