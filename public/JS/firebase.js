@@ -102,22 +102,33 @@ function loadnavbar() {
       //User is logged in
       $("#login").hide();
       $("#login2").hide();
+      $('#navButton1').show();
+      $('#navButton2').show();
+      $('#navButton3').show();
       $("#logout").show();
       $("#logout2").show();
 
-
       var navb = document.getElementsByClassName("navbar-nav");
       navb[0].style.visibility = "visible";
+
+
     } else {
 
       $("#logout").hide();
       $("#logout2").hide();
+      $('#navButton1').hide();
+      $('#navButton2').hide();
+      $('#navButton3').hide();
       $("#login").show();
       $("#login2").show();
+      console.log('not logged in');
+
       var navb = document.getElementsByClassName("navbar-nav");
       navb[0].style.visibility = "visible";
+   
     }
   });
+  
 }
 // Called here because everypage has the navbar and needs this function to run
 loadnavbar();

@@ -1,5 +1,5 @@
-
 var database = firebase.database();
+var postRef;
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
@@ -62,7 +62,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             });
             setTimeout(function () {
               window.open('portfolio.html', '_self');
-            }, 1000);
+            }, 750);
           })
         }
       });
@@ -75,9 +75,8 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 //RYANS FUNCTIONS
 // Reference messages collection
-var database = firebase.database();
 //   var currentUser;
-var postRef;
+
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -85,7 +84,6 @@ firebase.auth().onAuthStateChanged((user) => {
     // console.log(currentUser);
     postsRef = database.ref('Users/' + user.uid);
     postsRef.on('value', function (snapshot) {
-      console.log(snapshot);
       console.log(snapshot.val());
       $('#nameUser').html(snapshot.val().name);
       $('#descriptionUser').html(snapshot.val().description);
@@ -112,11 +110,12 @@ function editForm(e) {
   console.log('grabbed data');
 
   if (editDescription != "") {
+    console.log('working?');
     saveMessage(editDescription);
     console.log('saved data');
     // Clear form
     // document.getElementById('postForm').reset();
-  } 
+  }
 }
 
 // Function to get get form values
@@ -133,45 +132,92 @@ function saveMessage(editDescription) {
   });
 }
 
-var database = firebase.database();
-var postRef; 
-var user;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    postsRef = database.ref('Users/' + user.uid);
+    postsRef.once('value').then(function (snapshot) {
+      snapshot.child('experience').forEach(function (snapshot1) {
 
-// Read current user name from firebase and display
-firebase.auth().onAuthStateChanged(function (user) {
-  console.log(user.displayName);
-  $('#name').html(user.displayName);
-  });
-    
-  
-  // Listen for form submit
-  document.getElementById('saveprofile').addEventListener('click', submitForm);
-  
-  // Submit form
-  function submitForm(e){
-    e.preventDefault();
-    var name = getInputVal('name');
-    var description = getInputVal('description');
-    console.log('grabbed data');
+        var mainDiv = document.getElementById('experienceVolunteer');
 
-    if (name !="" && description !=""){
-        saveMessage(name, description);
-        console.log('saved data');
-        document.getElementById('saveprofile').reset();
-    }else{
-        // alert("Please input all the blank!");
-    }
-  }
+        var divFirst = document.createElement('div');
+        var divSecond = document.createElement('div');
 
-  
-  // Save message to firebase
-  function saveMessage(name, description){
-    var newPostsRef = postRef.push();
-    newPostsRef.set({
-      name: name,
-      description: description
+        var roleTitle = document.createElement('h4');
+        var dateTitle = document.createElement('h4');
+
+        $(roleTitle).attr('class', 'text-left');
+        $(dateTitle).attr('class', 'text-left');
+
+        var roleNode = document.createTextNode('Roles');
+        var dateNode = document.createTextNode('Date');
+
+        var node = document.createElement('p');
+        var node1Text = document.createTextNode(snapshot1.val().eventName);
+        node.appendChild(node1Text);
+        var node2 = document.createElement('p');
+        var node2Text = document.createTextNode(snapshot1.val().role);
+        node2.appendChild(node2Text);
+        $(node2).attr('class','text-left');
+        // var node2 = document.createTextNode(snapshot1.val().role);
+        var node3 = document.createElement('p');
+        var node3Text = document.createTextNode(snapshot1.val().date);
+        node3.appendChild(node3Text);
+        $(node3).attr('class', 'text-left');
+        var bar=document.createElement('hr');
+
+
+        roleTitle.appendChild(roleNode);
+        dateTitle.appendChild(dateNode);
+
+        divFirst.appendChild(node);
+        // divFirst.appendChild(bar);
+        divSecond.appendChild(roleTitle);
+        divSecond.appendChild(node2);
+        divSecond.appendChild(dateTitle);
+        divSecond.appendChild(node3);
+        // divSecond.appendChild(bar);
+
+        $(divFirst).attr({'class': 'col-sm-4', "id": "firstDiv"});
+        $(divSecond).attr({'class': 'col-sm-8', "id": "secondDiv"});
+
+        mainDiv.appendChild(divFirst);
+        mainDiv.appendChild(divSecond);
+        // mainDiv.after(bar);
+
+      })
     });
 
-    
-  }
 
+
+    // postsRef.on('value', function (snapshot) {
+    //   console.log(snapshot.val());
+    //   $('#nameUser').html(snapshot.val().name);
+    //   $('#descriptionUser').html(snapshot.val().description);
+    // })
+    // console.log(user);
+
+  } else {
+    // User not logged in or has just logged out.
+  }
+});
+
+
+
+
+/* <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
+  <!— EVENT NAME —>
+  <p id="postOwnerName"></p>
+</div>
+
+<div class="col-sm-9 text-left">
+  <!— ROLE IN THE VOLUNTEER —>
+  <h4 id="roleTitle"> </h4>
+  <p id="roleDescription"></p>
+
+  <!— DATE FOR THE VOLUNTEER —>
+  <h4 id="volunteerDate"> </h4>
+  <p id="actualDate"> </p>
+</div>
+</div>
+<hr> */
