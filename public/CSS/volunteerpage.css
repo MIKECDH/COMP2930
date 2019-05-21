@@ -9,6 +9,11 @@ body {
   text-align: center;
 }
 
+#myModal1 {
+  margin: 0 auto;
+  width: 50%;
+}
+
 #welcomeText h2 {
   color:black;
 }
@@ -207,7 +212,6 @@ table td {
     text-align: center;
   }
 
-
   .labelBox {
     font-size: 14pt;
   }
@@ -223,6 +227,11 @@ table td {
   #post1 p {
     font-size: 12pt;
     text-align: center;
+  }
+
+  #myModal1 {
+    margin: 0 auto;
+    width: 90%;
   }
 
   .buttonMain {

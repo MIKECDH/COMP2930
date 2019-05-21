@@ -48,7 +48,7 @@
     
               .imgwrapper {
                   /* background-size:stretch; */
-                  background-image: url("../PICTURE/beautiful-cropland-daylight-1624560.jpg");
+                  background-image: url("../PICTURE/index_bg.jpg");
                   background-repeat: no-repeat;
                   background-attachment: scroll;
                   background-position: center center;
@@ -129,8 +129,7 @@
                   from { transform: rotate(0deg) }
                   to   { transform: rotate(360deg) }
               }
-    
-    
+                
             input {
                 display: none;
             }
@@ -141,3 +140,5 @@
             input#show3:checked ~ span#content3, input#show4:checked ~ span#content4 {
                 display: block;
             }
+    
+

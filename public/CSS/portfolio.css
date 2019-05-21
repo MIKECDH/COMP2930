@@ -3,6 +3,19 @@
   padding: 0;
 }
 
+#myModal2 {
+  margin: 0 auto;
+  width: 50%;
+}
+
+#fileUpload {
+  display: flex;
+}
+
+#fileUpload input {
+  justify-content: space-evenly;
+}
+
 body {
   font-family: 'roboto', sans-serif;
   background-image: url('../PICTURE/portfolio_bg.jpg');
@@ -80,10 +93,10 @@ body {
 }
 
 
-input[type=file] {
+/* input[type=file] {
   text-align: center !important;
   margin-left: 50px;
-}
+} */
 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
@@ -198,14 +211,24 @@ input[type=file] {
     height: initial;
   }
 
-  /*#mainContainer {
-    display: none;
-  }*/
-
-  input[type=file] {
-    text-align: center !important;
-    margin-left: 5px;
+  #myModal2 {
+    margin: 0 auto;
+    width: 75%;
   }
+
+  #fileUpload {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #fileUpload input {
+    margin-left: 75px;
+  }
+
+  /* #fileButton{
+    margin: auto;
+  } */
+
 
   #modalHeight {
     height: 450px;
