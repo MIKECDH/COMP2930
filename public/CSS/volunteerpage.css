@@ -1,6 +1,6 @@
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  background-image:url('../PICTURE/bg2.jpeg');
+  background-image:url('../PICTURE/volunteer_bg.jpeg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -148,6 +148,11 @@ table td {
 #post1 a img {
   height: 50px;
   width: auto;
+}
+
+#closeButton {
+  margin-right:10px;
+  margin-top:10px;
 }
 
 /* md */

@@ -2,8 +2,29 @@
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
-var map, infoWindow;
+var map, infoWindow,latitude,longitude, geocoder;
 
+var query = firebase.database().ref("Users").orderByKey();
+query.once("value")
+  .then(function (snapshot) {
+    snapshot.forEach(function (childSnapshot) {
+        childSnapshot.child('posts').forEach(function(posts){
+            console.log(posts.val().address);
+        })
+    });
+});
+
+geocoder = new google.maps.Geocoder();
+var add = "3700 willingdon ave";
+
+geocoder.geocode( { 'address': add}, function(results, status) {
+if (status == google.maps.GeocoderStatus.OK) {
+    latitude = results[0].geometry.location.lat();
+    longitude = results[0].geometry.location.long();
+    console.log(latitude);
+    console.log(longitude);    
+    } 
+}); 
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
