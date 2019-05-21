@@ -57,6 +57,19 @@ query.once("value")
             $('.HideOnClick').html(divTwoText).css("display", "block");
             $('.ShowOnClick').html(divOneText);
             $('#tableRow').html('');
+            (function (window, location) {
+              history.replaceState(null, document.title, location.pathname + "#!/stealingyourhistory");
+              history.pushState(null, document.title, location.pathname);
+
+              window.addEventListener("popstate", function () {
+                if (location.hash === "#!/stealingyourhistory") {
+                  history.replaceState(null, document.title, location.pathname);
+                  setTimeout(function () {
+                    location.replace("volunteerpage.html");
+                  }, 0);
+                }
+              }, false);
+            }(window, location));
           }
 
           $('#titlePara').html(val.eventName);
@@ -88,7 +101,10 @@ query.once("value")
               // img.setAttribute('class', 'img-circle');
               $(applicantImg).attr('class', 'profilePic');
               $(applicantImg).attr('src', snapshot3.val().userImage);
-              $(applicantImg).css({'width': '100px', 'height': '100px'});
+              $(applicantImg).css({
+                'width': '100px',
+                'height': '100px'
+              });
               var heading = document.createElement('h4');
               heading.setAttribute('class', 'text-center');
               var name2 = document.createTextNode(snapshot3.val().name);
@@ -118,7 +134,7 @@ query.once("value")
                   })
                   console.log("test");
                   $(button).html('Done').attr('disabled', true);
-                  
+
                 });
               } else {
                 console.log('you are not owner');
@@ -140,7 +156,7 @@ query.once("value")
           $('#firstButton').click(function () {
             $('#theLabel').html('To: ' + name.email);
           })
-          
+
           // Once the Apply Button is Hit
           $('#applyButton' + x).click(function () {
             firebase.auth().onAuthStateChanged((user) => {
@@ -157,7 +173,7 @@ query.once("value")
                 snapshot.child('people').forEach(function (snapshot3) {
                   postName = snapshot3.val();
 
-                // To Tell The Applier that they APPLIED
+                  // To Tell The Applier that they APPLIED
                   if (postName.email == user.email) {
                     alert('You have already applied to this post!');
                     applied = true;
@@ -174,9 +190,9 @@ query.once("value")
                     return (currentApplicants + 1);
                   });
 
-                // To Store The Person applying Image to the Applicants Modal
+                  // To Store The Person applying Image to the Applicants Modal
                   userProfilePic = database.ref('Users/' + user.uid);
-                  userProfilePic.once('value').then(function(snapshot4){
+                  userProfilePic.once('value').then(function (snapshot4) {
                     postsRef = database.ref('Users/' + childSnapshot.key + '/posts/' + snapshot.key + '/people');
                     newPostsRef = postsRef.push();
                     newPostsRef.set({
@@ -186,7 +202,7 @@ query.once("value")
                       userImage: snapshot4.val().userImage
                     })
                   })
-                // Set Time so that the window Refresh
+                  // Set Time so that the window Refresh
                   window.setTimeout(function () {
                     window.open('volunteerpage.html', '_self');
                   }, 500);
@@ -266,7 +282,7 @@ function sortCategory(category) {
                   $('.ShowOnClick').html(divOneText);
                   $('#tableRow').html('');
                 }
-                
+
                 $('#titlePara').html(value.eventName);
                 $('#buttonCategory').html(value.category);
                 $('#descriptPara').html(value.description);
