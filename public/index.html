@@ -42,15 +42,15 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img id="Logo" src="PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+                        <img id="Logo" src="PICTURE/index_logo.png" alt="">
                     </a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a href="index.html">Home</a></li>
-                        <li class="nav-item"><a href="html/volunteerpage.html">Volunteering</a></li>
-                        <li class="nav-item"><a href="html/organization.html">Organization</a></li>
-                        <li class="nav-item"><a href="html/portfolio.html">Feature</a></li>
+                        <li id="navButton1" class="nav-item"><a class="navButtonTotal" href="html/volunteerpage.html">Volunteering</a></li>
+                        <li id="navButton2" class="nav-item"><a  class="navButtonTotal" href="html/posting.html">Posting</a></li>
+                        <li id="navButton3" class="nav-item"><a  class="navButtonTotal" href="html/portfolio.html">My history</a></li>
                         <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
                             <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         <li class="nav-item" id="logout2" style="display: none">
@@ -103,17 +103,17 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <img src="picture/feature1.jpg" style="width:80%; height:70%">
+                    <img src="picture/index_feature1.jpg" style="width:80%; height:70%">
                     <h4 class="service-heading">STEP 1</h4>
                     <p class="text-muted" style="font-weight:bold;">Find the category for your volunteer works.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="picture/feature2.jpg" style="width:80%; height:70%">
+                    <img src="picture/index_feature2.jpg" style="width:80%; height:70%">
                     <h4 class="service-heading">STEP 2</h4>
                     <p class="text-muted" style="font-weight:bold;">Volunteer for your community!</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="picture/feature3.jpg" style="width:80%; height:70%">
+                    <img src="picture/index_feature3.jpg" style="width:80%; height:70%">
                     <h4 class="service-heading">STEP 3</h4>
                     <p class="text-muted" style="font-weight:bold;">Get certificates for your future!</p>
                 </div>
@@ -126,7 +126,7 @@
                 <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading text-uppercase">About Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Click for our story!</h3>
                 </div>
                 </div>
                 <div class="row">
@@ -134,7 +134,7 @@
                         <div class="team-member">
                             <label for="show">
                                 <span>
-                                    <img class="img-circle" src="picture/brandon.jpg"/>
+                                    <img class="img-circle" src="picture/index_brandon.jpg"/>
                                     <h4>Brandon Vu</h4>
                                     <p class="text-muted">Developer</p>
                                 </span>
@@ -160,7 +160,7 @@
                      <div class="team-member">
                         <label for="show2">
                             <span>
-                                <img class="img-circle" src="picture/yun.jpg"/>
+                                <img class="img-circle" src="picture/index_yun.jpg"/>
                                  <h4>Sangwook Yun</h4>
                                  <p class="text-muted">Developer</p>
                             </span>
@@ -176,7 +176,7 @@
                         <div class="team-member">
                             <label for="show3">
                                 <span>
-                                    <img class="img-circle" src="picture/eric.jpeg"/>
+                                    <img class="img-circle" src="picture/index_eric.jpeg"/>
                                     <h4>Eric Chang</h4>
                                     <p class="text-muted">Developer</p>
                                 </span>
@@ -189,7 +189,7 @@
                             <div class="team-member">
                                     <label for="show4">
                                         <span>
-                                            <img class="img-circle" src="picture/mike.jpg"/>
+                                            <img class="img-circle" src="picture/index_mike.jpg"/>
                                             <h4>Mike Choi</h4>
                                             <p class="text-muted">Developer</p>
                                         </span>
@@ -204,6 +204,7 @@
 
             </div>
         </section>
+       
 
 
 
@@ -252,21 +253,50 @@
                     });
                     } // End if
                 });
+            
 
             });
-
             // Change pos/background/padding/add shadow on nav when scroll event happens 
-            $(function(){
+            $(function (){
                 var navbar = $('.navbar');
                 
                 $(window).scroll(function(){
-                    if($(window).scrollTop() <= 60){
-                        navbar.removeClass('navbar-scroll');
-                    } else {
+                    if($(window).scrollTop() > 60){
                         navbar.addClass('navbar-scroll');
+                    } else {
+                        navbar.removeClass('navbar-scroll');
                     }
                 });
             });
+
+            $(function() {
+                
+                var widebar=$('.navbar');
+                var windowWidth=$(window).width();
+                // console.log(windowWidth);
+                $(window).resize(function() {
+
+                    windowWidth=$(window).width();
+                    // console.log(windowWidth);
+                    if(windowWidth <=768) {
+                        widebar.addClass('navbar-scroll');
+                        // console.log('windowwidth: '+windowWidth);
+                    }else {
+                        widebar.removeClass('navbar-scroll');
+                        // $(window).scroll(function(){
+                        //     if($(window).scrollTop() > 60){
+                        //         console.log('windowscroll: '+$(window).scrollTop());
+                        //         navbar.addClass('navbar-scroll');
+                        //     } else {
+                        //         console.log('windowscroll: '+$(window).scrollTop());
+                        //         widebar.removeClass('navbar-scroll');
+                        //     }
+                    // });
+                }
+            });
+        });
+
+
 
             /*
             function for firebase Login and Logout 
