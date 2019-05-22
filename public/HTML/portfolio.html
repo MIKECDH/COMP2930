@@ -1,409 +1,149 @@
 <!Doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- Portfolio CSS -->
+    <link rel="stylesheet" type="text/css" href="../CSS/portfolio.css">
+    <!-- Firebase login UI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <!-- Firebase CSS -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <!-- Font Style -->
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+    </style>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <!-- Portfolio CSS -->
-  <link rel="stylesheet" type="text/css" href="../CSS/portfolio.css">
-
-  <!-- Firebase login UI -->
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
-
-  <!-- Firebase CSS -->
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-  <!-- Font Style -->
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
-  </style>
-
-  
-</head>
-
-<body>
-        <!-- Fixed Nav -->
-        <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
-          <div class="container">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#">
-                      <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
-                  </a>
-              </div>
-              <div id="navbar" class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav navbar-right">
-                      <li class="nav-item"><a href="../index.html">Home</a></li>
-                      <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-                      <li class="nav-item"><a href="organization.html">Organization</a></li>
-                      <li class="nav-item"><a href="portfolio.html">Feature</a></li>
-                      <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
-                          <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                      <li class="nav-item" id="logout2" style="display: none">
-                          <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>
-
-  <!-- Main Content -->
-  <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
-
-    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-
-      <div class="modal-content" style>
-
-        <div class="modal-body">
-          <div id="firebaseui-auth-container"></div>
-
-          <div id="loader">Loading...</div>
-        </div>
-      </div>
-
-    </div>
-  </div><br><br><br>
-
-  <div id="mainContainer">
-    <div class="container text-center">
-      <h2>My Portfolio</h2>
-      <div class="row">
-
-
-        <!-- User Profile -->
-        <div class="col-sm-1"></div>
-        <div class="col-sm-3"><br>
-          <div class="thumbnail" id ="usercolor">
-            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
-            <div class="caption">
-              <h3 class="text-left">Stella Kim</h3>
-              <h5 class="text-left"><span class="label label-default">Sports</span>
-                <span class="label label-default">Youth Development</span></h5><br>
-              <p class="text-left">adfnajkfawknkrenfaksd<br>fowiefwnwjnflwmlks<br>sndfwefjwoiejfw</p>
-            </div>
-            <button type="button" class="btn btn-info btn-md text-center btn-block" data-toggle="modal"
-              data-target="#myModal2">Edit profile</button>
-            <button type="button" class="btn btn-info btn-md text-center btn-block" data-toggle="modal"
-              data-target="#myModal3">Add Experience</button>
-          </div><br><br>
-        </div>
-
-
-        <!-- Organization Volunteering History -->
-        <div class="col-sm-1"> </div>
-        <div class="col-sm-6">
-          <h4 class="text-left">Volunteer Experiences</h4><br>
-          <div class="col-sm-1"></div>
-          <div class="col-sm-11">
-
-            <div class="row">
-
-              <!-- Trigger the modal with a button -->
-              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
-                <p>BCIT</p>
-              </div>
-              <div class="col-sm-2 text-left">
-                <h4>Role</h4><br>
-                <h4>Period</h4>
-              </div>
-              <div class="col-sm-7 text-left">
-                <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
-                <p>Aug.2016 ~ Sep.2016</p>
-              </div>
-            </div>
-            <hr>
-
-            <div class="row">
-
-              <!-- Trigger the modal with a button -->
-              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
-                <p>BCIT</p>
-              </div>
-
-              <div class="col-sm-2 text-left">
-                <h4>Role</h4><br>
-                <h4>Period</h4>
-              </div>
-              <div class="col-sm-7 text-left">
-                <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
-                <p>Aug.2016 ~ Sep.2016</p>
-              </div>
-            </div>
-            <hr>
-          
-
-          <!-- Personal Volunteering History -->
-          
-          <!-- <div class="col-sm-1"></div>
-          <div class="col-sm-11"> -->
-
-            <div class="row">
-
-              <!-- Trigger the modal with a button -->
-              <div class="col-sm-3" data-toggle="modal" data-target="#myModal"><br>
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image"><br>
-                <p>BCIT</p>
-              </div>
-
-              <div class="col-sm-2 text-left">
-                <h4>Role</h4><br>
-                <h4>Period</h4>
-              </div>
-              <div class="col-sm-7 text-left">
-                <p>sdofsodfjwsemfkf nwjknfrwewjdw<br>nfhoewhfnoifonfiosnwfeoenfos</p><br>
-                <p>Aug.2016 ~ Sep.2016</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
+  <body>
+    <!-- Fixed Nav bar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
       <div class="container">
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+            aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img id="Logo" src="../PICTURE/index_logo.png" alt="">
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item"><a href="../index.html">Home</a></li>
+            <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+            <li class="nav-item"><a href="posting.html">Posting</a></li>
+            <li class="nav-item"><a href="portfolio.html">My History</a></li>
+            <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li class="nav-item" id="logout2" style="display: none">
+              <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                <h4 class="modal-title">Review and Rate <span class="glyphicon glyphicon-pencil"></span></h4>
-
-              </div>
-
-
-              <div class="modal-body">
-                <div class="col-xs-5">
-                  <img alt="profile" src="https://placehold.it/150x80?text=IMAGE" width="200" height="200"
-                    style="border-radius: 10px" class="img-responsive">
-                  <br>
-                  <p>Organization</p>
-                </div>
-
-                <div class="col-xs-7">
-                  <label for="Textarea" id="thelabel">Description:</label>
-                  <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
-
-                </div>
-
-
-                <div class="rate">
-
-                  <p>Rating:</p>
-                  <input type="radio" id="star5" name="rate" value="5" />
-                  <label for="star5" title="text">5 stars</label>
-                  <input type="radio" id="star4" name="rate" value="4" />
-                  <label for="star4" title="text">4 stars</label>
-                  <input type="radio" id="star3" name="rate" value="3" />
-                  <label for="star3" title="text">3 stars</label>
-                  <input type="radio" id="star2" name="rate" value="2" />
-                  <label for="star2" title="text">2 stars</label>
-                  <input type="radio" id="star1" name="rate" value="1" />
-                  <label for="star1" title="text">1 star</label>
-                </div>
-
-                <div class="col-sm-2"></div>
-
-                <div class="modal-footer">
-                  <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
+    <!-- Modal for user log in -->
+    <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content" style>
+          <div class="modal-body">
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
           </div>
         </div>
       </div>
-    </div><br>
+    </div><br><br><br>
 
-  </div>
+    <!-- First Section of portfolio page : portfolio -->
+    <div id="mainContainer">
+      <div class="container text-center">
+        <h2>My Portfolio</h2>
+        <div class="row">
+          <!-- Edit User Profile -->
+          <div class="col-sm-1"></div>
+          <div class="col-sm-3"><br>
+            <div class="thumbnail" id="usercolor">
+              <img src="" id="userImage" class="img-responsive" alt="Image" style="width:100%">
+              <div class="caption">
+                <h3 id="nameUser" class="text-left"></h3>
+                <p id="descriptionUser" class="text-left"></p>
+              </div>
+              <button type="button" class="btn btn-warning btn-md text-center btn-block" data-toggle="modal"
+                data-target="#myModal2">Edit profile</button>
+            </div><br><br>
+          </div>
 
-
-
-
-  <!--edit profile pop out-->
-  <div>
-
-    <div class="modal fade text-center" id="myModal2" role="dialog" style="margin:0px auto; width:40%;">
-
-      <div class="modal-content">
-        
-        <div class="container text-center" style="width:100%;">
-          
-          <h2 style="margin-top: 50px">Edit Profile</h2>
-          <hr>
-
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-              <h4 class="category" style="margin: 0"><span class="glyphicon glyphicon-picture"></span> Image</h4>
-            </div>
-            <div class="col-sm-3">
-              <div class="form-group row">
-                <div class="col-xs-4">
-                  <input type="file" class="form-control-file" id="file1">
-                </div>
+          <!-- Organization Volunteering History -->
+          <div class="col-sm-1"> </div>
+          <div class="col-sm-6">
+            <hr>
+            <h4 class="text-center">Volunteer Experiences</h4>
+            <hr>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11">
+              <div id="experienceVolunteer" class="row">
               </div>
             </div>
-            <div class="col-sm-3"></div>
           </div>
+        </div><br>
+      </div>
 
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-              <h4 class="category"><span class="glyphicon glyphicon-user"></span> Name</h4>
+      <!--edit profile pop out-->
+      <div class="modal fade text-center" id="myModal2" role="dialog-lg">
+        <div class="modal-content">
+          <div class="text-center" id="modalHeight">
+            <h2 style="margin-top: 50px" id="rsize">Edit Profile</h2>
+            <hr>
+            <!--button for image change -->
+            <div class="row" id="insideRow">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h4 class="category"><span class="glyphicon glyphicon-picture"></span> Image</h4>
+              </div>
+              <div class="col-sm-5" id="picUpload">
+                <div id="fileUpload">
+                    <input type="file" id="fileButton">
+                </div>
+              </div>
+              <div class="col-sm-1"></div>
             </div>
-            <div class="col-sm-3">
-              <input type="text" name="title" style="height: 30px;">
+            <!--textarea for about me -->
+            <div class="row" id="insideRow">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-5">
+                <h4 class="category"><span class="glyphicon glyphicon-pencil"></span> About me</h4>
+              </div>
+              <div class="col-sm-3">
+                <textarea cols="25" rows="4" id="editDescription" style="margin-top:5px;"></textarea>
+              </div>
+              <div class="col-sm-1"></div>
             </div>
-            <div class="col-sm-3"></div>
-          </div>
-
-          
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-              <h4 class="category"><span class="glyphicon glyphicon-pencil"></span> About me</h4>
+            <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
+              <button type='submit' value="push" id="saveButton" class="btn btn-warning btn-lg">Save</button>
+              <button type='submit' id="buttonClose" class="btn btn-warning btn-lg">Close</button>
             </div>
-
-            <div class="col-sm-3">
-              <textarea cols="25" rows="4" style="margin-top:5px;"></textarea>
-            </div>
-            <div class="col-sm-3"></div>
-          </div>
-
-
-          <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
-            <button type='submit' class="btn btn-info btn-lg">Save</button>
-            <button type='submit' id="buttonClose" class="btn btn-info btn-lg">Close</button>
           </div>
         </div>
       </div>
     </div>
-    </div>
 
-
-
-
-
-    <!--add experience pop out-->
-
-    <div>
-
-    <div class="modal fade text-center" id="myModal3" role="dialog" style="margin:0px auto; width:40%;">
-
-      <div class="modal-content">
-        
-        <div class="container text-center" style="width:100%;">
-          
-          <h2 style="margin-top: 50px">Add Experience</h2>
-          <hr>
-
-           <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-              <h4 class="category"><span class="glyphicon glyphicon-briefcase"></span> Organization</h4>
-              <h4>Individual</h4>
-            </div>
-            <div class="col-sm-3">
-              <textarea cols="25" rows="4" style="margin-top:10px;"></textarea>
-            </div>
-            <div class="col-sm-3"></div>
-            </div>
-
-
-            <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-              <h4 class="category"><span class="glyphicon glyphicon-hand-up"></span> Role</h4>
-            </div>
-            <div class="col-sm-3">
-              <input type="text" name="title" style="height: 30px; margin-top:10px;">
-            </div>
-            <div class="col-sm-3"></div>
-          </div>
-
-
-          <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4">
-              <h4 class="category"><span class="glyphicon glyphicon-calendar"></span> Date</h4>
-            </div>
-            <div class="col-sm-3">
-              <input type="text" name="title" style="height: 30px; margin-top:10px;" placeholder="DD/MM/YYYY">
-            </div>
-            <div class="col-sm-3"></div>
-          </div>
-
-
-          <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
-
-            <button type='submit' class="btn btn-info btn-lg">Save</button>
-            <button type='submit' id="buttonClose1" class="btn btn-info btn-lg">Close</button>
-
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-
-
-
-    <script>
-      document.getElementById('navBar').addEventListener("click", function () {
-        if (document.querySelector('#mainContainer').style.zIndex != -1) {
-          let css = document.querySelector('#mainContainer');
-          css.style.zIndex = -1;
-          console.log('sent to back');
-          console.log(document.querySelector('#mainContainer').style.zIndex);
-        } else {
-          let css = document.querySelector('#mainContainer');
-          css.style.zIndex = 1;
-          console.log('send to front');
-          console.log(document.querySelector('#mainContainer').style.zIndex);
-        }
-      });
-    </script>
-
-
-  <!--Link Firebase File-->
-  <script src='../JS/firebase.js'></script>
-  <!--close button-->
-  <script>
-      $(document).ready(function () {
-        $(document).on('click', '#buttonSave', function() {
-          changeButtonAction();
-        });
-        $('#buttonClose').click(function () {
-          window.open('portfolio.html', '_self');
-        });
-      });
-  </script>
-
-    
-</body>
+    <!-- Link Firebase File -->
+    <script src='../JS/firebase.js'></script>
+    <!-- Link readProfile File -->
+    <script src="../JS/readProfile.js"></script>
+  </body>
 
 </html>

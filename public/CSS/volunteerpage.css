@@ -1,10 +1,57 @@
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  background-image:url('../PICTURE/blank-clean-color-889087.jpg');
-  background-repeat:no-repeat;
-  height: auto;
-  width: 100%;
+  background-image:url('../PICTURE/volunteer_bg.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
   background-size: cover;
+  height:800px;
+  text-align: center;
+}
+
+#applicantPortfolio {
+  display: none;
+  position:relative;
+  margin-top: 75px;
+}
+
+#gMap {
+  display:none;
+  height: 800px;
+  width:800px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#mainContainer {
+  position: relative;
+  margin-top: 50px;
+}
+
+#myModal1 {
+  margin: 0 auto;
+  width: 50%;
+}
+
+#welcomeText h2 {
+  color:black;
+}
+
+#applicants {
+  text-decoration: none;
+  color:black;
+}
+
+.table.table-hover {
+  margin: 0 30px 0 30px; 
+  width:80%; 
+  margin:0 auto; 
+  margin-top:40px;
+}
+
+#mainTable td {
+  font-size: 12pt;
+  text-align: center;
 }
 
 #map {
@@ -13,30 +60,34 @@ body {
   margin: 0 auto;
 }
 
-#showMap{
-  text-align: center;
-}
-
-#navbarMain {
-  margin: 0;
-  padding: 0;
-}
-
 .tableTitle th {
-  background-color: #E4EFF9;
-  text-align: left;
+  text-align: center;
+  font-size: 14pt;
 }
 
 table td {
-  height: 80px;
+  height: 70px;
 }
 
-.navbar-default .navbar-brand,
-.navbar-default .navbar-nav>li>a {
-    color: black;
-    font-weight: 400;
-    
+
+/* Navbar Styles Start */
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
 }
+
+.navbar-nav li a {
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+
+.navbar-default .navbar-brand, 
+.navbar-default .navbar-nav>li>a {
+  color: black;
+  font-weight: 400;
+}
+
 .nav-item {
   padding-left:10px;
   padding-right:10px;
@@ -49,163 +100,116 @@ table td {
 }
 
 #Logo {
-    margin-top: -20px;
-    height: 60px;
-    width: auto;
+  margin-top: -20px;
+  height: 60px;
+  width: auto;
 }
 
-/* jQuery Styles
-===================================*/
+/* jQuery Styles */
 .navbar-scroll {
-    background: #e7eaea;
-    padding: 0;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
-    transition-duration: 0.6s;
+  background: #e7eaea;
+  padding: 0;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.6s;
 }
+
 .nav-dropdown-scroll {
-    background: #e7eaea;
-    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
+  background: #e7eaea;
+  box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
 }
-
-#mainContainer {
-  position: relative;
-  margin-top: 50px;
-}
-
-#searchbar {
-  margin-top: 30px;
-}
+/* Navbar Styles End */
 
 #category {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.labelBox {
-  margin: 0;
+#closeButton {
+  margin-right:10px;
+  margin-top:10px;
 }
 
-#post1 {
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  margin: 30px 5px 0 5px;
-  height: 120px;
-  background-color: white;
-  border-radius: 0;
-}
-
-#post1 p {
-  margin: 0 5px 0 5px;
-  font-size: 18pt;
-}
-
-#post1 a img {
-  height: 50px;
-  width: auto;
-}
-
-/* md */
+/* On screens that are 991px or less */
 @media screen and (max-width: 991px) {
-  #post1 p {
-    font-size: 14pt;
-    text-align: center;
+
+  #gMap {
+    display:none;
+    height: 600px;
+    width:600px;
+    margin: 0 auto;
+    margin-top: 20px;
   }
 
   .navbar-header {
     float: none;
   }
-
+  
   .navbar-left,
   .navbar-right {
     float: none !important;
   }
-
+  
   .navbar-toggle {
     display: block;
   }
-
+  
   .navbar-collapse {
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-
+  
   .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
   }
-
+  
   .navbar-collapse.collapse {
     display: none !important;
   }
-
+  
   .navbar-nav {
     float: none !important;
     margin-top: 7.5px;
   }
-
+  
   .navbar-nav>li {
     float: none;
   }
-
+  
   .navbar-nav>li>a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-
+  
   .collapse.in {
     display: block !important;
   }
 
-  .labelBox {
-    font-size: 14pt;
+  #mainTable td {
+    font-size: 11pt;
   }
 }
 
-/* xs < 768 */
+/* On screens that are 767px or less */
 @media screen and (max-width: 767px) {
-  #post1 p {
-    font-size: 12pt;
-    text-align: center;
+  #gMap {
+    display:none;
+    height: 450px;
+    width:450px;
+    margin: 0 auto;
+    margin-top: 20px;
   }
 
-  .buttonMain {
-    display: flex;
-    justify-content: space-evenly;
+  #myModal1 {
+    margin: 0 auto;
+    width: 90%;
   }
 
-  .buttonMain button {
-    background-color: whitesmoke;
-    margin: 30px 0 0 0;
+  .tableTitle th {
+    font-size: 13pt;
+  }
+
+  #mainTable td {
     font-size: 10pt;
-  }
-
-  .labelBox {
-    font-size: 12pt;
-  }
-}
-
-/* lg */
-@media screen and (min-width: 991px) {
-  #post1 p {
-    font-size: 16pt;
-    text-align: center;
-  }
-
-  .labelBox {
-    font-size: 14pt;
-  }
-}
-
-/* xlg */
-@media screen and (min-width: 1200px) {
-  #post1 p {
-    font-size: 18pt;
-    text-align: center;
-  }
-
-  .labelBox {
-    font-size: 16pt;
   }
 }

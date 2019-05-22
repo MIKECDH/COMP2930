@@ -1,351 +1,225 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
-        
-        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-                
-        <!-- Portfolio CSS -->
-        <link rel="stylesheet" type="text/css" href="CSS/index.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- Font Style -->
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <!-- Portfolio CSS -->
+    <link rel="stylesheet" type="text/css" href="CSS/index.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- Firebase login UI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <!-- Firebase CSS -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+</head>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        
-        <!-- Firebase login UI -->
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-
-        <!-- Firebase -->
-        <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
-
-        <!-- Firebase CSS -->
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-
-    </head>
-    <body>
-        <!-- Fixed Nav -->
-        <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" id="navBar" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">
-                        <img id="Logo" src="PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
-                    </a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="index.html">Home</a></li>
-                        <li class="nav-item"><a href="html/volunteerpage.html">Volunteering</a></li>
-                        <li class="nav-item"><a href="html/organization.html">Organization</a></li>
-                        <li class="nav-item"><a href="html/portfolio.html">Feature</a></li>
-                        <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
-                            <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        <li class="nav-item" id="logout2" style="display: none">
-                            <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
-                        </li>
-                    </ul>
-                </div>
+<body>
+    <!-- Fixed Nav bar -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" id="navBar" data-toggle="collapse"
+                    data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img id="Logo" src="PICTURE/index_logo.png" alt="">
+                </a>
             </div>
-        </nav>   
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li id="navButton1" class="nav-item"><a class="navButtonTotal" href="HTML/volunteerpage.html">Volunteering</a></li>
+                    <li id="navButton2" class="nav-item"><a class="navButtonTotal" href="HTML/posting.html">Posting</a></li>
+                    <li id="navButton3" class="nav-item"><a class="navButtonTotal" href="HTML/portfolio.html">My History</a></li>
+                    <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                        <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li class="nav-item" id="logout2" style="display: none">
+                        <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <!-- Main Content -->
-        <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
-
-            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-
+    <!-- Modal for user log in -->
+    <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
             <div class="modal-content" style>
-
                 <div class="modal-body">
-                <div id="firebaseui-auth-container"></div>
-
-                <div id="loader">Loading...</div>
+                    <div id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>
                 </div>
-
-            </div>
-
             </div>
         </div>
+    </div>
 
-
-        <!-- First div-->
-        <div class="imgwrapper" id="main1">
-            <div class="word"><p>Welcome to VolunteerStudio</p>
-                    
-            </div>
-            <!-- <button id="newPostBtn" type="button" class="btn btn-warning btn-lg btn-secondary text-center" onclick="myFunction()">We connect you to your community</button> -->
-            <a class="btn btn-warning btn-xl text-uppercase js-scroll-trigger" href="#services">We connect you to your community</a>
-            
-
+    <!-- First Section of Index page : main background and theme-->
+    <div class="imgwrapper" id="main1">
+        <div class="word">
+            <p>Welcome to VolunteerStudio</p>
         </div>
+        <a class="btn btn-warning btn-xl text-uppercase js-scroll-trigger" href="#services">We connect you to your
+            community</a>
+    </div>
 
-
-        <!-- Second div-->
-        <section class="page-section" id="services">
-            <div class="container">
+    <!-- Second Section of Index page : how it works-->
+    <section class="page-section" id="services">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">How it works</h2>
-                <h3 class="section-subheading text-muted">Connect volunteer works with you!</h3>
+                    <h2 class="section-heading text-uppercase">How it works</h2>
+                    <h3 class="section-subheading text-muted">Connect volunteer works with you!</h3>
                 </div>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <img src="picture/feature1.jpg" style="width:80%; height:70%">
+                    <img src="PICTURE/index_feature1.jpg" style="width:80%; height:70%">
                     <h4 class="service-heading">STEP 1</h4>
                     <p class="text-muted" style="font-weight:bold;">Find the category for your volunteer works.</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="picture/feature2.jpg" style="width:80%; height:70%">
+                    <img src="PICTURE/index_feature2.jpg" style="width:80%; height:70%">
                     <h4 class="service-heading">STEP 2</h4>
                     <p class="text-muted" style="font-weight:bold;">Volunteer for your community!</p>
                 </div>
                 <div class="col-md-4">
-                    <img src="picture/feature3.jpg" style="width:80%; height:70%">
+                    <img src="PICTURE/index_feature3.jpg" style="width:80%; height:70%">
                     <h4 class="service-heading">STEP 3</h4>
                     <p class="text-muted" style="font-weight:bold;">Get certificates for your future!</p>
                 </div>
             </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="bg-light page-section" id="team">
-            <div class="container">
-                <div class="row">
+    <!-- Third Section of Index page : About us-->
+    <section class="bg-light page-section" id="team">
+        <div class="container">
+            <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                </div>
-                <div class="row">
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img class="img-circle" src="picture/yun.jpg" alt="">
-                    <h4>Kay Garland</h4>
-                    <p class="text-muted">Lead Designer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        </li>
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        </li>
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img class="img-circle" src="picture/yun.jpg" alt="">
-                    <h4>Larry Parker</h4>
-                    <p class="text-muted">Lead Marketer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        </li>
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        </li>
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img class="img-circle" src="picture/yun.jpg" alt="">
-                    <h4>Diana Pertersen</h4>
-                    <p class="text-muted">Lead Developer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        </li>
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        </li>
-                        <li class="list-inline-item">
-                        <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="team-member">
-                        <img class="img-circle" src="picture/yun.jpg" alt="">
-                        <h4>Kay Garland</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            </li>
-                            <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            </li>
-                            <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="team-member">
-                        <img class="mx-auto rounded-circle img-circle" src="picture/yun.jpg" alt="">
-                        <h4>Larry Parker</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            </li>
-                            <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            </li>
-                            <li class="list-inline-item">
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                    
-                </div>
-
-            </div>
-        </section>
-
-
-
-        <section class="page-section" id="services">
-            <div class="container">
-                <div class="row text-center">
-                    <a href="#main1" title="To Top">
-                        <span class="glyphicon glyphicon-chevron-up"></span>
-                    </a>
-                    <p>Volunteer App Made by COMP2930 Team 14</p>
+                    <h2 class="section-heading text-uppercase">About Us</h2>
+                    <h3 class="section-subheading text-muted">Click for our story!</h3>
                 </div>
             </div>
-        </section>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <label for="show">
+                            <span>
+                                <img class="img-circle" src="PICTURE/index_brandon.jpg" />
+                                <h4>Brandon Vu</h4>
+                                <p class="text-muted">Developer</p>
+                            </span>
+                        </label>
+                        <input type=radio id="show" name="group">
+                        <span class="text-muted" id="content"><b>"I don't like pokemon"</b><br>As a frequent user of
+                            craigslist, I am tired of all of the people who use that website</span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <label for="show1">
+                            <span>
+                                <img class="img-circle" src="PICTURE/index_yuni.jpg" />
+                                <h4>Yuni Hur</h4>
+                                <p class="text-muted">Developer</p>
+                            </span>
+                        </label>
+                        <input type=radio id="show1" name="group">
+                        <span class="text-muted" id="content1"><b>"I love animals and have one cute doggy"</b><br>In my
+                            home country of Korea, there are a lot of stray dogs. I have seen some posts saying that
+                            they need more supporters to keep the dogs alive in rescue centres. This might be one of the
+                            places where people can use their time and resources to help the community!</span>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <label for="show2">
+                            <span>
+                                <img class="img-circle" src="PICTURE/index_yun.jpg" />
+                                <h4>Sangwook Yun</h4>
+                                <p class="text-muted">Developer</p>
+                            </span>
+                        </label>
+                        <input type=radio id="show2" name="group">
+                        <span class="text-muted" id="content2"><b>"As a new immigrant, I would like to involve in
+                                community and would like to involve in community and would like to help other
+                                people."</b><br>I want to meet positive people by participating in volunteer works. It
+                            will help me to settle in Canada and learn the local culture. This website will be very
+                            useful and efficient tool for me to find this opportunity and achieve my goal! </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="team-member">
+                        <label for="show3">
+                            <span>
+                                <img class="img-circle" src="PICTURE/index_eric.jpeg" />
+                                <h4>Eric Chang</h4>
+                                <p class="text-muted">Developer</p>
+                            </span>
+                        </label>
+                        <input type=radio id="show3" name="group">
+                        <span class="text-muted" id="content3"><b>"Let's catch Poketmon together sometimes!"</b><br>As a
+                            Taiwanese, there are no volunteers (or only 1 to 2) in an event to help disabled or senior
+                            participants. I believe, they want to involve the event deeper, but no volunteer could help
+                            them. Therefore, I want to develop something that can assemble volunteers for the organizer
+                            or individual needs to create a better world.</span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="team-member">
+                        <label for="show4">
+                            <span>
+                                <img class="img-circle" src="PICTURE/index_mike.jpg" />
+                                <h4>Mike Choi</h4>
+                                <p class="text-muted">Developer</p>
+                            </span>
+                        </label>
+                        <input type=radio id="show4" name="group">
+                        <span class="text-muted" id="content4"><b>"A strong believer in positive thinking in the
+                                workplace! Always getting work done!"</b><br>As a person who wants to be more involved
+                            with the community. I want to find volunteer work easily.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Fourth Section of Index page : Footer-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="row text-center">
+                <a href="#main1" title="To Top">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </a>
+                <p>Volunteer App Made by COMP2930 Team 14</p>
+                <a href="https://www.privacypolicies.com/privacy/view/4253d9a906fd62e9c88ebfd06cf6d880">Privacy Policy</a>
+            </div>
+        </div>
+    </section>
 
-
-
-
-
-
-        <!-- //Close Fixed Nav -->   
-        <script>
-            /*
-            function for smooth a scroll up.down
-            */
-
-            $(document).ready(function(){
-            // Add smooth scrolling to all links in navbar + footer link
-                $("a").on('click', function(event) {
-                    // Make sure this.hash has a value before overriding default behavior
-                    if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
-
-                    // Store hash
-                    var hash = this.hash;
-
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 900, function(){
-                
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                    } // End if
-                });
-
-            });
-
-            // Change pos/background/padding/add shadow on nav when scroll event happens 
-            $(function(){
-                var navbar = $('.navbar');
-                
-                $(window).scroll(function(){
-                    if($(window).scrollTop() <= 60){
-                        navbar.removeClass('navbar-scroll');
-                    } else {
-                        navbar.addClass('navbar-scroll');
-                    }
-                });
-            });
-
-            /*
-            function for firebase Login and Logout 
-            */
-
-            document.getElementById('navBar').addEventListener("click", function () {
-            if (document.querySelector('#main1').style.zIndex != -1050) {
-                let css = document.querySelector('#main1');
-                css.style.zIndex = -1050;
-                console.log('sent to back');
-                console.log(document.querySelector('#main1').style.zIndex);
-            } else {
-                let css = document.querySelector('#main1');
-                css.style.zIndex = 1200;
-                console.log('send to front');
-                console.log(document.querySelector('#main1').style.zIndex);
-            }
-            });
-
-
-        </script>
-          <!--Link Firebase File-->
-        <script src='JS/firebase.js'></script>
-          <!--Link to easter egg file-->
-        <script src='JS/easterEgg.js'></script>
-    </body>
+    <!--Link Firebase File-->
+    <script src='JS/firebase.js'></script>
+    <!--Link to easter egg file-->
+    <script src='JS/easterEgg.js'></script>
+    <!--Link to smoothScroll file-->
+    <script src='JS/smoothScroll.js'></script>
+</body>
 
 </html>

@@ -1,201 +1,152 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta char set="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- Index CSS -->
+    <link rel="stylesheet" type="text/css" href="../CSS/volunteerpage.css">
+    <!-- Firebase login UI -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <!-- Firebase CSS -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <!-- Font Style -->
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+    </style>
+  </head>
 
-<head>
-  <meta char set="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <!-- Index CSS -->
-  <link rel="stylesheet" type="text/css" href="../CSS/volunteerpage.css">
-
-  <!-- Firebase login UI -->
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
-
-  <!-- Firebase CSS -->
-  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-  <!-- Font Style -->
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
-  </style>
-
-</head>
-
-<body>
-        <!-- Fixed Nav -->
-        <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
-          <div class="container">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#">
-                      <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
-                  </a>
-              </div>
-              <div id="navbar" class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav navbar-right">
-                      <li class="nav-item"><a href="../index.html">Home</a></li>
-                      <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-                      <li class="nav-item"><a href="organization.html">Organization</a></li>
-                      <li class="nav-item"><a href="portfolio.html">Feature</a></li>
-                      <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
-                          <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                      <li class="nav-item" id="logout2" style="display: none">
-                          <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
-                      </li>
-                  </ul>
-              </div>
+  <body>
+    <!-- Fixed Nav bar-->
+    <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+              aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img id="Logo" src="../PICTURE/index_logo.png" alt="">
+            </a>
           </div>
-      </nav>
-
-  <!-- Main Content -->
-  <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
-
-    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-
-      <div class="modal-content" style>
-
-        <div class="modal-body">
-          <div id="firebaseui-auth-container"></div>
-
-          <div id="loader">Loading...</div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="nav-item"><a href="../index.html">Home</a></li>
+              <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
+              <li class="nav-item"><a href="posting.html">Posting</a></li>
+              <li class="nav-item"><a href="portfolio.html">My History</a></li>
+              <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
+                  <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+              <li class="nav-item" id="logout2" style="display: none">
+                <a id="logout" class="nav-link" href="#" onclick="logout()">Logout</a>
+              </li>
+            </ul>
+          </div>
         </div>
-
-      </div>
-
-    </div>
-  </div><br><br>
-
-  <div id="mainContainer">
-  <div class="HideOnClick" style="display: block">
+      </nav>
     
-      <div class="container-fluid">
+  <!-- Modal for user log in -->
+  <div id='hideEverything'>
+    <div class="modal fade" id="user_login" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content" style>
+          <div class="modal-body">
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </div><br>
 
-        <!-- 고친부분 시작!!!-->
-        <br>
+  <!-- First Section of Volunteer page : title and 6 buttons -->
+  <div id="mainContainer">
+    <div class="HideOnClick" style="display: block">
+      <div class="container-fluid">
         <div class="col-sm-12 text-center" id="welcomeText">
           <h2>Volunteer Search for your community</h2><br>
         </div>
-
-        <!-- 고친부분 끝!!!-->
         <div class="row">
-
-          <!-- 고친부분 시작!!!-->
-
           <h2 id="category">
-
-            <button type="button" id="Seniors" class="btn btn-info">Senior</button>
-            <button type="button" id="Disabilities" class="btn btn-info">Disability</button>
-            <button type="button" id="Sports" class="btn btn-info">Sports</button>
-            <button type="button" id="YouthDevelopment" class="btn btn-info">Youth Development</button>
-            <button type="button" id="Environment" class="btn btn-info">Environment</button>
-            <button type="button" id="Education" class="btn btn-info">Education</button>
-            <button type="button" id="showMap" class="btn btn-info">Show Map</button>
-
+            <button type="button" id="Seniors" class="btn btn-warning">Senior</button>
+            <button type="button" id="Disabilities" class="btn btn-warning">Disability</button>
+            <button type="button" id="Sports" class="btn btn-warning">Sports</button>
+            <button type="button" id="YouthDevelopment" class="btn btn-warning">Youth</button>
+            <button type="button" id="Environment" class="btn btn-warning">Environment</button>
+            <button type="button" id="Education" class="btn btn-warning">Education</button>
           </h2>
-          <button type="button" id="showMap" class="btn btn-info">Show Map</button>
-
-          <!-- 고친부분 끝!!!-->
+          <button type="button" id="showMap" class="btn btn-warning">Show Map</button>  
         </div>
       </div>
     </div>
 
+    <!-- Second Section of Volunteer page : Board table -->
     <div class="row" id="tableRow">
       <div id="table">
-        <table class="table table-hover" style="margin: 0 30px 0 30px; width:80%; margin:0 auto; margin-top:40px;">
+        <table class="table table-hover" style="margin: 0 30px 0 30px; width:80%; margin:0 auto; margin-top:40px;" id='hideTable'>
           <thead>
-
             <tr class="tableTitle" id="titleForTable">
-              <th>No.</th>
               <th>Organizer</th>
               <th>Title</th>
               <th>Where</th>
               <th>When</th>
-              <th>Volunteers Needed</th>
             </tr>
           </thead>
           <tbody id="mainTable">
-
+            <!--Posts filled here from database-->
           </tbody>
         </table>
       </div>
+      <div id='gMap'></div>
     </div>
   </div>
-  </div>
 
-  <!-- VOLUNTEER DETAIL PAGE -->
+  <!-- Third Section of Volunteer page : Volunteer detail page -->
   <div class="ShowOnClick" style="display: none">
     <div class="container-fluid"><br>
-
       <div class="col-sm-12 text-center">
-
         <!-- Trigger the modal with a button -->
         <h4><a href="#" data-toggle="modal" data-target="#myModal">
             <span class="glyphicon glyphicon-user"></span>
             <u id="applicants"></u></a>
         </h4><br>
       </div>
-
       <!-- Modal for list -->
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-
-          <!-- Modal content-->
+          <!-- Modal for detail of people-->
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title">List for applying people</h4>
             </div>
             <div class="modal-body">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                  <h4 class="text-center">Brandon</h4><br>
-                </div>
-                <div class="col-md-4">
-                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                  <h4 class="text-center">Eric</h4><br>
-                </div>
-                <div class="col-md-4">
-                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                  <h4 class="text-center">Ryan</h4><br>
-                </div>
+              <div class="row" id="listTableBody">
+              <!-- Filled with applicants from database -->
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
-
-
       <div class="row">
-        <!-- Volunteering Details -->
+        <!-- Volunteering Details contents-->
         <div class="col-sm-2"></div>
         <div class="col-sm-5">
-          <h1 class="text-left">BCIT<br>
-            <h3 class="text-left"><span class="btn btn-info btn-md btn-secondary text-center">Sports</span>
-              <span class="btn btn-info btn-md btn-secondary text-center">Youth Development</span></h3>
-
+          <h1 class="text-left" id="titlePara">
+            <h3 class="text-left"><span id="buttonCategory" class="btn btn-warning btn-md btn-secondary text-center">Sports</span></h3>
           </h1><br>
           <div class="col-sm-11">
             <div class="row text-left">
-
               <h3>Description</h3>
               <p id="descriptPara"></p><br>
 
@@ -203,90 +154,103 @@
               <p id="rolePara"></p><br>
 
               <h3>How To Apply</h3>
-              <p id="userEmail"></p>
+              <p id="userEmail"></p><br>
+
+              <h3>Address</h3>
+              <p id="theLocation"></p><br>
+
+              <h3>Number of Volunteer</h3>
+              <p id="theNumber"></p>
+
             </div>
           </div>
         </div>
 
+          <!-- Buttons for apply and back--> 
+          <div class="col-sm-3"> <br>
+            <button type="button" class="btn btn-" data-toggle="modal" data-target="#myModal1" id="firstButton">
+              <span class="glyphicon glyphicon-envelope"></span> Apply</button>
 
+            <button type="button" class="btn btn-warning" id="backButton">
+              <span class="glyphicon glyphicon-log-out"></span> Back</button>
+            <div><br></div>
 
-        <!-- Buttons --> Î
-        <div class="col-sm-3"> <br>
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal1" id="firstButton">
-            <span class="glyphicon glyphicon-envelope"></span> Apply</button>
-
-          <button type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-heart-empty"></span> Save</button>
-          <div><br></div>
-
-          <!--apply pop out-->
-          <div id="applyModal">
-            <div class="modal fade text-center" id="myModal1" role="dialog" style="margin:0px auto; width:60%;">
-              <div class="modal-content">
-                <div class="container text-center" style="width:100%;">
-                  <h2 style="margin-top: 50px">Apply for Volunteer</h2>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-10">
-                      <div style="text-align: left;">
-                        <label for="Textarea" id="theLabel"></label>
+            <!--Modal for apply pop out-->
+            <div id="applyModal">
+              <div class="modal fade text-center" id="myModal1" role="dialog">
+                <div class="modal-content">
+                  <button type="button" class="close" id="closeButton" data-dismiss="modal">&times;</button>
+                  <div class="container text-center" style="width:100%;">
+                    <h2 style="margin-top: 50px">Apply for Volunteer</h2>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-1"></div>
+                      <div class="col-sm-10">
+                        <div style="text-align: left;">
+                          <label for="Textarea" id="theLabel"></label>
+                        </div>
+                        <br>
+                        <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
                       </div>
-                      <br>
-                      <textarea class="form-control" id="exampleTextarea" rows="12"></textarea>
+                      <div class="col-sm-1"></div>
                     </div>
-                    <div class="col-sm-1"></div>
-                  </div>
-                  <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
-                    <button type='submit' id="applyButton" class="btn btn-info btn-lg">Apply</button>
+                    <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
+                      <button type='submit' id="applyButton" class="btn btn-warning btn-lg">Apply</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Map and Reviews -->
+            <div class="thumbnail" id="map">
+            </div>
           </div>
-
-
-          <!-- Map and Reviews -->
-          <div class="thumbnail">
-            <!-- <a href="googleMap.jpg" target="_blank"> -->
-            <div id='map'></div>
-            
-            <!--</a>-->
-          </div>
-          <button type="button" id="backButton" class="btn btn-info">Back</button>
         </div>
-        <div class="col-sm-2"></div>
+      </div><br>
+    </div>
+    </div>
 
+    <!-- Fourth Section of Volunteer page : user Portfolio -->
+    <div id="applicantPortfolio">
+      <div class="container text-center">
+        <h2 id='usersPortfolio'></h2>
+        <div class="row">
+          <!-- User Profile -->
+          <div class="col-sm-1"></div>
+          <div class="col-sm-3"><br>
+            <div class="thumbnail" id="usercolor">
+              <img src="" id="userImage" class="img-responsive" alt="Image" style="width:100%">
+              <div class="caption">
+                <h3 id="nameUser" class="text-left"></h3>
+                <p id="descriptionUser" class="text-left"></p>
+              </div>
+            </div><br><br>
+          </div>
+          <!-- Organization Volunteering History -->
+          <div class="col-sm-1"> </div>
+          <div class="col-sm-6">
+            <hr>
+            <h4 class="text-center">Volunteer Experiences</h4>
+            <hr>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-11">
+              <div id="experienceVolunteer" class="row">
+                <!-- This div is filled with experiences -->
+              </div>
+            </div>
+          </div>
+        </div><br>
       </div>
-    </div><br>
-  </div>
+    </div>
 
-
-
-
-  <script>
-    document.getElementById('navBar').addEventListener("click", function () {
-      if (document.querySelector('#mainContainer').style.zIndex != -1050) {
-        let css = document.querySelector('#mainContainer');
-        css.style.zIndex = -1050;
-        console.log('sent to back');
-        console.log(document.querySelector('#mainContainer').style.zIndex);
-      } else {
-        let css = document.querySelector('#mainContainer');
-        css.style.zIndex = 1200;
-        console.log('send to front');
-        console.log(document.querySelector('#mainContainer').style.zIndex);
-      }
-    });
-  </script>
-
-  <!--Link Firebase File-->
-  <script src='../JS/firebase.js'></script>
-  <!--Link Table Firebase File-->
-  <script src='../JS/readFirebase.js'></script>
-  <!--Link Geolocation API-->
-  <!-- <script src='../JS/geolocation.js'></script> -->
-  <script id='script' aysnc defer></script>
-</body>
+    <!-- Link Firebase File -->
+    <script src='../JS/firebase.js'></script>
+    <!-- Link Table Firebase File -->
+    <script src='../JS/readFirebase.js'></script>
+    <!-- Geolocation -->
+    <script id='bigMap' src='../JS/bigMap.js'></script>
+    <script id='littleMap' src='../JS/geolocation.js'></script>
+    <script id='geo' aysnc defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDaqqjObPbLckB-N709lZtUOBmhZhgajGA&callback=initMap'></script>
+  </body>
 
 </html>
