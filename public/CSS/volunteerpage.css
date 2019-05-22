@@ -57,10 +57,20 @@ table td {
 
 
 /* Navbar Styles Start */
-.navbar-default .navbar-brand,
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-nav li a {
+  font-size: 1em;
+  letter-spacing: 2px;
+}
+
+.navbar-default .navbar-brand, 
 .navbar-default .navbar-nav>li>a {
   color: black;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .nav-item {
@@ -82,15 +92,16 @@ table td {
 
 /* jQuery Styles */
 .navbar-scroll {
-    background: #e7eaea;
-    padding: 0;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
-    transition-duration: 0.6s;
+  background: #e7eaea;
+  padding: 0;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.6s;
 }
+
 .nav-dropdown-scroll {
-    background: #e7eaea;
-    box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
-} 
+  background: #e7eaea;
+  box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
+}
 /* Navbar Styles End */
 
 #category {
