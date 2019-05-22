@@ -43,15 +43,15 @@
                       <span class="icon-bar"></span>
                   </button>
                   <a class="navbar-brand" href="#">
-                      <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+                      <img id="Logo" src="../PICTURE/index_logo.png" alt="">
                   </a>
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav navbar-right">
                       <li class="nav-item"><a href="../index.html">Home</a></li>
                       <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-                      <li class="nav-item"><a href="organization.html">Organization</a></li>
-                      <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+                      <li class="nav-item"><a href="posting.html">Posting</a></li>
+                      <li class="nav-item"><a href="portfolio.html">My history</a></li>
                       <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
                           <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                       <li class="nav-item" id="logout2" style="display: none">
@@ -102,7 +102,7 @@
             </div>
             <div class="form-group col-sm-8 text-left" style="margin-bottom: 20px">
               <input type="text" class="form-control" id="eventName" pattern="[A-Za-z]{8,15}"
-                placeholder="Enter Position Title" required />
+                placeholder="Enter Event name!" required />
             </div>
 
             <div class="col-sm-3 text-left" style="margin-bottom: 20px">
@@ -118,7 +118,7 @@
             </div>
             <div class="col-sm-8 text-left" style="margin-bottom: 20px">
               <input type="text" class="form-control" id="address" pattern="[A-Za-z]{8,15}"
-                placeholder="Enter Work Location" style="margin-bottom:5px;" required />
+                placeholder="Enter the address" style="margin-bottom:5px;" required />
               <select class="form-control" id="city">
                 <option>Burnaby</option>
                 <option>Coquitlam</option>
@@ -181,7 +181,7 @@
         <div class="col-sm-12 text-center">
           <div class="row btn-group">
             <button id="submitButton" type="button"
-              class="btn btn-info btn-lg btn-secondary text-center">Submit</button>
+              class="btn btn-warning btn-lg btn-secondary text-center">Submit</button>
           </div>
         </div>
         </form>
@@ -199,6 +199,8 @@
               console.log(document.querySelector('#fullcontainer').style.zIndex);
             }
           });
+        
+          
         </script>
 
 
