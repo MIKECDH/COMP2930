@@ -3,6 +3,18 @@
   padding: 0;
 }
 
+body {
+  font-family: 'roboto', sans-serif;
+  background-image: url('../PICTURE/portfolio_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+#mainContainer {
+  position: relative;
+}
+
 #myModal2 {
   margin: 0 auto;
   width: 50%;
@@ -16,72 +28,18 @@
   justify-content: space-evenly;
 }
 
-body {
-  font-family: 'roboto', sans-serif;
-  background-image: url('../PICTURE/portfolio_bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
-
-#firstDiv p {
-  font-size: 14pt;
-  margin-top: 10px;
-  text-align: left;
-}
-
-#mainContainer {
-  position: relative;
-}
-
-/* #usercolor{
-  background-color: rgb(238,241,234);
-} */
-
-.rate {
-  float: left;
-  height: 46px;
-  padding: 0 10px;
-}
-
-.rate:not(:checked)>input {
-  position: absolute;
-  top: -9999px;
-}
-
-.rate:not(:checked)>label {
-  float: right;
-  width: 1em;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  font-size: 30px;
-  color: #ccc;
-}
-
-.rate:not(:checked)>label:before {
-  content: '★ ';
-}
-
-.rate>input:checked~label {
-  color: #ffc700;
-}
-
-.rate:not(:checked)>label:hover,
-.rate:not(:checked)>label:hover~label {
-  color: #deb217;
-}
-
-.rate>input:checked+label:hover,
-.rate>input:checked+label:hover~label,
-.rate>input:checked~label:hover,
-.rate>input:checked~label:hover~label,
-.rate>label:hover~input:checked~label {
-  color: #c59b08;
-}
-
 #rsize {
   margin-top: 50px;
+  font-size: 30pt;
+  letter-spacing: 1.7px;
+  line-height: 30px;
+  font-weight: 700;
+  margin-top: 15px;
+  text-align: center;
+}
+
+#picUpload {
+  text-align: center !important;
 }
 
 #modalHeight {
@@ -92,24 +50,17 @@ body {
   margin-top: 25px;
 }
 
-
-/* input[type=file] {
-  text-align: center !important;
-  margin-left: 50px;
-} */
-
+/* Navbar Styles Start */
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
   color: black;
   font-weight: bold;
-
 }
 
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
   color: black;
   font-weight: 400;
-
 }
 
 .nav-item {
@@ -129,8 +80,7 @@ body {
   width: auto;
 }
 
-/* jQuery Styles
-===================================*/
+/* jQuery Styles */
 .navbar-scroll {
   background: #e7eaea;
   padding: 0;
@@ -142,22 +92,11 @@ body {
   background: #e7eaea;
   box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
 }
+/* Navbar Styles End */
 
 
-#backgroundMain {
-  position: relative;
-}
-
-#buttonsize {
-  height: 80px;
-  margin-top: 40px;
-}
-
-
-/* md */
+/* On screens that are 991px or less */
 @media screen and (max-width: 991px) {
-
-
   .navbar-header {
     float: none;
   }
@@ -205,7 +144,8 @@ body {
 }
 
 
-/* xs < 768 */
+
+/* On screens that are 767px or less */
 @media screen and (max-width: 767px) {
   body {
     height: initial;
@@ -225,23 +165,13 @@ body {
     margin-left: 75px;
   }
 
-  /* #fileButton{
-    margin: auto;
-  } */
-
-
   #modalHeight {
     height: 450px;
-  }
-
-  #btc {
-    font-size: 7pt;
   }
 
   #rsize {
     font-size: 17pt;
     letter-spacing: 1.2px;
-    /*line-height: 30px;*/
     font-weight: 500;
     margin-top: 0;
     text-align: center;
@@ -268,49 +198,5 @@ body {
 
   .caption h3 {
     text-align: center;
-  }
-}
-
-/* lg */
-@media screen and (min-width: 900px) {
-  #btc {
-    font-size: 15pt;
-  }
-
-  #rsize {
-    font-size: 25pt;
-    letter-spacing: 1.2px;
-    line-height: 30px;
-    font-weight: 500;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  #picUpload {
-    text-align: center !important;
-  }
-
-}
-
-
-
-
-/* xlg */
-@media screen and (min-width: 1500px) {
-  #btc {
-    font-size: 15pt;
-  }
-
-  #rsize {
-    font-size: 30pt;
-    letter-spacing: 1.7px;
-    line-height: 30px;
-    font-weight: 700;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  #picUpload {
-    text-align: center !important;
   }
 }
