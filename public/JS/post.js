@@ -38,6 +38,7 @@
         if (phone !="" && address !="" && city != "" && eventName !="" && role !="" && category !="" && volunteers !="" && description !="" && date != ""){
             saveMessage(phone, address, city, eventName, role, category, volunteers, description, date);
             console.log('saved data');
+            alert('Posted successfully');
             // Clear form
             document.getElementById('postForm').reset();
         }else{
