@@ -9,6 +9,11 @@ body {
   text-align: center;
 }
 
+#mainContainer {
+  position: relative;
+  margin-top: 50px;
+}
+
 #myModal1 {
   margin: 0 auto;
   width: 50%;
@@ -18,20 +23,8 @@ body {
   color:black;
 }
 
-#postInfo {
-  color:black;
-}
-
-#postInfo p {
-  font-size: 12pt;
-}
-
 #applicants {
   text-decoration: none;
-  color:black;
-}
-
-#userIconColor {
   color:black;
 }
 
@@ -53,10 +46,6 @@ body {
   margin: 0 auto;
 }
 
-#showMap{
-  text-align: center;
-}
-
 .tableTitle th {
   text-align: center;
   font-size: 14pt;
@@ -66,19 +55,14 @@ table td {
   height: 70px;
 }
 
+
+/* Navbar Styles Start */
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav>li>a {
-    color: black;
-    font-weight: bold;
-    
+  color: black;
+  font-weight: bold;
 }
 
-.navbar-default .navbar-brand,
-.navbar-default .navbar-nav>li>a {
-    color: black;
-    font-weight: 400;
-    
-}
 .nav-item {
   padding-left:10px;
   padding-right:10px;
@@ -91,13 +75,12 @@ table td {
 }
 
 #Logo {
-    margin-top: -20px;
-    height: 60px;
-    width: auto;
+  margin-top: -20px;
+  height: 60px;
+  width: auto;
 }
 
-/* jQuery Styles
-===================================*/
+/* jQuery Styles */
 .navbar-scroll {
     background: #e7eaea;
     padding: 0;
@@ -108,51 +91,11 @@ table td {
     background: #e7eaea;
     box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
 } 
-
-
-#backgroundMain {
-  position: relative;
-}
-
-
-
-#mainContainer {
-  position: relative;
-  margin-top: 50px;
-}
-
-#searchbar {
-  margin-top: 30px;
-}
+/* Navbar Styles End */
 
 #category {
   text-align: center;
   margin-bottom: 40px;
-}
-
-.labelBox {
-  margin: 0;
-}
-
-#post1 {
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  margin: 30px 5px 0 5px;
-  height: 120px;
-  background-color: white;
-  border-radius: 0;
-}
-
-#post1 p {
-  margin: 0 5px 0 5px;
-  font-size: 18pt;
-}
-
-#post1 a img {
-  height: 50px;
-  width: auto;
 }
 
 #closeButton {
@@ -160,60 +103,51 @@ table td {
   margin-top:10px;
 }
 
-/* md */
+/* On screens that are 991px or less */
 @media screen and (max-width: 991px) {
-
-    .navbar-header {
-      float: none;
-    }
-  
-    .navbar-left,
-    .navbar-right {
-      float: none !important;
-    }
-  
-    .navbar-toggle {
-      display: block;
-    }
-  
-    .navbar-collapse {
-      border-top: 1px solid transparent;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-  
-    .navbar-fixed-top {
-      top: 0;
-      border-width: 0 0 1px;
-    }
-  
-    .navbar-collapse.collapse {
-      display: none !important;
-    }
-  
-    .navbar-nav {
-      float: none !important;
-      margin-top: 7.5px;
-    }
-  
-    .navbar-nav>li {
-      float: none;
-    }
-    .navbar-nav>li>a {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-  
-    .collapse.in {
-      display: block !important;
-    }
-
-  #post1 p {
-    font-size: 14pt;
-    text-align: center;
+  .navbar-header {
+    float: none;
   }
-
-  .labelBox {
-    font-size: 14pt;
+  
+  .navbar-left,
+  .navbar-right {
+    float: none !important;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+  }
+  
+  .navbar-nav>li {
+    float: none;
+  }
+  
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .collapse.in {
+    display: block !important;
   }
 
   #mainTable td {
@@ -221,32 +155,11 @@ table td {
   }
 }
 
-/* xs < 768 */
+/* On screens that are 767px or less */
 @media screen and (max-width: 767px) {
-
-  #post1 p {
-    font-size: 12pt;
-    text-align: center;
-  }
-
   #myModal1 {
     margin: 0 auto;
     width: 90%;
-  }
-
-  .buttonMain {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .buttonMain button {
-    background-color: whitesmoke;
-    margin: 30px 0 0 0;
-    font-size: 10pt;
-  }
-
-  .labelBox {
-    font-size: 12pt;
   }
 
   .tableTitle th {
@@ -255,29 +168,5 @@ table td {
 
   #mainTable td {
     font-size: 10pt;
-  }
-}
-
-/* lg */
-@media screen and (min-width: 991px) {
-  #post1 p {
-    font-size: 16pt;
-    text-align: center;
-  }
-
-  .labelBox {
-    font-size: 14pt;
-  }
-}
-
-/* xlg */
-@media screen and (min-width: 1200px) {
-  #post1 p {
-    font-size: 18pt;
-    text-align: center;
-  }
-
-  .labelBox {
-    font-size: 16pt;
   }
 }
