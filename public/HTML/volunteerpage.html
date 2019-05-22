@@ -37,22 +37,22 @@
         <nav class="navbar navbar-default navbar-fixed-top" id="myScrollspy">
           <div class="container">
               <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <button type="button" class="navbar-toggle collapsed" id='navBar' data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                       <span class="sr-only">Toggle navigation</span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
                   <a class="navbar-brand" href="#">
-                      <img id="Logo" src="../PICTURE/KakaoTalk_Photo_2019-04-30-15-50-56.png" alt="">
+                      <img id="Logo" src="../PICTURE/index_logo.png" alt="">
                   </a>
               </div>
               <div id="navbar" class="navbar-collapse collapse">
                   <ul class="nav navbar-nav navbar-right">
                       <li class="nav-item"><a href="../index.html">Home</a></li>
                       <li class="nav-item"><a href="volunteerpage.html">Volunteering</a></li>
-                      <li class="nav-item"><a href="organization.html">Organization</a></li>
-                      <li class="nav-item"><a href="portfolio.html">Feature</a></li>
+                      <li class="nav-item"><a href="posting.html">Posting</a></li>
+                      <li class="nav-item"><a href="portfolio.html">My history</a></li>
                       <li class="nav-item"><a class="nav-link" id="login" data-toggle="modal" href="#user_login">
                           <span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                       <li class="nav-item" id="logout2" style="display: none">
@@ -98,14 +98,12 @@
 
           <h2 id="category">
 
-            <button type="button" id="Seniors" class="btn btn-info">Senior</button>
-            <button type="button" id="Disabilities" class="btn btn-info">Disability</button>
-            <button type="button" id="Sports" class="btn btn-info">Sports</button>
-            <button type="button" id="YouthDevelopment" class="btn btn-info">Youth Development</button>
-            <button type="button" id="Environment" class="btn btn-info">Environment</button>
-            <button type="button" id="Education" class="btn btn-info">Education</button>
-          </h2>
-          <button type="button" id="showMap" class="btn btn-info">Show Map</button>
+            <button type="button" id="Seniors" class="btn btn-warning">Senior</button>
+            <button type="button" id="Disabilities" class="btn btn-warning">Disability</button>
+            <button type="button" id="Sports" class="btn btn-warning">Sports</button>
+            <button type="button" id="YouthDevelopment" class="btn btn-warning">Youth Development</button>
+            <button type="button" id="Environment" class="btn btn-warning">Environment</button>
+            <button type="button" id="Education" class="btn btn-warning">Education</button>
 
           <!-- 고친부분 끝!!!-->
         </div>
@@ -135,8 +133,8 @@
   </div>
   </div>
 
-  <!-- VOLUNTEER DETAIL PAGE -->
-  <div class="ShowOnClick" style="display: none">
+   <!-- VOLUNTEER DETAIL PAGE -->
+   <div class="ShowOnClick" style="display: none">
     <div class="container-fluid"><br>
 
       <div class="col-sm-12 text-center">
@@ -159,19 +157,8 @@
               <h4 class="modal-title">List for applying people</h4>
             </div>
             <div class="modal-body">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                  <h4 class="text-center">Brandon</h4><br>
-                </div>
-                <div class="col-md-4">
-                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                  <h4 class="text-center">Eric</h4><br>
-                </div>
-                <div class="col-md-4">
-                  <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive img-circle" alt="Image">
-                  <h4 class="text-center">Ryan</h4><br>
-                </div>
+              <div class="row" id="listTableBody">
+                
               </div>
             </div>
           </div>
@@ -185,8 +172,8 @@
         <!-- Volunteering Details -->
         <div class="col-sm-2"></div>
         <div class="col-sm-5">
-          <h1 class="text-left">BCIT
-            <h3 class="text-left"><span id="buttonCategory" class="btn btn-info btn-md btn-secondary text-center">Sports</span></h3>
+          <h1 class="text-left" id="titlePara">
+            <h3 class="text-left"><span id="buttonCategory" class="btn btn-warning btn-md btn-secondary text-center">Sports</span></h3>
               
 
           </h1><br>
@@ -227,8 +214,9 @@
 
           <!--apply pop out-->
           <div id="applyModal">
-            <div class="modal fade text-center" id="myModal1" role="dialog" style="margin:0px auto; width:60%;">
+            <div class="modal fade text-center" id="myModal1" role="dialog">
               <div class="modal-content">
+                <button type="button" class="close" id="closeButton" data-dismiss="modal">&times;</button>
                 <div class="container text-center" style="width:100%;">
                   <h2 style="margin-top: 50px">Apply for Volunteer</h2>
                   <hr>
@@ -244,7 +232,7 @@
                     <div class="col-sm-1"></div>
                   </div>
                   <div class="col-sm-12" style="height: 80px; margin-top: 40px;">
-                    <button type='submit' id="applyButton" class="btn btn-info btn-lg">Apply</button>
+                    <button type='submit' id="applyButton" class="btn btn-warning btn-lg">Apply</button>
                   </div>
                 </div>
               </div>
@@ -273,7 +261,6 @@
 
 
 
-
   <script>
     document.getElementById('navBar').addEventListener("click", function () {
       if (document.querySelector('#mainContainer').style.zIndex != -1050) {
@@ -288,11 +275,12 @@
         console.log(document.querySelector('#mainContainer').style.zIndex);
       }
     });
+
   </script>
 
-  <!--Link Firebase File-->
+  <!—Link Firebase File—>
   <script src='../JS/firebase.js'></script>
-  <!--Link Table Firebase File-->
+  <!—Link Table Firebase File—>
   <script src='../JS/readFirebase.js'></script>
 
 </body>
