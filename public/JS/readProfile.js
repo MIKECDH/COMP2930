@@ -133,7 +133,6 @@ firebase.auth().onAuthStateChanged((user) => {
 
         var divFirst=document.createElement('div');
         var roleTitle = document.createElement('div');
-        // $(roleTitle).attr('class', 'text-center');
         var roleNode = document.createTextNode('Roles');
         roleTitle.appendChild(roleNode);
         roleTitle.style.fontWeight="bold";
@@ -151,7 +150,6 @@ firebase.auth().onAuthStateChanged((user) => {
 
         var divThird=document.createElement('div');
         var dateTitle = document.createElement('div');
-        // $(dateTitle).attr('class', 'text-center');
         var dateNode = document.createTextNode('Date');
         dateTitle.appendChild(dateNode);
         dateTitle.style.fontWeight="bold";

@@ -1,3 +1,4 @@
+
 // Reference messages collection
 var database = firebase.database();
 var postRef;

@@ -1,3 +1,4 @@
+
 //The following variables are declared as counters used below
 var x = 0;
 var y = 0;
@@ -161,10 +162,10 @@ query.once("value")
 
                     divTitleRow.appendChild(node);
                     divTitleRow.style.marginBottom = "20px";
+                    divTitleRow.style.textAlign = "center";
 
                     var divFirst = document.createElement('div');
                     var roleTitle = document.createElement('div');
-                    $(roleTitle).attr('class', 'text-center');
                     var roleNode = document.createTextNode('Roles');
                     roleTitle.appendChild(roleNode);
                     roleTitle.style.fontWeight = "bold";
@@ -179,10 +180,10 @@ query.once("value")
                     $(divSecond).attr('class', 'col-xs-9');
                     divSecond.appendChild(node2);
                     divRoleRow.appendChild(divSecond);
+                    divRoleRow.style.textAlign = "left";
 
                     var divThird = document.createElement('div');
                     var dateTitle = document.createElement('div');
-                    $(dateTitle).attr('class', 'text-center');
                     var dateNode = document.createTextNode('Date');
                     dateTitle.appendChild(dateNode);
                     dateTitle.style.fontWeight = "bold";
@@ -197,6 +198,8 @@ query.once("value")
                     $(divFourth).attr('class', 'col-xs-9');
                     divFourth.appendChild(node3);
                     divDateRow.appendChild(divFourth);
+                    divDateRow.style.textAlign = "left";
+
                     var bar = document.createElement('hr');
                     mainDiv.appendChild(divTitleRow);
                     mainDiv.appendChild(divRoleRow);
@@ -419,7 +422,6 @@ function sortCategory(category) {
                     console.log(snapshot3.val());
                     $('#user' + y).click(function () {
                       //The following function displays the applicants profile when their image is clicked
-
                       $('#applicantPortfolio').css('display', 'block');
                       $('#hideEverything').css('display', 'none');
                       $('#myModal').modal('hide');
@@ -444,14 +446,12 @@ function sortCategory(category) {
                           var node = document.createElement('h4');
                           var node1Text = document.createTextNode(childProfileSnapshot.val().eventName);
                           node.appendChild(node1Text);
-
                           divTitleRow.appendChild(node);
                           divTitleRow.style.marginBottom = "20px";
                           divTitleRow.style.textAlign = "center";
 
                           var divFirst = document.createElement('div');
                           var roleTitle = document.createElement('div');
-                          // $(roleTitle).attr('class', 'text-center');
                           var roleNode = document.createTextNode('Roles');
                           roleTitle.appendChild(roleNode);
                           roleTitle.style.fontWeight = "bold";
@@ -470,7 +470,6 @@ function sortCategory(category) {
 
                           var divThird = document.createElement('div');
                           var dateTitle = document.createElement('div');
-                          // $(dateTitle).attr('class', 'text-center');
                           var dateNode = document.createTextNode('Date');
                           dateTitle.appendChild(dateNode);
                           dateTitle.style.fontWeight = "bold";
