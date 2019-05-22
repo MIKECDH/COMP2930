@@ -12,7 +12,7 @@ function team() {
         img.src = data
         img.style.width = '1050px'
         img.style.height = '300px'
-        img.style.transition = '7s all'
+        img.style.transition = '15s all'
         img.style.position = 'fixed'
         img.style.left = '-1100px'
         img.style.bottom = 'calc(-50% + 420px)'
@@ -49,7 +49,7 @@ function team() {
         document.addEventListener('keyup', record)
     }
 
-    let data = 'animation.gif';
+    let data = 'picture/index_easteregg.gif';
 
     init(data)
     }
