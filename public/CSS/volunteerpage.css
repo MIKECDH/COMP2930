@@ -88,12 +88,6 @@ table td {
   font-weight: 400;
 }
 
-.nav-item {
-  padding-left:10px;
-  padding-right:10px;
-  font-weight:400;
-}
-
 .navbar-nav li a {
   font-size: 1.0em;
   letter-spacing: 2px;
